@@ -106,7 +106,7 @@
       <workItem from="1584955522114" duration="27072000" />
       <workItem from="1584995091603" duration="116000" />
       <workItem from="1585324068208" duration="1828000" />
-      <workItem from="1585339227590" duration="1052000" />
+      <workItem from="1585339227590" duration="1838000" />
     </task>
     <task id="LOCAL-00001" summary="Homebase değişti">
       <created>1585339704994</created>
@@ -115,7 +115,21 @@
       <option name="project" value="LOCAL" />
       <updated>1585339704994</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Homebase değişti">
+      <created>1585340349499</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1585340349499</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Homebase değişti">
+      <created>1585340459703</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1585340459703</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -130,26 +144,26 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="137" y="21" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1585339550630" />
-    <state x="321" y="0" key="CommitChangelistDialog2" timestamp="1585340348744">
+    <state x="321" y="0" key="CommitChangelistDialog2" timestamp="1585340458591">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="321" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1585340348744" />
+    <state x="321" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1585340458591" />
     <state x="177" y="0" key="SettingsEditor" timestamp="1585339025289">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="177" y="0" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1585339025289" />
-    <state x="275" y="99" key="Vcs.Push.Dialog.v2" timestamp="1585340400916">
+    <state x="275" y="99" key="Vcs.Push.Dialog.v2" timestamp="1585340472891">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="275" y="99" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1585340400916" />
+    <state x="275" y="99" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1585340472891" />
     <state x="404" y="188" key="com.intellij.ide.util.TipDialog" timestamp="1585339232863">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="404" y="188" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1585339232863" />
-    <state x="494" y="282" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1585340444328">
+    <state x="494" y="282" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1585341244132">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="494" y="282" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.728@0.0.1366.728" timestamp="1585340444328" />
+    <state x="494" y="282" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.728@0.0.1366.728" timestamp="1585341244132" />
     <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1584966102338">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
