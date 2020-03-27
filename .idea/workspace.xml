@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="02bb089f-e80a-4433-8741-c3b51d268ae8" name="Default Changelist" comment="" />
+    <list default="true" id="02bb089f-e80a-4433-8741-c3b51d268ae8" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/templates/homebase.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/homebase.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -18,7 +22,12 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="MERGE" />
+  </component>
   <component name="ProjectId" id="1ZP9ze1AEOCQdyzM4KO9CyunkLi" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -84,7 +93,8 @@
       <workItem from="1584730147265" duration="8681000" />
       <workItem from="1584955522114" duration="27072000" />
       <workItem from="1584995091603" duration="116000" />
-      <workItem from="1585324068208" duration="1029000" />
+      <workItem from="1585324068208" duration="1828000" />
+      <workItem from="1585339227590" duration="235000" />
     </task>
     <servers />
   </component>
@@ -92,14 +102,22 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="186" y="0" key="SettingsEditor" timestamp="1585336622295">
+    <state x="137" y="21" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1585339550630">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="186" y="0" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1585336622295" />
-    <state x="404" y="188" key="com.intellij.ide.util.TipDialog" timestamp="1584995088818">
+    <state x="137" y="21" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1585339550630" />
+    <state x="177" y="0" key="SettingsEditor" timestamp="1585339025289">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="404" y="188" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1584995088818" />
+    <state x="177" y="0" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1585339025289" />
+    <state x="404" y="188" key="com.intellij.ide.util.TipDialog" timestamp="1585339232863">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="404" y="188" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1585339232863" />
+    <state x="494" y="282" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1585339562450">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="494" y="282" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.728@0.0.1366.728" timestamp="1585339562450" />
     <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1584966102338">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
