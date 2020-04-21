@@ -1,0 +1,32 @@
+{% extends "homebase.html" %}
+
+{% block title %}Referanslarımız {{ settings.title }} {% endblock %}
+{% block keywords %}{{ settings.keywords}}{% endblock %}
+{% block description %}{{settings.description}}{% endblock %}
+{% block head %}
+    <link rel="shortcut icon" href='{{settings.icon.url}}'>
+{% endblock %}
+{% block sidebar %} {% include "sidebar.html" %} {% endblock %}
+
+
+
+{% block body %} <div id="breadcrumb">
+        <div class="container">
+            <ul class="breadcrumb">
+                <li><a href="/">Anasayfa</a></li>
+                <li class="active">Referanslarımız</li>
+            </ul>
+
+
+
+    <div class="cm-sectionTitle">
+        <div class="container">
+            <div class="row">
+                {{ settings.references|safe}}
+            </div>
+        </div>
+    </div>
+ </div>
+</div>
+{% endblock %}
+
