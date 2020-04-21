@@ -2,7 +2,7 @@ from django.db import models
 
 # Create your models here.
 from django.utils.safestring import mark_safe
-
+from ckeditor_uploader.fields import RichTextUploadingField
 
 class Category(models.Model):
     STATUS=(
@@ -40,7 +40,7 @@ class Product(models.Model):
     #price = models.FloatField()
     #amount = models.IntegerField()
     #detail = RichTextUploadingField()
-    detail = models.TextField()
+    detail = RichTextUploadingField()
     status = models.CharField(max_length=10, choices=STATUS)
     slug = models.SlugField()
     parent = models.ForeignKey('self', blank=True, null=True, related_name='children', on_delete=models.CASCADE)
