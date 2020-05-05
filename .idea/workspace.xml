@@ -4,11 +4,12 @@
     <list default="true" id="02bb089f-e80a-4433-8741-c3b51d268ae8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/home/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/home/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/templates/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/header.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/templates/iletisim.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/iletisim.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/templates/hakkimizda.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/hakkimizda.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/templates/referanslarimiz.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/referanslarimiz.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/templates/slider.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/slider.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/home/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/home/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/turistikmekan/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/turistikmekan/models.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -153,7 +154,7 @@
       <workItem from="1585563384744" duration="457000" />
       <workItem from="1587376620415" duration="3307000" />
       <workItem from="1587480942238" duration="11491000" />
-      <workItem from="1588674642152" duration="9341000" />
+      <workItem from="1588674642152" duration="21456000" />
     </task>
     <task id="LOCAL-00001" summary="Homebase değişti">
       <created>1585339704994</created>
@@ -197,7 +198,14 @@
       <option name="project" value="LOCAL" />
       <updated>1587494491102</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Contact form bize ulaşın formu eklendi.">
+      <created>1588692321514</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1588692321514</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -207,9 +215,14 @@
     <MESSAGE value="Homebase değişti" />
     <MESSAGE value="Ckeditör ekleme." />
     <MESSAGE value="Hakkimizda, refereanslar ve iletisim sayfalari eklendi." />
-    <option name="LAST_COMMIT_MESSAGE" value="Hakkimizda, refereanslar ve iletisim sayfalari eklendi." />
+    <MESSAGE value="Contact form bize ulaşın formu eklendi." />
+    <option name="LAST_COMMIT_MESSAGE" value="Contact form bize ulaşın formu eklendi." />
   </component>
   <component name="WindowStateProjectService">
+    <state x="275" y="24" key="#Inspections" timestamp="1588695118068">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="275" y="24" key="#Inspections/0.0.1366.728@0.0.1366.728" timestamp="1588695118068" />
     <state x="137" y="21" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1585342239582">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -218,10 +231,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="413" y="113" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.728@0.0.1366.728" timestamp="1587492871954" />
-    <state x="321" y="0" key="CommitChangelistDialog2" timestamp="1587494489856">
+    <state x="321" y="0" key="CommitChangelistDialog2" timestamp="1588692320409">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="321" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1587494489856" />
+    <state x="321" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1588692320409" />
     <state x="463" y="121" key="FileChooserDialogImpl" timestamp="1585342094466">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -234,18 +247,18 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="177" y="0" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1587482913948" />
-    <state x="275" y="99" key="Vcs.Push.Dialog.v2" timestamp="1587494495861">
+    <state x="275" y="99" key="Vcs.Push.Dialog.v2" timestamp="1588692331001">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="275" y="99" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1587494495861" />
+    <state x="275" y="99" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1588692331001" />
     <state x="404" y="188" key="com.intellij.ide.util.TipDialog" timestamp="1588675564724">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="404" y="188" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1588675564724" />
-    <state x="494" y="282" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1588692265655">
+    <state x="494" y="282" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1588717681155">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="494" y="282" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.728@0.0.1366.728" timestamp="1588692265655" />
+    <state x="494" y="282" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.728@0.0.1366.728" timestamp="1588717681155" />
     <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1584966102338">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

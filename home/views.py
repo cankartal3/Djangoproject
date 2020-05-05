@@ -4,11 +4,18 @@ from django.shortcuts import render
 
 # Create your views here.
 from home.models import Settings, ContactFormuu, ContactFormMessage
+from turistikmekan.models import Product
 
 
 def index(request):
     settings = Settings.objects.get(pk=1)
-    context = {'settings': settings, 'page':'home'}
+    sliderdata = Product.objects.all()[:2]
+    integer = 0
+    context = {'settings': settings,
+               'page':'home',
+               'sliderdata':sliderdata,
+               'integer':integer}
+
     return render(request, 'index.html', context)
 
 def hakkimizda(request):
