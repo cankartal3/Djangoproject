@@ -21,13 +21,15 @@ def index(request):
     return render(request, 'index.html', context)
 
 def hakkimizda(request):
+    category = Category.objects.all()
     settings = Settings.objects.get(pk=1)
-    context = {'settings': settings, 'page':'hakkimizda'}
+    context = {'settings': settings, 'category':category,'page':'hakkimizda'}
     return render(request, 'hakkimizda.html', context)
 
 def referanslarimiz(request):
+    category = Category.objects.all()
     settings = Settings.objects.get(pk=1)
-    context = {'settings': settings, 'page':'referanslarimiz'}
+    context = {'settings': settings, 'page':'referanslarimiz','category':category}
     return render(request, 'referanslarimiz.html', context)
 
 def iletisim(request):
@@ -44,10 +46,10 @@ def iletisim(request):
             data.save()  # veri tabanına kaydet
             messages.success(request, "Mesajınız başarılı bir şekilde gönderilmiştir. Teşekkür ederiz.")
             return HttpResponseRedirect('/iletisim')
-
+    category = Category.objects.all()
     settings = Settings.objects.get(pk=1)
     form = ContactFormuu()
-    context = {'settings': settings, 'form':form}
+    context = {'settings': settings, 'form':form,'category':category}
     return render(request, 'iletisim.html', context)
 
 def category_products(request ,id,slug):
