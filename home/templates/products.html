@@ -1,0 +1,67 @@
+{% extends "homebase.html" %}
+
+{% block title %}{{categorydata.title}} Gezi Yerleri {{ settings.title }} {% endblock %}
+{% block keywords %}{{ settings.keywords}}{% endblock %}
+{% block description %}{{settings.description}}{% endblock %}
+{% block head %}
+    <link rel="shortcut icon" href='{{settings.icon.url}}'>
+{% endblock %}
+
+
+
+
+{% block body %} <div id="breadcrumb">
+        <div class="container">
+            <ul class="breadcrumb">
+                <li><a href="/">Anasayfa</a></li>
+                <li class="active">{{categorydata.title}} Gezi yerleri</li>
+            </ul>
+
+<div class="well well-small">
+<!--
+New Products
+-->
+	<div class="well well-small">
+	<h3>{{categorydata.title}} </h3>
+		<div class="row-fluid">
+		  <ul class="thumbnails">
+            {% for rs in products %}
+			<li class="span4">
+			  <div class="thumbnail">
+
+				<a href="/product/{{ rs.id }}/{{ rs.slug }}"><img src="{{ rs.image.url }}" alt=""></a>
+				<div class="caption cntr">
+					<p>{{ rs.title }}</p>
+					<br class="clr">
+				</div>
+			  </div>
+			</li>
+
+             {% endfor %}
+
+
+
+		  </ul>
+
+
+
+
+
+	</div>
+	</div>
+	</div>
+<!--
+Clients
+-->
+
+        <div class="container">
+            <div class="row">
+
+            </div>
+        </div>
+    </div>
+ </div>
+
+</div>
+{% endblock %}
+

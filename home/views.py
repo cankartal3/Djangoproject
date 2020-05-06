@@ -4,14 +4,16 @@ from django.shortcuts import render
 
 # Create your views here.
 from home.models import Settings, ContactFormuu, ContactFormMessage
-from turistikmekan.models import Product
+from turistikmekan.models import Product, Category
 
 
 def index(request):
     settings = Settings.objects.get(pk=1)
-    sliderdata = Product.objects.all()[:2]
+    sliderdata = Product.objects.all()
+    category = Category.objects.all()
     integer = 0
     context = {'settings': settings,
+               'category':category,
                'page':'home',
                'sliderdata':sliderdata,
                'integer':integer}
@@ -47,3 +49,12 @@ def iletisim(request):
     form = ContactFormuu()
     context = {'settings': settings, 'form':form}
     return render(request, 'iletisim.html', context)
+
+def category_products(request ,id,slug):
+    category = Category.objects.all()
+    categorydata = Category.objects.get(pk=id)
+    products = Product.objects.filter(category_id=id)
+    context = {'products':products,
+               'category':category,
+               'categorydata':categorydata}
+    return render(request,'products.html',context)

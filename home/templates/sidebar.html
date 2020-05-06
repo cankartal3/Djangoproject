@@ -3,6 +3,22 @@
 <div id="sidebar" class="span3">
 <div class="well well-small">
 	<ul class="nav nav-list">
+
+        {% load mptt_tags %}
+
+    {% recursetree category %}
+        <li><a href="/category/{{ node.id }}/{{ node.slug }} ">{% if not node.is_leaf_node %}<span class="icon-chevron-right"></span>{% endif %}
+            {{ node.title }}
+ </a>
+            {% if not node.is_leaf_node %}
+                <ul>
+                    <li><a href="#"><span class="icon-chevron-right"></span>{{ children }}</a></li>
+                </ul>
+            {% endif %}
+        </li>
+    {% endrecursetree %}
+
+
 		<li><a href="products.html"><span class="icon-chevron-right"></span>Fashion</a></li>
 		<li><a href="products.html"><span class="icon-chevron-right"></span>Watches</a></li>
 		<li><a href="products.html"><span class="icon-chevron-right"></span>Fine Jewelry</a></li>
