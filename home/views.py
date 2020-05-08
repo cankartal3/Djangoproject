@@ -9,14 +9,23 @@ from turistikmekan.models import Product, Category
 
 def index(request):
     settings = Settings.objects.get(pk=1)
-    sliderdata = Product.objects.all()
+    sliderdata = Product.objects.all().order_by('-id')
     category = Category.objects.all()
-    integer = 0
+    integer = 1
+    dayproducts = Product.objects.all()[:4]
+    lastproducts = Product.objects.all().order_by('-id')[:9]
+    randomproducts = Product.objects.all().order_by('?')[:5]
+
+
     context = {'settings': settings,
                'category':category,
                'page':'home',
                'sliderdata':sliderdata,
-               'integer':integer}
+               'integer':integer,
+               'dayproducts':dayproducts,
+               'lastproducts':lastproducts,
+               'randomproducts':randomproducts
+               }
 
     return render(request, 'index.html', context)
 
