@@ -1,0 +1,52 @@
+{% extends "homebase.html" %}
+
+{% block title %}Ürün arama sonucu {% endblock %}
+{% block keywords %}{{ categorydata.keywords}}{% endblock %}
+{% block description %}{{categorydata.description}}{% endblock %}
+{% block head %}
+    <link rel="shortcut icon" href='{{settings.icon.url}}'>
+{% endblock %}
+
+
+
+
+{% block body %} <div id="breadcrumb">
+    <div class="container">
+        <ul class="breadcrumb">
+            <li><a href="/">Anasayfa</a></li>
+            <li class="active">{{ categorydata.title }}</li>
+        </ul>
+
+        <div class="well well-small">
+
+
+            <div class="container">
+                <div class="row">
+
+
+                    <table cellpadding="3" width="800" style="border: 1px solid black">
+                        <tr>
+                            <th style="border: 1px solid black">Resim</th>
+                            <th style="border: 1px solid black">Turistik Yerin Adı</th>
+                            <th style="border: 1px solid black">Kategorisi</th>
+                            <!-- <th></th> -->
+                        </tr>
+                        {% for rs in products %}
+                            <tr>
+                                <td style="border: 1px solid black"><div class="span4"> <a href="/product/{{rs.id}}/{{ rs.slug }}"><img src="{{ rs.image.url }}" style="height: 100px; width: 200px"></a> </div></td>
+                                <td style="border: 1px solid black"><h4 class="fa-product-hunt"><a href="/product/{{ rs.id }}/{{ rs.slug }}">{{ rs.title }}</a></h4></td>
+                                <td style="border: 1px solid black"><a href="/category/{{ rs.category.id }}/{{ rs.category.slug }}">{{ rs.category }}</a></td>
+                                <!--<td></td>-->
+                            </tr>
+                        {% endfor %}
+                    </table>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+{% endblock %}
+
