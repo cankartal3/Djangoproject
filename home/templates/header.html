@@ -6,10 +6,10 @@
 		<div class="container">
 			<div class="alignR">
 				<div class="pull-left socialNw">
-					<a href="#"><span class="icon-twitter"></span></a>
-					<a href="#"><span class="icon-facebook"></span></a>
-					<a href="#"><span class="icon-youtube"></span></a>
-					<a href="#"><span class="icon-tumblr"></span></a>
+					<a href="{{ settings.instagram }}"><span class="icon-instagram"></span></a>
+					<a href="{{ settings.facebook }}"><span class="icon-facebook"></span></a>
+					<a href="{{ settings.youtube }}"><span class="icon-youtube"></span></a>
+					<a href="{{ settings.twitter }}"><span class="icon-twitter"></span></a>
 				</div>
 				<a class="active" href="/"> <span class="icon-home"></span> Anasayfa</a>
 				<a href="#"><span class="icon-user"></span> My Account</a>
@@ -17,8 +17,9 @@
 				<a href="/hakkimizda"><span class="icon-envelope"></span> Hakkımızda</a>
                 <a href="/iletisim"><span class="icon-phone"></span> İletişim</a>
                 <a href="/referanslarimiz"><span class="icon-refresh"></span> Referanslar</a>
-				<a href="cart.html"><span class="icon-shopping-cart"></span> 2 Item(s) - <span class="badge badge-warning"> $448.42</span></a>
-			</div>
+			<!--	<a href="cart.html"><span class="icon-shopping-cart"></span> 2 Item(s) - <span class="badge badge-warning"> $448.42</span></a>
+			-->
+            </div>
 		</div>
 	</div>
 </div>
@@ -28,15 +29,17 @@ Lower Header Section
 -->
 <div class="container">
 <div id="gototop"> </div>
+
 <header id="header">
 <div class="row">
 	<div class="span4">
 	<h1>
-	<a class="logo" href="index.html"><span>Twitter Bootstrap ecommerce template</span>
+	<a class="logo" href="/"><span>Twitter Bootstrap ecommerce template</span>
 		<img src="{% static  'assets/img/logo-bootstrap-shoping-cart.png'%}" alt="bootstrap shop">
 	</a>
 	</h1>
 	</div>
+    <!--
 	<div class="span4">
 	<div class="offerNoteWrapper">
 	<h1 class="dotmark">
@@ -45,6 +48,7 @@ Lower Header Section
 	</h1>
 	</div>
 	</div>
+
 	<div class="span4 alignR">
 	<p><br> <strong> Support (24/7) :  0800 1234 678 </strong><br><br></p>
 	<span class="btn btn-mini">[ 2 ] <span class="icon-shopping-cart"></span></span>
@@ -52,6 +56,7 @@ Lower Header Section
 	<span class="btn btn-mini">&pound;</span>
 	<span class="btn btn-mini">&euro;</span>
 	</div>
+    -->
 </div>
 </header>
     <!--
@@ -67,7 +72,7 @@ Navigation Bar Section
 		  </a>
 		  <div class="nav-collapse">
 			<ul class="nav">
-			  <li class="active"><a href="index.html">Anasafa	</a></li>
+			  <li class="active"><a href="/">Anasafa	</a></li>
 			  <li class=""><a href="list-view.html">List View</a></li>
 			  <li class=""><a href="grid-view.html">Grid View</a></li>
 			  <li class=""><a href="three-col.html">Three Column</a></li>
