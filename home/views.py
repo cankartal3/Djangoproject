@@ -1,3 +1,4 @@
+import json
 
 from django.contrib import messages
 from django.http import HttpResponse, HttpResponseRedirect
@@ -87,10 +88,31 @@ def product_search(request):
         if form.is_valid():
             category = Category.objects.all()
             query = form.cleaned_data['query'] #get form data
-            products = Product.objects.filter(title__icontains=query) #Select * form product where title like %query%
+            catid = form.cleaned_data['catid'] #get form data
+            # return HttpResponse(catid)
+            if catid == 0:
+                products = Product.objects.filter(title__icontains=query) #Select * form product where title like %query%
+            else:
+                products = Product.objects.filter(title__icontains=query, category_id=catid)
             #return HttpResponse
             context ={'products':products,
                       'category':category,
                       }
             return render(request, 'products_search.html',context)
         return HttpResponseRedirect('/')
+
+
+def get_places(request):
+  if request.is_ajax():
+    q = request.GET.get('term', '')
+    product = Product.objects.filter(title__icontains=q)
+    results = []
+    for pl in product:
+      product_json = {}
+      product_json = pl.title
+      results.append(product_json)
+    data = json.dumps(results)
+  else:
+    data = 'fail'
+  mimetype = 'application/json'
+  return HttpResponse(data, mimetype)

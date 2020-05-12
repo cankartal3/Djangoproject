@@ -79,11 +79,45 @@ Navigation Bar Section
 
 			  <li class=""><a href="general.html">General Content</a></li>
 			</ul>
+
+
+          <script>
+              $(function () {
+                  $("#query").autocomplete({
+                      source:"/search_auto",
+                      select: function (event, ui) {//item selected
+                        AutoCompleteSelectHandler(event, ui)
+                      },
+                      minLength: 2,
+                  });
+              });
+              function AutoCompleteSelectHandler(event, ui)
+              {
+                    var selectedObj = ui.item;
+              }
+
+          </script>
+
 			<form action="/search/" method="post" class="navbar-search pull-left" >
                 {% csrf_token %}
-			  <input name="query" type="text" placeholder="Anahtar kelimeyi gir" class="search-query span2">
+			  <input id="query" name="query" type="text" placeholder="Anahtar kelimeyi gir" class="">
+
+                {% load mptt_tags %}
+                <select name="catid" class="input search-categories">
+                    <option value="0">Bütün Kategoriler</option>
+                    {% recursetree category %}
+                        {% if node.is_leaf_node %}<option value="{{ node.id }}">{{ node.title }}</option>{% endif %}
+                        {% if not node.is_leaf_node %}
+                            <optgroup label="{{ node.title }}">
+                                {{ children }}
+                            </optgroup>
+                        {% endif %}
+                    {% endrecursetree %}
+                </select>
+
               <button class="" ><i class="fa fa-search">Ara</i></button>
 			</form>
+
 			<ul class="nav pull-right">
 			<li class="dropdown">
 				<a data-toggle="dropdown" class="dropdown-toggle" href="#"><span class="icon-lock"></span> Login <b class="caret"></b></a>
