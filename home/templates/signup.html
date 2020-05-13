@@ -1,0 +1,69 @@
+{% extends "homebase.html" %}
+
+{% block title %}Üye Ol {{ settings.title }} {% endblock %}
+{% block keywords %}{{ settings.keywords}}{% endblock %}
+{% block description %}{{settings.description}}{% endblock %}
+{% block head %}
+    <link rel="shortcut icon" href='{{settings.icon.url}}'>
+{% endblock %}
+
+
+
+
+{% block body %} <div id="breadcrumb">
+    <div class="container">
+        <ul class="breadcrumb">
+            <li><a href="/">Anasayfa</a></li>
+            <li class="active">Üye Ol</li>
+        </ul>
+
+        <div class="well well-small">
+
+            <div class="span4">
+                <h4>Üye formu</h4>
+                {% if messages %}
+                    {% for message in messages %}
+                        <div class="alert alert-{{ message.tags }}" role="alert">
+                            {{ message }}
+                        </div>
+
+                    {% endfor %}
+                {% endif %}
+
+                <form  method="post">
+                    {% csrf_token %}
+                    {% for field in form %}
+                        <p>
+                            {{ field.label_tag }}<br>
+                            {{ field }}
+                            {% if field.help_text %}
+                                <small style="color: grey">{{ field.help_text }}</small>
+                            {% endif %}
+                            {% for error in field.errors %}
+                                <p style="color: red">{{ error }}</p>
+                            {% endfor %}
+                        </p>
+                    {% endfor %}
+                <button type="submit">Üye ol</button>
+                </form>
+            </div>
+
+
+
+
+
+
+
+
+        </div>
+
+    </div>
+</div>
+
+
+
+{% endblock %}
+
+
+
+

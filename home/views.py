@@ -6,7 +6,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
 
 # Create your views here.
-from home.forms import SearchForm
+from home.forms import SearchForm, SignUpForm
 from home.models import Settings, ContactFormuu, ContactFormMessage
 from turistikmekan.models import Product, Category, Images, Comment
 
@@ -19,6 +19,7 @@ def index(request):
     dayproducts = Product.objects.all()[:4]
     lastproducts = Product.objects.all().order_by('-id')[:9]
     randomproducts = Product.objects.all().order_by('?')[:5]
+
     if request.method == 'POST':
         username = request.POST['username']
         password = request.POST['password']
@@ -116,21 +117,41 @@ def product_search(request):
 
 
 def get_places(request):
-  if request.is_ajax():
-    q = request.GET.get('term', '')
-    product = Product.objects.filter(title__icontains=q)
-    results = []
-    for pl in product:
-      product_json = {}
-      product_json = pl.title
-      results.append(product_json)
-    data = json.dumps(results)
-  else:
-    data = 'fail'
-  mimetype = 'application/json'
-  return HttpResponse(data, mimetype)
+    if request.is_ajax():
+        q = request.GET.get('term', '')
+        product = Product.objects.filter(title__icontains=q)
+        results = []
+        for pl in product:
+            product_json = {}
+            product_json = pl.title
+            results.append(product_json)
+        data = json.dumps(results)
+    else:
+        data = 'fail'
+    mimetype = 'application/json'
+    return HttpResponse(data, mimetype)
 
 def logout_view(request):
     logout(request)
     # Redirect to a success page.
     return HttpResponseRedirect('/')
+
+
+def signup_view(request):
+    if request.method == 'POST':
+        form = SignUpForm(request.POST)
+        if form.is_valid():
+            form.save()
+            username = form.cleaned_data.get('username')
+            password = form.cleaned_data.get('password1')
+            user = authenticate(username=username, password= password)
+            login(request, user)
+            return HttpResponseRedirect("/")
+
+    form = SignUpForm()
+    category = Category.objects.all()
+    context = {'category': category,
+               'form':form,
+               }
+    return render(request, 'signup.html', context)
+

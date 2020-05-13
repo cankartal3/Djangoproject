@@ -27,9 +27,31 @@
                         <a href="/logout" style="color: red">Logout</a>
                     {% else %}
 
+                        <li class="dropdown">
+                            <a data-toggle="dropdown" class="dropdown-toggle" href="#" style="color: black"><span class="icon-lock"></span> Login <b class="caret"></b></a>
+                            <div class="dropdown-menu">
+                                <form class="form-horizontal loginFrm" action="" method="post">
+                                    {% csrf_token %}
+                                    <div class="control-group">
+                                        <input type="text" class="span2" name="username" placeholder="Kullanıcı adı">
+                                    </div>
+
+                                    <div class="control-group">
+                                        <input type="password" class="span2" name="password" placeholder="Password">
+                                    </div>
+
+
+
+                                    <div class="control-group">
+                                        <button type="submit" value="Login" class="shopBtn btn-block">Login</button>
+                                    </div>
+
+                                </form>
+                            </div>
+                        </li>
                         <li> <div class="control-group">
-                            <a href="/signup/">Üye Ol</a>
-                        </div></li>
+                                        <a href="/signup">Üye Ol</a>
+                                    </div></li>
 
                         </ul>
                     {% endif %}
@@ -73,13 +95,13 @@ Lower Header Section
             </div>
             -->
         </div>
-        {% if messages %}
-            {% for message in messages %}
-                <div class="alert alert-{{ message.tags }}" role="alert">
-                    <h3>{{ message }}</h3>
-                </div>
-            {% endfor %}
-        {% endif %}
+          {% if messages %}
+                            {% for message in messages %}
+                                <div class="alert alert-{{ message.tags }}" role="alert">
+                                    <h3>{{ message }}</h3>
+                                </div>
+                            {% endfor %}
+                        {% endif %}
     </header>
     <!--
 Navigation Bar Section

@@ -34,6 +34,7 @@ urlpatterns = [
     path('search/', views.product_search, name='product_search'),
     path('search_auto/', views.get_places, name='get_places'),
     path('logout/', views.logout_view, name='logout_view'),
+    path('signup/', views.signup_view, name='signup_view'),
 
 ]
 if settings.DEBUG: # new
