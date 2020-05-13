@@ -4,13 +4,9 @@
     <list default="true" id="02bb089f-e80a-4433-8741-c3b51d268ae8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/home/forms.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/home/templates/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/header.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/templates/homebase.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/homebase.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/home/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/home/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/project/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/turistikmekan/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/turistikmekan/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/turistikmekan/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/turistikmekan/models.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,13 +96,13 @@
     </option>
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Django\project\home" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Django\project\home\templates" />
       <recent name="C:\Django\project\turistikmekan" />
       <recent name="C:\Django\project\project" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Django\project\home" />
     </key>
   </component>
   <component name="RunManager">
@@ -162,7 +158,8 @@
       <workItem from="1589050921654" duration="3525000" />
       <workItem from="1589075920322" duration="12011000" />
       <workItem from="1589119378240" duration="4766000" />
-      <workItem from="1589213296112" duration="9079000" />
+      <workItem from="1589213296112" duration="9978000" />
+      <workItem from="1589375837439" duration="5065000" />
     </task>
     <task id="LOCAL-00001" summary="Homebase değişti">
       <created>1585339704994</created>
@@ -262,7 +259,14 @@
       <option name="project" value="LOCAL" />
       <updated>1589123647080</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Ajax JQuery ile Urun Aramada Otomatik tamamlama, Kategori ve Urun için otomatik slag oluşturma eklendi.">
+      <created>1589245805080</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1589245805080</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -280,7 +284,8 @@
     <MESSAGE value="Ürün detay ve resim galerisi eklendi." />
     <MESSAGE value="Urun Yorum ve Puan Ekleme eklendi." />
     <MESSAGE value="Urun Arama Product Search eklendi." />
-    <option name="LAST_COMMIT_MESSAGE" value="Urun Arama Product Search eklendi." />
+    <MESSAGE value="Ajax JQuery ile Urun Aramada Otomatik tamamlama, Kategori ve Urun için otomatik slag oluşturma eklendi." />
+    <option name="LAST_COMMIT_MESSAGE" value="Ajax JQuery ile Urun Aramada Otomatik tamamlama, Kategori ve Urun için otomatik slag oluşturma eklendi." />
   </component>
   <component name="WindowStateProjectService">
     <state x="275" y="24" key="#Inspections" timestamp="1588695118068">
@@ -295,10 +300,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="413" y="113" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.728@0.0.1366.728" timestamp="1587492871954" />
-    <state x="171" y="0" key="CommitChangelistDialog2" timestamp="1589123645649">
+    <state x="171" y="0" key="CommitChangelistDialog2" timestamp="1589245803537">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="171" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1589123645649" />
+    <state x="171" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1589245803537" />
     <state x="463" y="121" key="FileChooserDialogImpl" timestamp="1585342094466">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -311,18 +316,18 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="177" y="0" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1587482913948" />
-    <state x="275" y="99" key="Vcs.Push.Dialog.v2" timestamp="1589123655356">
+    <state x="275" y="99" key="Vcs.Push.Dialog.v2" timestamp="1589245818300">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="275" y="99" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1589123655356" />
-    <state x="404" y="188" key="com.intellij.ide.util.TipDialog" timestamp="1589213293171">
+    <state x="275" y="99" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1589245818300" />
+    <state x="404" y="188" key="com.intellij.ide.util.TipDialog" timestamp="1589375966304">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="404" y="188" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1589213293171" />
-    <state x="494" y="282" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1589245733631">
+    <state x="404" y="188" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1589375966304" />
+    <state x="494" y="282" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1589380928922">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="494" y="282" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.728@0.0.1366.728" timestamp="1589245733631" />
+    <state x="494" y="282" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.728@0.0.1366.728" timestamp="1589380928922" />
     <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1589221663243">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

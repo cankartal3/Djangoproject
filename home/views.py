@@ -1,6 +1,7 @@
 import json
 
 from django.contrib import messages
+from django.contrib.auth import logout, authenticate, login
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
 
@@ -18,7 +19,17 @@ def index(request):
     dayproducts = Product.objects.all()[:4]
     lastproducts = Product.objects.all().order_by('-id')[:9]
     randomproducts = Product.objects.all().order_by('?')[:5]
-
+    if request.method == 'POST':
+        username = request.POST['username']
+        password = request.POST['password']
+        user = authenticate(request, username=username, password=password)
+        if user is not None:
+            login(request, user)
+            # Redirect to a success page.
+            return HttpResponseRedirect('/')
+        else:
+            messages.error(request, "Login Hatası! Kullanıcı adı ya da şifre yanlış. ")
+            return HttpResponseRedirect('/')
 
     context = {'settings': settings,
                'category':category,
@@ -74,12 +85,14 @@ def category_products(request ,id,slug):
     return render(request,'products.html',context)
 
 def product_detail(request ,id,slug):
+    category = Category.objects.all()
     product = Product.objects.get(pk=id)
     images = Images.objects.filter(product_id=id)
     comments = Comment.objects.filter(product_id=id,status='True').order_by('-id') #en son yorumdan itibaren
     context = {'product':product,
                'images':images,
-               'comments':comments}
+               'comments':comments,
+               'category':category}
     return render(request,'product_detail.html',context)
 
 def product_search(request):
@@ -116,3 +129,8 @@ def get_places(request):
     data = 'fail'
   mimetype = 'application/json'
   return HttpResponse(data, mimetype)
+
+def logout_view(request):
+    logout(request)
+    # Redirect to a success page.
+    return HttpResponseRedirect('/')
