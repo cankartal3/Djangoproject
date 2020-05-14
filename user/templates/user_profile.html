@@ -1,0 +1,63 @@
+{% extends "homebase.html" %}
+
+{% block title %} {{ profile.user_name }} Profili{% endblock %}
+{% block keywords %}{{ settings.keywords}}{% endblock %}
+{% block description %}{{settings.description}}{% endblock %}
+{% block head %}
+    <link rel="shortcut icon" href='{{settings.icon.url}}'>
+{% endblock %}
+
+
+
+
+{% block body %} <div id="breadcrumb">
+    <div class="container">
+        <ul class="breadcrumb">
+            <li><a href="/">Anasayfa</a></li>
+            <li class="active">Kullanıcı Profil</li>
+        </ul>
+
+        <div class="well well-small">
+
+            <div class="span4">
+
+                {% include "user_panel.html" %}
+            </div>
+
+
+
+            <div class="container">
+                <div class="row">
+                    <h3>Kullanıcı Bilgileri</h3>
+                   <table>
+    <thead>
+
+        <tr ><th width="100"></th><td width="250" class="text-center"><img src="{{ profile.image.url }}" "></td></tr>
+        <tr><th class="text-left" style="border: 1px solid black">İsim Soyisim</th><td style="border: 1px solid black">{{ profile.user_name }}</td></tr>
+        <tr><th class="text-left" style="border: 1px solid black">Email</th><td style="border: 1px solid black">{{ profile.user.email }}</td></tr>
+        <tr><th class="text-left" style="border: 1px solid black">Telefon</th><td style="border: 1px solid black">{{ profile.phone }}</td></tr>
+        <tr><th class="text-left" style="border: 1px solid black">Adres</th><td style="border: 1px solid black">{{ profile.address }}</td></tr>
+        <tr><th class="text-left" style="border: 1px solid black">Şehir</th><td style="border: 1px solid black">{{ profile.city }}</td></tr>
+        <tr><th class="text-left" style="border: 1px solid black">Ülke</th><td style="border: 1px solid black">{{ profile.country }}</td></tr>
+
+    </thead>
+
+</table>
+                </div>
+            </div>
+
+
+
+
+        </div>
+
+    </div>
+</div>
+
+
+
+{% endblock %}
+
+
+
+
