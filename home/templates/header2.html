@@ -98,7 +98,7 @@ Lower Header Section
           {% if messages %}
                             {% for message in messages %}
                                 <div class="alert alert-{{ message.tags }}" role="alert">
-                                    <h3>{{ message }}</h3>
+                                    <h3>{{ message|safe }}</h3>
                                 </div>
                             {% endfor %}
                         {% endif %}

@@ -19,14 +19,14 @@
 
         <div class="well well-small">
 
-            <div class="span4">
+            <div class="span3">
 
                 {% include "user_panel.html" %}
             </div>
 
 
 
-            <div class="container">
+            <div class="span5">
                 <div class="row">
                     <h3>Kullanıcı Bilgileri</h3>
                    <table>
@@ -45,7 +45,11 @@
 </table>
                 </div>
             </div>
-
+    <div class="span3">
+        <h3>Hesabını Güncelle</h3>
+        <a href="/user/update" class="button" style="color: red">Profil Güncelleme</a><br>
+        <a href="/user/password" class="button" style="color: red">Şifre Değiştirme</a>
+    </div>
 
 
 
