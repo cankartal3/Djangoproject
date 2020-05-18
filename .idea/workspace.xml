@@ -2,14 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="02bb089f-e80a-4433-8741-c3b51d268ae8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/user/forms.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user/templates/change_password.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user/templates/user_update.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user/templates/user_comments.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/templates/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/header.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/templates/header2.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/header2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/templates/change_password.html" beforeDir="false" afterPath="$PROJECT_DIR$/user/templates/change_password.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/templates/user_panel.html" beforeDir="false" afterPath="$PROJECT_DIR$/user/templates/user_panel.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/user/templates/user_profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/user/templates/user_profile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/templates/user_update.html" beforeDir="false" afterPath="$PROJECT_DIR$/user/templates/user_update.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/user/url.py" beforeDir="false" afterPath="$PROJECT_DIR$/user/url.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/user/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/user/views.py" afterDir="false" />
     </list>
@@ -104,16 +103,16 @@
     </option>
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Django\project\home\templates" />
+      <recent name="C:\Django\project\turistikmekan" />
+      <recent name="C:\Django\project\project" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Django\project\user\templates" />
       <recent name="C:\Django\project\user" />
       <recent name="C:\Django\project\user\migrations" />
       <recent name="C:\Django\project\home" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Django\project\home\templates" />
-      <recent name="C:\Django\project\turistikmekan" />
-      <recent name="C:\Django\project\project" />
     </key>
   </component>
   <component name="RunManager">
@@ -172,7 +171,10 @@
       <workItem from="1589213296112" duration="9978000" />
       <workItem from="1589375837439" duration="16455000" />
       <workItem from="1589472930246" duration="11664000" />
-      <workItem from="1589559732678" duration="6964000" />
+      <workItem from="1589559732678" duration="7311000" />
+      <workItem from="1589639633572" duration="624000" />
+      <workItem from="1589653735940" duration="1200000" />
+      <workItem from="1589805906388" duration="4935000" />
     </task>
     <task id="LOCAL-00001" summary="Homebase değişti">
       <created>1585339704994</created>
@@ -307,7 +309,14 @@
       <option name="project" value="LOCAL" />
       <updated>1589488821845</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Kullanıcı Uye Bilgilerini ve Şifresini Güncelleme eklendi.">
+      <created>1589581861955</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1589581861955</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -331,7 +340,8 @@
     <MESSAGE value="Uye Kayıt Formu User Sign up form eklendi.&#10;(Ana sayfadan login yaptığım için yeni homebase2.html ekledim, burada login yaptırıyorum. Ve bunu index.htmle extend edip diğer sayfalarda login yaptırmıyorum.)" />
     <MESSAGE value="Uye Profile ile Ek Bilgiler ve resim eklendi." />
     <MESSAGE value="Anasayfa Uye Paneli ve Profil Bilgileri eklendi." />
-    <option name="LAST_COMMIT_MESSAGE" value="Anasayfa Uye Paneli ve Profil Bilgileri eklendi." />
+    <MESSAGE value="Kullanıcı Uye Bilgilerini ve Şifresini Güncelleme eklendi." />
+    <option name="LAST_COMMIT_MESSAGE" value="Kullanıcı Uye Bilgilerini ve Şifresini Güncelleme eklendi." />
   </component>
   <component name="WindowStateProjectService">
     <state x="275" y="24" key="#Inspections" timestamp="1588695118068">
@@ -346,10 +356,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="413" y="113" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.728@0.0.1366.728" timestamp="1587492871954" />
-    <state x="0" y="0" key="CommitChangelistDialog2" timestamp="1589488819734">
+    <state x="0" y="0" key="CommitChangelistDialog2" timestamp="1589581859640">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="0" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1589488819734" />
+    <state x="0" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1589581859640" />
     <state x="463" y="121" key="FileChooserDialogImpl" timestamp="1585342094466">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -362,18 +372,18 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="177" y="0" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1587482913948" />
-    <state x="275" y="99" key="Vcs.Push.Dialog.v2" timestamp="1589488828683">
+    <state x="275" y="99" key="Vcs.Push.Dialog.v2" timestamp="1589581879193">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="275" y="99" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1589488828683" />
-    <state x="404" y="188" key="com.intellij.ide.util.TipDialog" timestamp="1589559730718">
+    <state x="275" y="99" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1589581879193" />
+    <state x="404" y="188" key="com.intellij.ide.util.TipDialog" timestamp="1589805912950">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="404" y="188" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1589559730718" />
-    <state x="494" y="282" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1589581840785">
+    <state x="404" y="188" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1589805912950" />
+    <state x="494" y="282" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1589810924291">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="494" y="282" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.728@0.0.1366.728" timestamp="1589581840785" />
+    <state x="494" y="282" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.728@0.0.1366.728" timestamp="1589810924291" />
     <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1589486268699">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
