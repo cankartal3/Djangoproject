@@ -50,8 +50,8 @@
                             </div>
                         </li>
                         <li> <div class="control-group">
-                                        <a href="/signup">Üye Ol</a>
-                                    </div></li>
+                            <a href="/signup">Üye Ol</a>
+                        </div></li>
 
                         </ul>
                     {% endif %}
@@ -95,13 +95,13 @@ Lower Header Section
             </div>
             -->
         </div>
-          {% if messages %}
-                            {% for message in messages %}
-                                <div class="alert alert-{{ message.tags }}" role="alert">
-                                    <h3>{{ message|safe }}</h3>
-                                </div>
-                            {% endfor %}
-                        {% endif %}
+        {% if messages %}
+            {% for message in messages %}
+                <div class="alert alert-{{ message.tags }}" role="alert">
+                    <h3>{{ message|safe }}</h3>
+                </div>
+            {% endfor %}
+        {% endif %}
     </header>
     <!--
 Navigation Bar Section
@@ -122,9 +122,9 @@ Navigation Bar Section
                         <li class=""><a href="three-col.html">Three Column</a></li>
 
                         <li class=""><a href="general.html">General Content</a></li>
+
+
                     </ul>
-
-
 
 
                     <script>
@@ -165,8 +165,33 @@ Navigation Bar Section
                     </form>
 
 
-
                 </div>
             </div>
+ <div style="position:relative; z-index:2">
+                        <nav role="navigation" class="nmee">
+
+                            <ul class="dsaf">
+                                {% load mptt_tags %}
+                                {% if menu  %}
+                                    {% recursetree menu %}
+
+                                        <li class="herw qwert wrdw"><a href="/menu/{{ node.id }}" class="nme asdf" {% if not node.is_leaf_node %} data-toggle="dropdown" aria-expanded="true" {% endif %}>{{ node.title }} {% if not node.is_leaf_node %}<i class="fa fa-angle-right"></i>{% endif %}</a>
+                                            {% if not node.is_leaf_node %}
+                                                <ul class="dropdown adsafsa acılırkutu dsaf">
+                                                    <li class="herw qwert wrdw faqfafs"><a href="#" class="nme asdf">{{ children }}</a></li>
+                                                </ul>
+                                            {% endif %}
+                                        </li>
+
+                                    {% endrecursetree %}
+                                {% endif %}
+                            </ul>
+
+                        </nav>
+                    </div>
+
+
+
+
         </div>
     </div>

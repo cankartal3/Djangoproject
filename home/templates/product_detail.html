@@ -1,6 +1,6 @@
 {% extends "homebase.html" %}
 
-{% block title %}Hakkımızda {{ product.title }} {% endblock %}
+{% block title %}{{ product.title }} {% endblock %}
 {% block keywords %}{{ product.keywords}}{% endblock %}
 {% block description %}{{product.description}}{% endblock %}
 {% block head %}
@@ -175,17 +175,6 @@
 
                                 </div>
                             </div>
-
-
-
-
-
-
-
-
-
-
-
                             {% for com in comments %}
 
 
@@ -406,8 +395,8 @@
 
     </div>
 </div>
-    </div>
 
-    </div>
+
+
 {% endblock %}
 

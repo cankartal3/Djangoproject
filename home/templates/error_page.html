@@ -1,0 +1,45 @@
+{% extends "homebase.html" %}
+
+{% block title %}HATA{% endblock %}
+{% block keywords %}{{ settings.keywords}}{% endblock %}
+{% block description %}{{settings.description}}{% endblock %}
+{% block head %}
+    <link rel="shortcut icon" href='{{settings.icon.url}}'>
+{% endblock %}
+
+
+
+
+{% block body %} <div id="breadcrumb">
+        <div class="container">
+            <ul class="breadcrumb">
+                <li><a href="/">Anasayfa</a></li>
+                <li class="active">Hata</li>
+            </ul>
+
+<div class="well well-small">
+
+<style>
+    a:hover.buradaSadece {
+        color: red;
+}
+    a.bS2 {
+        text-decoration:none;
+        color: black;
+    }
+</style>
+
+        <div class="container">
+            <div align="center">
+<br><br><br><br>
+               <H1>ARADIĞINIZ İRERİK BULUNAMADI</H1>
+                <h3><a href="/" class="buradaSadece bS2">Anasayfaya Dön</a></h3>
+<br><br><br><br>
+            </div>
+        </div>
+    </div>
+ </div>
+
+</div>
+{% endblock %}
+

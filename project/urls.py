@@ -27,6 +27,7 @@ urlpatterns = [
     path('ckeditor/', include('ckeditor_uploader.urls')),
     path('', include('home.urls')),
     path('user/', include('user.url')),
+    path('content/', include('content.urls')),
 
     path('hakkimizda/', views.hakkimizda, name='hakkimizda'),
     path('referanslarimiz/', views.referanslarimiz, name='referanslarimiz'),
@@ -37,6 +38,10 @@ urlpatterns = [
     path('search_auto/', views.get_places, name='get_places'),
     path('logout/', views.logout_view, name='logout_view'),
     path('signup/', views.signup_view, name='signup_view'),
+    #path('bossayfa/<int:id>/', views.bossayfa , name='bossayfa'),
+    path('content/<int:id>/<slug:slug>/', views.contentdetail, name='contentdetail'),
+    path('menu/<int:id>', views.menu, name='menu'),
+    path('error/', views.error, name='error'),
 
 ]
 if settings.DEBUG: # new

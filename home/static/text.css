@@ -1,0 +1,58 @@
+a.nme {
+  text-decoration: none;
+}
+
+nav.nmee {
+    font-family: monospace;
+}
+
+ul.dsaf {
+  background: darkorange;
+    list-style: none;
+    margin: 0;
+    padding-left: 0;
+}
+
+li.qwert {
+    color: #fff;
+  background: darkorange;
+    display: block;
+    float: left;
+    padding: 1rem;
+    position: relative;
+    text-decoration: none;
+  transition-duration: 0.5s;
+}
+  
+li a.asdf {
+  color: #fff;
+}
+
+li:hover.herw {
+    background: red;
+    cursor: pointer;
+}
+
+ul li ul.adsafsa {
+    background: orange;
+    visibility: hidden;
+  opacity: 0;
+  min-width: 5rem;
+    position: absolute;
+  transition: all 0.5s ease;
+  margin-top: 1rem;
+    left: 0;
+  display: none;
+}
+
+ul li:hover > ul.acılırkutu,
+ul li ul:hover.faqfafs {
+  visibility: visible;
+  opacity: 1;
+  display: block;
+}
+
+ul li ul li.wrdw {
+    clear: both;
+  width: 100%;
+}

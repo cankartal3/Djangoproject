@@ -62,13 +62,13 @@
                     {% for rs in comments %}
                         <tr>
 
-                            <td><a href="/product/{{ rs.product_id }}/{{ rs.product.slug }}" style="color: red;">
+                            <td><a href="/product/{{ rs.product_id }}/{{ rs.product.slug }}" style="color: indigo;">
                                 <strong>{{ rs.product.title }}</strong>
                                 </a>
                             </td>
                             <td>{{ rs.rate }}</td>
                             <td>{{ rs.subject }}</td>
-                            <td>{{ rs.comment }}</td>
+                            <td><p style="font-size: large">{{ rs.comment }}</p></td>
                             <td>{{ rs.status }}</td>
                             <td>{{ rs.create_at }}</td>
                             <td><a class="btn-primary" href="/user/deletecomment/{{ rs.id }}" onclick="return confirm('Silmek istediğinizden emin misiniz?')">Yorumu Sil</a></td>
