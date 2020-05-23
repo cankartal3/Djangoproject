@@ -1,9 +1,10 @@
+from ckeditor.widgets import CKEditorWidget
 from ckeditor_uploader.fields import RichTextUploadingField
 from django.contrib.auth.models import User
 from django.db import models
 
 # Create your models here.
-from django.forms import ModelForm
+from django.forms import ModelForm, TextInput, Select, FileInput
 from django.urls import reverse
 from django.utils.safestring import mark_safe
 from mptt.fields import TreeForeignKey
@@ -33,19 +34,21 @@ class Menu(MPTTModel):
             full_path.append(k.title)
             k = k.parent
         return ' / '.join(full_path[::-1])
-
-class Content(models.Model):
-    TYPE = (
+TYPE = (
         ('menu', 'menu'),
         ('haber', 'haber'),
         ('duyuru', 'duyuru'),
         ('etkinlik', 'etkinlik'),
     )
-    STATUS = (
-        ('True', 'Evet'),
-        ('False', 'Hayır'),
-    )
+STATUS = (
+    ('True', 'Evet'),
+    ('False', 'Hayır'),
+)
 
+
+class Content(models.Model):
+
+    user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
     menu = models.OneToOneField(Menu, null=True, blank=True, on_delete=models.CASCADE) #relation with Menu table
     type = models.CharField(max_length=10, choices=TYPE)
     title = models.CharField(max_length=150)
@@ -102,3 +105,16 @@ class CommentForm(ModelForm):
         model = Commentcontent
         fields = ['subject', 'comment', 'rate']
 
+class ContentForm(ModelForm):
+    class Meta:
+        model = Content
+        fields = ['type', 'title', 'slug', 'keywords', 'description', 'image', 'detail']
+        widgets = {
+            'title': TextInput(attrs={'class': 'input', 'placeholder' : 'title'}),
+            'slug': TextInput(attrs={'class': 'input', 'placeholder': 'slug'}),
+            'keywords': TextInput(attrs={'class': 'input', 'placeholder': 'keywords'}),
+            'description': TextInput(attrs={'class': 'input', 'placeholder': 'description'}),
+            'type': Select(attrs={'class': 'input', 'placeholder': 'city'}, choices=TYPE),
+            'image': FileInput(attrs={'class': 'input', 'placeholder': 'image'}),
+            'detail': CKEditorWidget(), #Ckeditor input
+        }

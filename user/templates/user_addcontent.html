@@ -1,0 +1,61 @@
+{% extends "homebase.html" %}
+
+{% block title %} İçerik Ekle{% endblock %}
+{% block keywords %}{{ settings.keywords}}{% endblock %}
+{% block description %}{{settings.description}}{% endblock %}
+{% block head %}
+    <link rel="shortcut icon" href='{{settings.icon.url}}'>
+
+    {% load static %}
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script type="text/javascript" src="{% static "ckeditor/ckeditor-init.js" %}"></script>
+    <script type="text/javascript" src="{% static "ckeditor/ckeditor/ckeditor.js" %}"></script>
+{% endblock %}
+
+
+
+
+{% block body %} <div id="breadcrumb">
+    <div class="container">
+        <ul class="breadcrumb">
+            <li><a href="/">Anasayfa</a></li>
+            <li class="active">İçerik Ekle</li>
+        </ul>
+    </div>
+        <div class="container" style="background-color:white; width: 250px; position: fixed; top: 50px; left: 5px">
+
+                {% include "user_panel.html" %}
+
+        </div>
+
+        <div class="well well-small">
+            <div class="content">
+
+                <form method="POST" enctype="multipart/form-data">{% csrf_token %}
+                    <fieldset class="form-group" >
+                        {{ form.media }}
+                        {{ form.as_p }}
+                    </fieldset>
+                    <div class="form-group">
+                        <button class="" type="submit">Kaydet</button>
+                     </div>
+                </form>
+            </div>
+
+
+
+
+
+
+        </div>
+
+    </div>
+</div>
+
+
+
+{% endblock %}
+
+
+
+

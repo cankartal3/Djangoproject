@@ -58,7 +58,6 @@ class Product(models.Model):
     #amount = models.IntegerField()
     #detail = RichTextUploadingField()
     detail = RichTextUploadingField()
-    slug = models.SlugField(blank=True,max_length=150)
     status = models.CharField(max_length=10, choices=STATUS)
     slug = models.SlugField(null=False, unique=True)
     parent = models.ForeignKey('self', blank=True, null=True, related_name='children', on_delete=models.CASCADE)
