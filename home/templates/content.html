@@ -1,6 +1,34 @@
 <!--
 Keşfedilecek yeni yerler
 -->{% load static %}
+<div>
+{% if duyuru %}
+<div class="well well-small" style="width: 335px;height: 137px;float:left;margin-right: 10px;margin-left: 4px;">
+<h3>Duyurular</h3>
+<ul style="list-style-type: none">
+
+{%for rs in duyuru %}
+ <li>  <a href="content/{{ rs.id }}/{{ rs.slug }}" style=" text-decoration: none;color: #0000cc;font-size: 15px">{{ rs.title }}</a></li>
+
+{% endfor %}
+</ul>
+</div>
+{% endif %}
+
+{% if etkinlik %}
+<div class="well well-small" style="width: 335px;height: 137px;float:left;margin-right: 10px;margin-left: 4px;">
+<h3>Etkinlik</h3>
+      <ul style="list-style-type: none">
+{% for rs in etkinlik %}
+  <li>   <a href="content/{{ rs.id }}/{{ rs.slug }}" style=" text-decoration: none;color: #df8505;font-size: 15px">{{ rs.title }}</a></li>
+{% endfor %}
+</ul>
+
+</div>
+{% endif %}
+
+</div>
+<br><br><br><br><br><br><br><br>
 <div class="well well-small">
     <h3>KEŞFEDİLECEK YENİ YERLER </h3>
     <hr class="soften"/>

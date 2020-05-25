@@ -13,7 +13,7 @@
                 </div>
                 <a class="active" href="/"> <span class="icon-home"></span> Anasayfa</a>
                 {% if user.id is not None %}
-                    <a href="/user"><img src="{{ request.user.profile.image.url }}" style="height: 30px; width: 30px"> {{ user.first_name }}</a>
+                    <a href="/user"><img src="{{ user.userprofile.image.url }}" style="height: 30px; width: 30px"> {{ user.first_name }}</a>
                 {% endif %}
 
                 <a href="/hakkimizda"><span class="icon-envelope"></span> Hakkımızda</a>
@@ -49,7 +49,7 @@ Lower Header Section
             <div class="span4">
                 <h1>
                     <a class="logo" href="/"><span>Twitter Bootstrap ecommerce template</span>
-                        <img src="{% static  'assets/img/logo-bootstrap-shoping-cart.png'%}" alt="bootstrap shop">
+                        <img src="{% static  'assets/img/logo.png'%}" alt="bootstrap shop" style="height: 100px; width: 250px">
                     </a>
                 </h1>
             </div>

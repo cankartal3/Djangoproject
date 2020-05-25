@@ -7,7 +7,7 @@ urlpatterns = [
     path('', views.index, name='index'),
 
 
-    #path('bossayfa/', views.bossayfaa, name='bossayfaa')
+#    path('bossayfa/', views.bossayfaa, name='bossayfaa')
 
 
     # ex: /polls/5/

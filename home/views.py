@@ -2,6 +2,7 @@ import json
 
 from django.contrib import messages
 from django.contrib.auth import logout, authenticate, login
+from django.contrib.auth.models import User
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
 
@@ -20,7 +21,8 @@ def index(request):
     dayproducts = Product.objects.all()[:4]
     lastproducts = Product.objects.all().order_by('-id')[:9]
     randomproducts = Product.objects.all().order_by('?')[:5]
-
+    duyuru = Content.objects.filter(status='True', type='duyuru').order_by('-id')[:3]
+    etkinlik = Content.objects.filter(status='True', type='etkinlik').order_by('-id')[:3]
     if request.method == 'POST':
         username = request.POST['username']
         password = request.POST['password']
@@ -41,6 +43,8 @@ def index(request):
                'lastproducts':lastproducts,
                'randomproducts':randomproducts,
                'menu':menu,
+               'duyuru':duyuru,
+               'etkinlik':etkinlik
                }
 
     return render(request, 'index.html', context)
@@ -92,6 +96,7 @@ def category_products(request ,id,slug):
 def product_detail(request ,id,slug):
     menu = Menu.objects.all()
     category = Category.objects.all()
+
     try:
         product = Product.objects.get(pk=id)
         images = Images.objects.filter(product_id=id)
@@ -188,6 +193,7 @@ def contentdetail(requset, id, slug):
     commentscontent = Commentcontent.objects.filter(content_id=id, status='True').order_by('-id')  # en son yorumdan itibaren
     category = Category.objects.all()
     menu = Menu.objects.all()
+
     try:
         content = Content.objects.get(pk=id)
         image = CImage.objects.filter(content_id=id)
@@ -198,7 +204,7 @@ def contentdetail(requset, id, slug):
             'menu':menu,
             'image':image,
             'comment':comment,
-            'commentscontent':commentscontent,
+            'commentscontent':commentscontent
         }
         return render(requset, 'content_detail.html', context)
     except:
@@ -211,7 +217,10 @@ def contentdetail(requset, id, slug):
 
 
 #def bossayfaa(request):     #home -> urls.py
-#    return HttpResponse('Bos')
+
+#    return HttpResponse("Boş Sayfa")
+
+
 def error(request):
     category = Category.objects.all()
     menu = Menu.objects.all()
@@ -233,3 +242,15 @@ def faq(request):
         'faq':faq,
     }
     return render(request, 'faq.html', context)
+
+
+
+def visitetouser(request,id):
+    category = Category.objects.all()
+    profile = User.objects.get(id=id)
+    userprofile = UserProfile.objects.get(user_id=id)
+    context = {'category': category,
+               'profile': profile,
+               'userprofile':userprofile,
+               }
+    return render(request, 'visit_to_user.html', context)

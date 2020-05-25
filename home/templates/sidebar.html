@@ -2,24 +2,28 @@
 <div class="row">
 <div id="sidebar" class="span3">
 <div class="well well-small">
-	<ul class="nav nav-list">
 
+
+
+
+<nav>
+    <ul class="isim1">
         {% load mptt_tags %}
 
     {% recursetree category %}
-        <li><a href="/category/{{ node.id }}/{{ node.slug }} ">{% if not node.is_leaf_node %}<span class="icon-chevron-right"></span>{% endif %}
+        <li class="isim3"><a href="/category/{{ node.id }}/{{ node.slug }}" class="isim4 isim5">{% if not node.is_leaf_node %}<span class="icon-chevron-left"></span>{% endif %}
             {{ node.title }}
  </a>
             {% if not node.is_leaf_node %}
-                <ul>
-                    <li><a href="#"><span class="icon-chevron-right"></span>{{ children }}</a></li>
+                <ul class="isim1 isim2 isim6">
+                    <li class="isim3"><a href="#" class="isim4 isim5"><span class="icon-chevron-left"></span>{{ children }}</a></li>
                 </ul>
             {% endif %}
         </li>
     {% endrecursetree %}
-		<li style="border:0"> &nbsp;</li>
+    </ul>
+</nav>
 
-	</ul>
 </div>
 
 			  <div class="well well-small alert alert-warning cntr">

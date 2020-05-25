@@ -1,0 +1,35 @@
+    ul.isim1 {
+        list-style-type: none;
+
+    }
+
+    nav>ul li.isim3 {
+        width: 100px;
+        position: relative;
+        background-color: orange;
+        text-align: left;
+        width: 200px;
+    }
+
+    nav>ul>li:hover>ul.isim6 {
+        display: block;
+    }
+
+    nav  ul li a.isim4 {
+        text-decoration: none;
+        color: black;
+        display: block;
+        line-height: 60px;
+    }
+
+    nav ul li a:hover.isim5 {
+        border: 1px solid black;
+    }
+
+
+    nav>ul>li>ul.isim2 {
+        position: absolute;
+        top: 0;
+        right: 100%;
+        display: none;
+    }

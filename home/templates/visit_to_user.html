@@ -1,0 +1,84 @@
+{% extends "homebase.html" %}
+
+{% block title %} {{ profile.user_name }} Profili{% endblock %}
+{% block keywords %}{{ settings.keywords}}{% endblock %}
+{% block description %}{{settings.description}}{% endblock %}
+{% block head %}
+    <link rel="shortcut icon" href='{{settings.icon.url}}'>
+{% endblock %}
+
+
+
+
+{% block body %} <div id="breadcrumb">
+    <div class="container">
+        <ul class="breadcrumb">
+            <li><a href="/">Anasayfa</a></li>
+            <li class="active">{{ profile.user_name }}</li>
+        </ul>
+
+        <div class="well well-small">
+
+            <div class="span3">
+
+               <p>ADSSAFSAF</p>
+            </div>
+
+
+
+            <div class="span5">
+                <div class="row">
+                    <h3>Kullanıcı Bilgileri</h3>
+                   <table>
+                       <style>
+                    table {
+                        border-collapse: collapse;
+
+                    }
+
+                    th, td {
+                        color: darkblue;
+                        padding: 8px;
+                        text-align: left;
+                        border-bottom: 1px solid #ddd;
+
+
+                    }
+
+                    tr:hover {background-color:grey;}
+                </style>
+    <thead>
+
+        <tr style=" background-color: transparent"><th width="100" ></th><td width="250" class="text-center " style=" background-color: indigo"><img src="{{ userprofile.image.url }}"></td></tr>
+        <tr><th class="text-left" style="border: 1px solid black">İsim Soyisim</th><td style="border: 1px solid black">{{ profile.first_name}}</td></tr>
+        <tr><th class="text-left" style="border: 1px solid black">İsim Soyisim</th><td style="border: 1px solid black">{{ profile.last_name}}</td></tr>
+        <tr><th class="text-left" style="border: 1px solid black">Email</th><td style="border: 1px solid black">{{ profile.email }}</td></tr>
+        <tr><th class="text-left" style="border: 1px solid black">Telefon</th><td style="border: 1px solid black">{{ userprofile.phone }}</td></tr>
+        <tr><th class="text-left" style="border: 1px solid black">Adres</th><td style="border: 1px solid black">{{ userprofile.address }}</td></tr>
+        <tr><th class="text-left" style="border: 1px solid black">Şehir</th><td style="border: 1px solid black">{{ userprofile.city }}</td></tr>
+        <tr><th class="text-left" style="border: 1px solid black">Ülke</th><td style="border: 1px solid black">{{ userprofile.country }}</td></tr>
+
+    </thead>
+
+</table>
+                </div>
+            </div>
+    <div class="span3">
+        <h3>XXXXXXXX</h3>
+
+    </div>
+
+
+
+        </div>
+
+    </div>
+</div>
+
+
+
+{% endblock %}
+
+
+
+

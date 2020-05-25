@@ -43,6 +43,8 @@ urlpatterns = [
     path('menu/<int:id>', views.menu, name='menu'),
     path('error/', views.error, name='error'),
     path('sss/', views.faq, name='faq'),
+    path('visitetouser/<int:id>', views.visitetouser, name='visitetouser'),
+
 ]
 if settings.DEBUG: # new
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
