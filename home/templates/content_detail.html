@@ -20,20 +20,22 @@
         <div class="well well-small">
             <div>
 
-                <a href="/visitetouser/{{ content.user.id }}" style="position: absolute; text-decoration: none; color: orange">{{ content.user.first_name }}</a>
+                <a href="/visitetouser/{{ content.user.id }}" style="position: absolute; text-decoration: none; color: orange; font-size: 20px">{{ content.user.first_name }} {{ content.user.last_name }}</a>
             </div>
             <hr style="border-top: 2px solid red;">
-            <div class="row">
-                <img src="{{ content.image.url }}"  align="left" style="height: 300px;padding: 10px; border-radius:25px">
+            <div class="row" >
 
+                <img src="{{ content.image.url }}"  align="left" style="height: 300px;padding: 20px; border-radius:25px">
+                <br><br>
                 {{ content.detail|safe }}
                 <hr>
-                {% for rs in image %}
-                    <img src="{{ rs.image.url }}" alt="" style="height: 150px">
-                {% endfor %}
 
             </div>
-
+            <div class="well well-small">
+                {% for rs in image %}
+                    <img src="{{ rs.image.url }}" alt="" style="height: 175px">
+                {% endfor %}
+            </div>
             <!--Yorumlara -->
 
             <div class="span6">

@@ -1,8 +1,9 @@
+from ckeditor.widgets import CKEditorWidget
 from django.contrib.auth.models import User
 from django.db import models
 
 # Create your models here.
-from django.forms import ModelForm
+from django.forms import ModelForm, Select, TextInput, FileInput
 from django.urls import reverse
 from django.utils.safestring import mark_safe
 from ckeditor_uploader.fields import RichTextUploadingField
@@ -49,8 +50,10 @@ class Product(models.Model):
         ('True', 'Evet'),
         ('False', 'Hayır'),
     )
-    category = models.ForeignKey(Category, on_delete=models.CASCADE) # relation with Category table
+    user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
+    category = models.ForeignKey(Category, on_delete=models.SET_NULL, null=True) # relation with Category table
     title = models.CharField(max_length=150)
+    guidecategory = models.CharField(blank=True,max_length=30)
     keywords = models.CharField(blank=True, max_length=255)
     description = models.CharField(blank=True, max_length=255)
     image = models.ImageField(blank=True,upload_to='images/')
@@ -87,6 +90,12 @@ class Images(models.Model):
         return mark_safe('<img src="{}" height="50"/>'.format(self.image.url))
     image_tag.short_description = 'Image'
 
+class ProductImageForm(ModelForm):
+    class Meta:
+        model = Images
+        fields = ['title', 'image']
+
+
 class Comment(models.Model):
     STATUS = (
         ('New','Yeni'),
@@ -111,5 +120,16 @@ class CommentForm(ModelForm):
         model = Comment
         fields = ['subject','comment','rate']
 
-
-
+class ProductForm(ModelForm):
+    class Meta:
+        model = Product
+        fields = ['title', 'guidecategory' ,'keywords' ,'description', 'image', 'slug', 'detail']
+        widgets = {
+            'title' : TextInput(attrs={'class': 'input', 'placeholder': 'title'}),
+            'guidecategory': TextInput(attrs={'class': 'input', 'placeholder': 'guidecategory'}),
+            'slug': TextInput(attrs={'class': 'input', 'placeholder': 'slug'}),
+            'keywords': TextInput(attrs={'class': 'input', 'placeholder': 'keywords'}),
+            'description': TextInput(attrs={'class': 'input', 'placeholder': 'description'}),
+            'image': FileInput(attrs={'class': 'input', 'placeholder': 'image'}),
+            'detail': CKEditorWidget(), #CKeditor input
+        }

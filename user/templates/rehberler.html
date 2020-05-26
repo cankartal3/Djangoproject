@@ -16,7 +16,7 @@
     <div class="container">
         <ul class="breadcrumb">
             <li><a href="/">Anasayfa</a></li>
-            <li class="active">İçeriklerim</li>
+            <li class="active">Rehberlerim</li>
         </ul>
 
         <div class="well well-small">
@@ -30,7 +30,7 @@
 
 
             <div class="span3">
-                <h2>İçeriklrim</h2> <br>
+                <h2>Rehberlerim</h2> <br>
 
                 <style>
                     table {
@@ -61,27 +61,27 @@
                         <th>Düzenle</th>
                         <th>Sil</th>
                     </tr>
-                    {% for rs in contents%}
+                    {% for rs in products%}
                         <tr>
 
                             <td>
-                                <a href="/content/{{ rs.id }}/{{ rs.slug }}">
+                                <a href="/product/{{ rs.id }}/{{ rs.slug }}">
                                 <img src="{{ rs.image.url }}" style="height: 30px"></a>
                             </td>
-                            <td><a href="/content/{{ rs.id }}/{{ rs.slug }}">{{ rs.title }}</a></td>
+                            <td><a href="/product/{{ rs.id }}/{{ rs.slug }}">{{ rs.title }}</a></td>
                             <td>{{ rs.type }}</td>
-                            <td><a href="javascript:;" onclick="window.open('/user/contentaddimage/{{ rs.id }}', 'gallery', 'height=600, width=800, top=50, left=150')"><img src="{% static '' %}assets/img/resim galerisi.jpg" style="height: 60px;width: 60px"></a></td>
+                            <td><a href="javascript:;" onclick="window.open('/user/productaddimage/{{ rs.id }}', 'gallery', 'height=600, width=800, top=50, left=150')"><img src="{% static '' %}assets/img/resim galerisi.jpg" style="height: 60px;width: 60px"></a></td>
                             <td>{{ rs.status }}</td>
                             <td>{{ rs.create_at }}</td>
-                            <td><a class="btn-primary" href="/user/contentedit/{{ rs.id }}">Düzenle</a></td>
-                            <td><a onclick="return confirm('Silmek istediğinizden emin misiniz?')" href="/user/contentdelete/{{ rs.id }}">Sil</a></td>
+                            <td><a class="btn-primary" href="/user/editrehber/{{ rs.id }}">Düzenle</a></td>
+                            <td><a onclick="return confirm('Silmek istediğinizden emin misiniz?')" href="/user/deleterehber/{{ rs.id }}">Sil</a></td>
                         </tr>
                     {% endfor %}
                 </table>
 
             </div>
         <div class="span3">
-            <h4><a class="btn-primary" href="/user/addcontent">İçerik ekle</a></h4>
+            <h4><a class="btn-primary" href="/user/rehberekle">Regber Ekle ekle</a></h4>
         </div>
 
 

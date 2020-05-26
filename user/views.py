@@ -6,9 +6,9 @@ from django.shortcuts import render, redirect
 from django.contrib import messages
 
 # Create your views here.
-from content.models import Menu, Content, ContentForm
+from content.models import Menu, Content, ContentForm, CImage, ContentImageForm
 from home.models import UserProfile
-from turistikmekan.models import Category, Comment
+from turistikmekan.models import Category, Comment, Product, ProductForm, ProductImageForm, Images
 from user.forms import UserUpdateForm, ProfileUpdateForm
 
 
@@ -161,3 +161,134 @@ def contentdelete(request,id):
     Content.objects.filter(id=id, user_id=current_user.id).delete()
     messages.success(request, 'İçerik silindi.')
     return HttpResponseRedirect('/user/contents')
+
+@login_required(login_url='/login') #Check login
+def rehberler(request):
+    category = Category.objects.all()
+    menu = Menu.objects.all()
+    current_user = request.user
+    products = Product.objects.filter(user_id=current_user.id).order_by('-id')
+
+    context = {
+        'category': category,
+        'menu': menu,
+        'products': products,
+    }
+    return render(request, 'rehberler.html', context)
+
+@login_required(login_url='/login') #Check login
+def rehberekle(request):
+    if request.method == 'POST':
+        form = ProductForm(request.POST, request.FILES)
+        if form.is_valid():
+            current_user = request.user
+            data = Product()  # model ile bağlantı yap
+            data.user_id = current_user.id
+            data.title = form.cleaned_data['title']
+            data.guidecategory = form.cleaned_data['guidecategory']
+            data.keywords = form.cleaned_data['keywords']
+            data.description = form.cleaned_data['description']
+            data.image = form.cleaned_data['image']
+            data.slug = form.cleaned_data['slug']
+            data.detail = form.cleaned_data['detail']
+            data.status = 'False'
+            data.save()  # veritabanına kaydet
+            messages.success(request, 'İçeriğiniz başarılı bir şekilde kaydedildi!')
+            return HttpResponseRedirect('/user/rehberler')
+        else:
+            messages.success(request, 'Content Form Error:' + str(form.errors))
+            return HttpResponseRedirect('/user/rehberekle')
+    else:
+        category = Category.objects.all()
+        form = ProductForm()
+        menu = Menu.objects.all()
+        context = {
+            'category': category,
+            'form': form,
+            'menu': menu,
+        }
+        return render(request, 'user_rehber_ekle.html', context)
+
+@login_required(login_url='/login') #Check login
+def editrehber(request, id):
+    product = Product.objects.get(id=id)
+    if request.method == 'POST':
+        form = ProductForm(request.POST, request.FILES, instance=product)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'İçeriğiniz başarılı bir şekilde güncellendi!')
+            return HttpResponseRedirect('/user/rehberler')
+        else:
+            messages.success(request, 'Content Form Error' + str(form.errors))
+            return HttpResponseRedirect('/user/editrehberler/' + str(id))
+    else:
+        category = Category.objects.all()
+        menu = Menu.objects.all()
+        form = ProductForm(instance=product)
+        context = {
+            'category': category,
+            'form': form,
+            'menu': menu,
+        }
+        return render(request, 'user_rehber_ekle.html', context)
+
+@login_required(login_url='/login') #Check login
+def deleterehber(request,id):
+    current_user = request.user
+    Product.objects.filter(id=id, user_id=current_user.id).delete()
+    messages.success(request, 'İçerik silindi.')
+    return HttpResponseRedirect('/user/rehberler')
+
+
+def contentaddimage(request, id):
+    if request.method == 'POST':
+        lasturl= request.META.get('HTTP_REFERER')
+        form = ContentImageForm(request.POST, request.FILES)
+        if form.is_valid():
+            data = CImage()
+            data.title = form.cleaned_data['title']
+            data.content_id = id
+            data.image = form.cleaned_data['image']
+            data.save()
+            messages.success(request, 'Resiminiz başarılı bir şekilde kaydedildi!')
+            return HttpResponseRedirect(lasturl)
+        else:
+            messages.warning(request, 'Form Error :' + str(form.errors))
+            return HttpResponseRedirect(lasturl)
+    else:
+        content = Content.objects.get(id=id)
+        images = CImage.objects.filter(content_id=id)
+        form = ContentImageForm()
+        context = {
+            'content':content,
+            'images':images,
+            'form':form,
+        }
+        return render(request, 'content_gallery.html', context)
+
+
+def productaddimage(request, id):
+    if request.method == 'POST':
+        lasturl= request.META.get('HTTP_REFERER')
+        form = ProductImageForm(request.POST, request.FILES)
+        if form.is_valid():
+            data = Images()
+            data.title = form.cleaned_data['title']
+            data.product_id = id
+            data.image = form.cleaned_data['image']
+            data.save()
+            messages.success(request, 'Resiminiz başarılı bir şekilde kaydedildi!')
+            return HttpResponseRedirect(lasturl)
+        else:
+            messages.warning(request, 'Form Error :' + str(form.errors))
+            return HttpResponseRedirect(lasturl)
+    else:
+        product = Product.objects.get(id=id)
+        images = Images.objects.filter(product_id=id)
+        form = ProductImageForm()
+        context = {
+            'product':product,
+            'images':images,
+            'form':form,
+        }
+        return render(request, 'product_gallery.html', context)

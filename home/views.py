@@ -15,12 +15,12 @@ from turistikmekan.models import Product, Category, Images, Comment
 
 def index(request):
     settings = Settings.objects.get(pk=1)
-    sliderdata = Product.objects.all().order_by('-id')
+    sliderdata = Product.objects.filter(status='True').order_by('-id')[:5]
     category = Category.objects.all()
     menu = Menu.objects.all()
-    dayproducts = Product.objects.all()[:4]
-    lastproducts = Product.objects.all().order_by('-id')[:9]
-    randomproducts = Product.objects.all().order_by('?')[:5]
+    dayproducts = Product.objects.filter(status='True')[:4]
+    lastproducts = Product.objects.filter(status='True').order_by('-id')[:9]
+    randomproducts = Product.objects.filter(status='True').order_by('?')[:5]
     duyuru = Content.objects.filter(status='True', type='duyuru').order_by('-id')[:3]
     etkinlik = Content.objects.filter(status='True', type='etkinlik').order_by('-id')[:3]
     if request.method == 'POST':
