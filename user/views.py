@@ -68,7 +68,7 @@ def comments(request):
     profile = UserProfile.objects.get(user_id=current_userr.id)
     category = Category.objects.all()
     current_user = request.user
-    comments = Comment.objects.filter(user_id=current_user.id)
+    comments = Comment.objects.filter(user_id=current_user.id).order_by('-id')
     context={
         'category':category,
         'comments':comments,
@@ -97,7 +97,6 @@ def addcontent(request):
             data.description = form.cleaned_data['description']
             data.image = form.cleaned_data['image']
             data.type = form.cleaned_data['type']
-            data.slug = form.cleaned_data['slug']
             data.detail = form.cleaned_data['detail']
             data.status = 'False'
             data.save() #veritabanına kaydet
@@ -185,11 +184,10 @@ def rehberekle(request):
             data = Product()  # model ile bağlantı yap
             data.user_id = current_user.id
             data.title = form.cleaned_data['title']
-            data.guidecategory = form.cleaned_data['guidecategory']
+            data.category = form.cleaned_data['category']
             data.keywords = form.cleaned_data['keywords']
             data.description = form.cleaned_data['description']
             data.image = form.cleaned_data['image']
-            data.slug = form.cleaned_data['slug']
             data.detail = form.cleaned_data['detail']
             data.status = 'False'
             data.save()  # veritabanına kaydet
@@ -239,7 +237,7 @@ def deleterehber(request,id):
     messages.success(request, 'İçerik silindi.')
     return HttpResponseRedirect('/user/rehberler')
 
-
+@login_required(login_url='/login') #Check login
 def contentaddimage(request, id):
     if request.method == 'POST':
         lasturl= request.META.get('HTTP_REFERER')
@@ -266,7 +264,7 @@ def contentaddimage(request, id):
         }
         return render(request, 'content_gallery.html', context)
 
-
+@login_required(login_url='/login') #Check login
 def productaddimage(request, id):
     if request.method == 'POST':
         lasturl= request.META.get('HTTP_REFERER')

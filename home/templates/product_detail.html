@@ -18,13 +18,11 @@
             <li class="active"><h5>{{product.title}}</h5></li>
         </ul>
 
-
-
-
         <div class="container">
             <div class="row">
             <div class="well well-small">
                 <h2>REHBER</h2>
+                 <a href="/visitetouser/{{ product.user.id }}"><img src="{{ product.user.userprofile.image.url }}" style="height: 80px"></a><br>
                 <a href="/visitetouser/{{ product.user.id }}" style="font-size: 20px; text-decoration: none; color: orange;">{{ product.user.first_name }} {{ product.user.last_name }}</a>
             </div>
                 <div class="well well-small">
@@ -43,65 +41,14 @@
                                              <img src="{{img.image.url}}" alt="" style="width: 1000px; height: 550px" >
                                         </div>
                                     {% endfor %}
-
-
-
-
                                 </div>
                                 <a class="left carousel-control" href="#myCarousel" data-slide="prev">‹</a>
                                 <a class="right carousel-control" href="#myCarousel" data-slide="next">›</a>
                             </div>
                         </div>
-
-
-
-
-
-
-
                         <div class="span7">
                             <h3>{{product.title}}</h3>
                             <hr class="soft"/>
-                            <!--
-
-
-                                                            <form class="form-horizontal qtyFrm">
-                                                                <div class="control-group">
-                                                                    <label class="control-label"><span>$140.00</span></label>
-                                                                    <div class="controls">
-                                                                        <input type="number" class="span6" placeholder="Qty.">
-                                                                    </div>
-                                                                </div>
-
-                                                                <div class="control-group">
-                                                                    <label class="control-label"><span>Color</span></label>
-                                                                    <div class="controls">
-                                                                        <select class="span11">
-                                                                            <option>Red</option>
-                                                                            <option>Purple</option>
-                                                                            <option>Pink</option>
-                                                                            <option>Red</option>
-                                                                        </select>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="control-group">
-                                                                    <label class="control-label"><span>Materials</span></label>
-                                                                    <div class="controls">
-                                                                        <select class="span11">
-                                                                            <option>Material 1</option>
-                                                                            <option>Material 2</option>
-                                                                            <option>Material 3</option>
-                                                                            <option>Material 4</option>
-                                                                        </select>
-                                                                    </div>
-                                                                </div>
-                                                                <h4>100 items in stock</h4>
-                                                                <p>Nowadays the lingerie industry is one of the most successful business spheres.
-                                                                    Nowadays the lingerie industry is one of ...
-                                                                <p>
-                                                                    <button type="submit" class="shopBtn"><span class=" icon-shopping-cart"></span> Add to cart</button>
-                                                         </form>
-                          -->
                         </div>
 
 
@@ -117,22 +64,19 @@
                     <div id="myTabContent" class="tab-content tabWrapper">
                         <div class="tab-pane fade active in" id="home">
                             <h4>Product Information</h4>
+
                             {{ product.detail|safe }}
 
                         </div>
-
-
                         <div class="tab-pane fade" id="profile">
-
-
-
-
-
-
-                            <div class="row-fluid">
-
-
+                             <div class="row-fluid">
                                 <div class="span6">
+                                <h2>
+                                {% if avg.rate__avg >= 3 %}<strong style="color: green">
+                                {% elif avg.rate__avg < 3 or avg.rate__avg > 2.5 %} <strong style="color: orange">
+                                {% else %} <strong style="color: red"> {% endif %}
+                                    {{ avg.rate__avg|floatformat:"2"}} </strong>{% if avg.rate__avg == NULL %}<strong style="color: red">Henüz kimse bu içeriği oylamadı.</strong> {% else %} / <strong style="color: green">5</strong>{% endif %}
+                                </h2>
                                     <h4>Görüşünüz yaz</h4>
                                     {% if messages%}
                                         {% for message in messages %}
@@ -173,17 +117,16 @@
 
                                 </div>
                             </div>
+
+
                             {% for com in comments %}
-
-
                                 <div class="row-fluid">
-
-
                                     <div class="span6">
                                         <div class="">
                                             <div><a href="/visitetouser/{{ com.user_id }}"><i class="fa fa-user-o"></i> <b>{{ com.user.first_name }} {{ com.user.last_name }}</b></a></div>
                                             <div><a href="#" style="color: #0e0e0e"><i class="fa fa-user-o"></i>{{ com.create_at }}</a></div>
                                             <hr style="width: 50%;border-top: 2px solid red;">
+
                                             <div>
 
                                                 {% if com.rate == 1 %}<h4>Puan: 1</h4> {% endif %}
@@ -204,32 +147,15 @@
                             {% endfor %}
 
                         </div>
-
-
                             <hr class="soften"/>
-
                         </div>
                     </div>
 
                 </div>
             </div>
         </div>
-
-
-
-
-
-
-
-
-
-
-
-
     </div>
 </div>
-
-
 
 {% endblock %}
 

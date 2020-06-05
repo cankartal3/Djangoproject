@@ -2,30 +2,30 @@
 Keşfedilecek yeni yerler
 -->{% load static %}
 <div>
-{% if duyuru %}
-<div class="well well-small" style="width: 335px;height: 137px;float:left;margin-right: 10px;margin-left: 4px;">
-<h3>Duyurular</h3>
-<ul style="list-style-type: none">
+    {% if duyuru %}
+        <div class="well well-small" style="width: 335px;height: 137px;float:left;margin-right: 10px;margin-left: 4px;">
+            <h3>Duyurular</h3>
+            <ul style="list-style-type: none">
 
-{%for rs in duyuru %}
- <li>  <a href="content/{{ rs.id }}/{{ rs.slug }}" style=" text-decoration: none;color: #0000cc;font-size: 15px">{{ rs.title }}</a></li>
+                {%for rs in duyuru %}
+                    <li>  <a href="content/{{ rs.id }}/{{ rs.slug }}" style=" text-decoration: none;color: #0000cc;font-size: 15px">{{ rs.title }}</a></li>
 
-{% endfor %}
-</ul>
-</div>
-{% endif %}
+                {% endfor %}
+            </ul>
+        </div>
+    {% endif %}
 
-{% if etkinlik %}
-<div class="well well-small" style="width: 335px;height: 137px;float:left;margin-right: 10px;margin-left: 4px;">
-<h3>Etkinlik</h3>
-      <ul style="list-style-type: none">
-{% for rs in etkinlik %}
-  <li>   <a href="content/{{ rs.id }}/{{ rs.slug }}" style=" text-decoration: none;color: #df8505;font-size: 15px">{{ rs.title }}</a></li>
-{% endfor %}
-</ul>
+    {% if etkinlik %}
+        <div class="well well-small" style="width: 335px;height: 137px;float:left;margin-right: 10px;margin-left: 4px;">
+            <h3>Etkinlik</h3>
+            <ul style="list-style-type: none">
+                {% for rs in etkinlik %}
+                    <li>   <a href="content/{{ rs.id }}/{{ rs.slug }}" style=" text-decoration: none;color: #df8505;font-size: 15px">{{ rs.title }}</a></li>
+                {% endfor %}
+            </ul>
 
-</div>
-{% endif %}
+        </div>
+    {% endif %}
 
 </div>
 <br><br><br><br><br><br><br><br>
@@ -92,77 +92,29 @@ Keşfedilecek yeni yerler
         </ul>
 
 
-
-    </div>
-</div>
-
-<!--
-Featured Products
--->
-<!--
-<div class="well well-small">
-    <h3><a class="btn btn-mini pull-right" href="products.html" title="View more">VIew More<span class="icon-plus"></span></a> Featured Products  </h3>
-    <hr class="soften"/>
-    <div class="row-fluid">
         <ul class="thumbnails">
-            <li class="span4">
-                <div class="thumbnail">
-                    <a class="zoomTool" href="product_details.html" title="add to cart"><span class="icon-search"></span> QUICK VIEW</a>
-                    <a  href="product_details.html"><img src="{% static  'assets/img/d.jpg'%}" alt=""></a>
-                    <div class="caption">
-                        <h5>Manicure & Pedicure</h5>
-                        <h4>
-                            <a class="defaultBtn" href="product_details.html" title="Click to view"><span class="icon-zoom-in"></span></a>
-                            <a class="shopBtn" href="#" title="add to cart"><span class="icon-plus"></span></a>
-                            <span class="pull-right">$22.00</span>
-                        </h4>
-                    </div>
-                </div>
-            </li>
-            <li class="span4">
-                <div class="thumbnail">
-                    <a class="zoomTool" href="product_details.html" title="add to cart"><span class="icon-search"></span> QUICK VIEW</a>
-                    <a  href="product_details.html"><img src="{% static  'assets/img/e.jpg'%}" alt=""></a>
-                    <div class="caption">
-                        <h5>Manicure & Pedicure</h5>
-                        <h4>
-                            <a class="defaultBtn" href="product_details.html" title="Click to view"><span class="icon-zoom-in"></span></a>
-                            <a class="shopBtn" href="#" title="add to cart"><span class="icon-plus"></span></a>
-                            <span class="pull-right">$22.00</span>
-                        </h4>
-                    </div>
-                </div>
-            </li>
-            <li class="span4">
-                <div class="thumbnail">
-                    <a class="zoomTool" href="product_details.html" title="add to cart"><span class="icon-search"></span> QUICK VIEW</a>
-                    <a  href="product_details.html"><img src="{% static  'assets/img/f.jpg'%}" alt=""/></a>
-                    <div class="caption">
-                        <h5>Manicure & Pedicure</h5>
-                        <h4>
-                            <a class="defaultBtn" href="product_details.html" title="Click to view"><span class="icon-zoom-in"></span></a>
-                            <a class="shopBtn" href="#" title="add to cart"><span class="icon-plus"></span></a>
-                            <span class="pull-right">$22.00</span>
-                        </h4>
-                    </div>
-                </div>
-            </li>
+            {% for yeni in lastproducts %}
+                {% if forloop.counter >= 10 and forloop.counter < 13%}
+                    <li class="span4">
+                        <div class="thumbnail">
+
+                            <a class="zoomTool" href="/product/{{ yeni.id }}/{{ yeni.slug }}" title="add to cart"><span class="icon-search"></span> ZİYARET ET</a>
+                            <a href="/product/{{ yeni.id }}/{{ yeni.slug }}"><img src="{{ yeni.image.url }} " style="height: 200px" alt=""></a>
+                            <div class="caption cntr">
+                                <p>{{ yeni.title}}</p>
+                                <br class="clr">
+                            </div>
+                        </div>
+                    </li>
+                {% endif %}
+            {% endfor %}
         </ul>
+
+
     </div>
 </div>
 
 
-
-<div class="well well-small">
-    <a class="btn btn-mini pull-right" href="#">View more <span class="icon-plus"></span></a>
-    Popular Products
-</div>
-<hr>
-<div class="well well-small">
-    <a class="btn btn-mini pull-right" href="#">View more <span class="icon-plus"></span></a>
-    Best selling Products
-</div>
--->
 </div>
 </div>
 <!--

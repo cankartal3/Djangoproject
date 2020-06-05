@@ -51,9 +51,8 @@ class Product(models.Model):
         ('False', 'Hayır'),
     )
     user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
-    category = models.ForeignKey(Category, on_delete=models.SET_NULL, null=True) # relation with Category table
+    category = models.ForeignKey(Category,on_delete=models.CASCADE) # relation with Category table
     title = models.CharField(max_length=150)
-    guidecategory = models.CharField(blank=True,max_length=30)
     keywords = models.CharField(blank=True, max_length=255)
     description = models.CharField(blank=True, max_length=255)
     image = models.ImageField(blank=True,upload_to='images/')
@@ -123,11 +122,10 @@ class CommentForm(ModelForm):
 class ProductForm(ModelForm):
     class Meta:
         model = Product
-        fields = ['title', 'guidecategory' ,'keywords' ,'description', 'image', 'slug', 'detail']
+        fields = ['title', 'category' ,'keywords' ,'description', 'image', 'detail']
         widgets = {
             'title' : TextInput(attrs={'class': 'input', 'placeholder': 'title'}),
-            'guidecategory': TextInput(attrs={'class': 'input', 'placeholder': 'guidecategory'}),
-            'slug': TextInput(attrs={'class': 'input', 'placeholder': 'slug'}),
+            'category': Select(attrs={'class': 'input', 'placeholder': 'category'}),
             'keywords': TextInput(attrs={'class': 'input', 'placeholder': 'keywords'}),
             'description': TextInput(attrs={'class': 'input', 'placeholder': 'description'}),
             'image': FileInput(attrs={'class': 'input', 'placeholder': 'image'}),

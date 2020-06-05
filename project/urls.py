@@ -37,6 +37,7 @@ urlpatterns = [
     path('search/', views.product_search, name='product_search'),
     path('search_auto/', views.get_places, name='get_places'),
     path('logout/', views.logout_view, name='logout_view'),
+    path('login/', views.login_view, name='login_view'),
     path('signup/', views.signup_view, name='signup_view'),
     #path('bossayfa/<int:id>/', views.bossayfa , name='bossayfa'),
     path('content/<int:id>/<slug:slug>/', views.contentdetail, name='contentdetail'),

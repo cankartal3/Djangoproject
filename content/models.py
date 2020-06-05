@@ -114,10 +114,9 @@ class CommentForm(ModelForm):
 class ContentForm(ModelForm):
     class Meta:
         model = Content
-        fields = ['type', 'title', 'slug', 'keywords', 'description', 'image', 'detail']
+        fields = ['type', 'title', 'keywords', 'description', 'image', 'detail']
         widgets = {
             'title': TextInput(attrs={'class': 'input', 'placeholder' : 'title'}),
-            'slug': TextInput(attrs={'class': 'input', 'placeholder': 'slug'}),
             'keywords': TextInput(attrs={'class': 'input', 'placeholder': 'keywords'}),
             'description': TextInput(attrs={'class': 'input', 'placeholder': 'description'}),
             'type': Select(attrs={'class': 'input', 'placeholder': 'city'}, choices=TYPE),

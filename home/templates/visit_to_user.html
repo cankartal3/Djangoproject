@@ -21,7 +21,7 @@
 
             <div class="span3">
 
-               <p>ADSSAFSAF</p>
+               <p></p>
             </div>
 
 
@@ -64,8 +64,29 @@
                 </div>
             </div>
     <div class="span3">
-        <h3>XXXXXXXX</h3>
 
+<table >
+<style>
+    tr:hover.a {background-color:#f5f5f5;}
+</style>
+<h3>Turistik mekan rehberleri</h3>
+                    <tr class="a">
+                        <th>Resim</th>
+                        <th>Başlık</th>
+                        <th>Tarih</th>
+                    </tr>
+                    {% for rs in userproducts %}
+                        <tr class="a">
+
+                            <td>
+                                <a href="/product/{{ rs.id }}/{{ rs.slug }}">
+                                <img src="{{ rs.image.url }}" style="height: 30px"></a>
+                            </td>
+                            <td><a href="/product/{{ rs.id }}/{{ rs.slug }}">{{ rs.title }}</a></td>
+                            <td>{{ rs.create_at }}</td>
+                        </tr>
+                    {% endfor %}
+                </table>
     </div>
 
 

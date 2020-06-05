@@ -1,8 +1,10 @@
 import json
+from decimal import Decimal
 
 from django.contrib import messages
 from django.contrib.auth import logout, authenticate, login
 from django.contrib.auth.models import User
+from django.db.models import Avg
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
 
@@ -19,7 +21,7 @@ def index(request):
     category = Category.objects.all()
     menu = Menu.objects.all()
     dayproducts = Product.objects.filter(status='True')[:4]
-    lastproducts = Product.objects.filter(status='True').order_by('-id')[:9]
+    lastproducts = Product.objects.filter(status='True').order_by('-id')[:12]
     randomproducts = Product.objects.filter(status='True').order_by('?')[:5]
     duyuru = Content.objects.filter(status='True', type='duyuru').order_by('-id')[:3]
     etkinlik = Content.objects.filter(status='True', type='etkinlik').order_by('-id')[:3]
@@ -87,10 +89,12 @@ def iletisim(request):
 def category_products(request ,id,slug):
     category = Category.objects.all()
     categorydata = Category.objects.get(pk=id)
-    products = Product.objects.filter(category_id=id)
+    menu = Menu.objects.all()
+    products = Product.objects.filter(category_id=id, status='True')
     context = {'products':products,
                'category':category,
-               'categorydata':categorydata}
+               'categorydata':categorydata,
+               'menu':menu}
     return render(request,'products.html',context)
 
 def product_detail(request ,id,slug):
@@ -101,11 +105,14 @@ def product_detail(request ,id,slug):
         product = Product.objects.get(pk=id)
         images = Images.objects.filter(product_id=id)
         comments = Comment.objects.filter(product_id=id,status='True').order_by('-id') #en son yorumdan itibaren
+        avg = Comment.objects.filter(product_id=id, status='True').aggregate(Avg('rate'))
         context = {'product':product,
                    'images':images,
                    'comments':comments,
                    'category':category,
-                   'menu':menu}
+                   'menu':menu,
+                   'avg':avg,
+                   }
         return render(request,'product_detail.html',context)
     except:
         messages.warning(request, "Hata! İlgili içerik bulunamadı")
@@ -249,8 +256,31 @@ def visitetouser(request,id):
     category = Category.objects.all()
     profile = User.objects.get(id=id)
     userprofile = UserProfile.objects.get(user_id=id)
+    userproducts = Product.objects.filter(user_id=id)
     context = {'category': category,
                'profile': profile,
                'userprofile':userprofile,
+               'userproducts':userproducts,
                }
     return render(request, 'visit_to_user.html', context)
+
+
+def login_view(request):
+    category = Category.objects.all()
+    menu = Menu.objects.all()
+    if request.method == 'POST':
+        username = request.POST['username']
+        password = request.POST['password']
+        user = authenticate(request, username=username, password=password)
+        if user is not None:
+            login(request, user)
+            # Redirect to a success page.
+            return HttpResponseRedirect('/')
+        else:
+            messages.error(request, "Login Hatası! Kullanıcı adı ya da şifre yanlış. ")
+            return HttpResponseRedirect('/login')
+    context = {
+        'category': category,
+        'menu': menu,
+    }
+    return render(request, 'login.html', context)
