@@ -2,14 +2,9 @@
 <div class="row">
 <div id="sidebar" class="span3">
 <div class="well well-small">
-
-
-
-
 <nav>
     <ul class="isim1">
         {% load mptt_tags %}
-
     {% recursetree category %}
         <li class="isim3"><a href="/category/{{ node.id }}/{{ node.slug }}" class="isim4 isim5">{% if not node.is_leaf_node %}<span class="icon-chevron-left"></span>{% endif %}
             {{ node.title }}
@@ -23,16 +18,13 @@
     {% endrecursetree %}
     </ul>
 </nav>
-
 </div>
-
 			  <div class="well well-small alert alert-warning cntr">
 				  <h2>XXXXXXXXX</h2>
 				  <p>
 					 xxxxxxxxx <br><br><a class="defaultBtn" href="#">xxxxx </a>
 				  </p>
 			  </div>
-
 			<a class="shopBtn btn-block" href="#">Upcoming products <br><small>Click to view</small></a>
 			<br>
 			<br>
@@ -49,7 +41,5 @@
 			</li>
                     <li style="border:0"> &nbsp;</li>
                 {% endfor %}
-
 		  </ul>
-
 	</div>

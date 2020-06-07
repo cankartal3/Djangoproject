@@ -2,12 +2,10 @@
 <html lang="en">
 
 <head>
-
     <meta charset="utf-8">
     <title>{% block title %} Django gezi  {% endblock %}</title>
     <meta name="keywords" content="{% block keywords %}Anasayfa anahtar kelime {% endblock %}">
     <meta name="description" content="{% block description %}Anasayfa kısa açıklama {% endblock %}">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="">
     <!-- Bootstrap styles -->
@@ -22,16 +20,12 @@
     <!--[if IE 7]>
 			<link href="{% static  'css/font-awesome-ie7.min.css'%}" rel="stylesheet">
 		<![endif]-->
-
     <!--[if lt IE 9]>
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-
     <!-- Favicons -->
     <link rel="shortcut icon" href="{% static 'assets/ico/images.png'%}">
-
     <!-- jQuery !-->
-
     <script src="{% static  'jquery.min.js'%}"> </script>
     <!-- jQuery UI !-->
     <link rel="stylesheet" type="text/css" href="{% static 'text.css' %}"/>
@@ -41,7 +35,6 @@
     {% block head %} {% endblock %}
 </head>
 <body>
-
 {% include 'header2.html' %}
 {% block sidebar %} {% endblock %}
 {% block slider %} {% endblock %}

@@ -1,17 +1,10 @@
-
 {% load static %}
 
 <div class="span9">
     <div class="well np">
         <div id="myCarousel" class="carousel slide homCar">
-
-
-
-
             <div class="carousel-inner">
                 {% for rs in sliderdata %}
-
-
                     <div class="item {% if forloop.counter == 1%} active {% endif %} ">
                         <a href="/product/{{ rs.id }}/{{ rs.slug }}">
                             <img style="height: 350px" src="{{ rs.image.url }}" alt="bootstrap ecommerce templates">
@@ -21,17 +14,9 @@
                             </div>
                         </a>
                     </div>
-
-
                 {% endfor %}
-
-
-
-
             </div>
-
             <a class="left carousel-control" href="#myCarousel" data-slide="prev">&lsaquo;</a>
             <a class="right carousel-control" href="#myCarousel" data-slide="next">&rsaquo;</a>
         </div>
     </div>
-

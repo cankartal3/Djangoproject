@@ -7,29 +7,23 @@
     <link rel="shortcut icon" href='{{settings.icon.url}}'>
 {% endblock %}
 
-
-
-
 {% block body %} <div id="breadcrumb">
     <div class="container">
         <ul class="breadcrumb">
             <li><a href="/">Anasayfa</a></li>
             <li class="active">{{ content.type }}</li>
         </ul>
-
         <div class="well well-small">
             <div>
-
+                <a href="/visitetouser/{{ content.user.id }}"><img src="{{ content.user.userprofile.image.url }}"style=" height: 80px"></a><br>
                 <a href="/visitetouser/{{ content.user.id }}" style="position: absolute; text-decoration: none; color: orange; font-size: 20px">{{ content.user.first_name }} {{ content.user.last_name }}</a>
             </div>
             <hr style="border-top: 2px solid red;">
             <div class="row" >
-
                 <img src="{{ content.image.url }}"  align="left" style="height: 300px;padding: 20px; border-radius:25px">
                 <br><br>
                 {{ content.detail|safe }}
                 <hr>
-
             </div>
             <div class="well well-small">
                 {% for rs in image %}
@@ -37,7 +31,6 @@
                 {% endfor %}
             </div>
             <!--Yorumlara -->
-
             <div class="span6">
                 <h4>Görüşünüz yaz</h4>
                 {% if messages%}
@@ -74,14 +67,10 @@
                     {% endif %}
                 </form>
             </div>
-
             <div class="span4 alignR">
-
             </div>
         </div>
         {% for com in commentscontent %}
-
-
             <div class="row-fluid">
                 <div class="span2">
                     <img src="assets/img/d.jpg" alt="">
@@ -92,7 +81,6 @@
                         <div><a href="" style="color: #0e0e0e"><i class="fa fa-user-o"></i>{{ com.create_at }}</a></div>
                         <hr style="width: 50%;border-top: 2px solid red;">
                         <div>
-
                             {% if com.rate == 1 %}<h4>Puan: 1</h4> {% endif %}
                             {% if com.rate == 2 %}<h4>Puan: 2</h4> {% endif %}
                             {% if com.rate == 3 %}<h4>Puan: 3</h4> {% endif %}
@@ -104,21 +92,12 @@
                         <p>{{ com.comment }}</p>
                     </div>
                 </div>
-
             </div>
             <hr class="soft">
-
         {% endfor %}
-
-
-
     </div>
-
 </div>
     </div>
-
-
-
 {% endblock %}
 
 

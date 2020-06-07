@@ -6,19 +6,13 @@
 {% block head %}
     <link rel="shortcut icon" href='{{settings.icon.url}}'>
 {% endblock %}
-
-
-
-
 {% block body %} <div id="breadcrumb">
     <div class="container">
         <ul class="breadcrumb">
             <li><a href="/">Anasayfa</a></li>
             <li class="active">Üye Ol</li>
         </ul>
-
         <div class="well well-small">
-
             <div class="span4">
                 <h4>Üye formu</h4>
                 {% if messages %}
@@ -26,10 +20,8 @@
                         <div class="alert alert-{{ message.tags }}" role="alert">
                             {{ message }}
                         </div>
-
                     {% endfor %}
                 {% endif %}
-
                 <form  method="post">
                     {% csrf_token %}
                     {% for field in form %}
@@ -47,21 +39,9 @@
                 <button type="submit">Üye ol</button>
                 </form>
             </div>
-
-
-
-
-
-
-
-
         </div>
-
     </div>
 </div>
-
-
-
 {% endblock %}
 
 

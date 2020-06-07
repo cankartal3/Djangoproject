@@ -6,79 +6,72 @@
 {% block head %}
     <link rel="shortcut icon" href='{{settings.icon.url}}'>
 {% endblock %}
-
-
-
-
 {% block body %} <div id="breadcrumb">
     <div class="container">
         <ul class="breadcrumb">
             <li><a href="/">Anasayfa</a></li>
-            <li class="active">Kullanıcı Profil</li>
+            <li class="active">Hesabım</li>
         </ul>
-
         <div class="well well-small">
-
             <div class="span3">
-
                 {% include "user_panel.html" %}
             </div>
-
-
-
             <div class="span5">
                 <div class="row">
                     <h3>Kullanıcı Bilgileri</h3>
-                   <table>
-                       <style>
-                    table {
-                        border-collapse: collapse;
-
-                    }
-
-                    th, td {
-                        color: darkblue;
-                        padding: 8px;
-                        text-align: left;
-                        border-bottom: 1px solid #ddd;
-
-
-                    }
-
-                    tr:hover {background-color:grey;}
-                </style>
-    <thead>
-
-        <tr style=" background-color: transparent"><th width="100" ></th><td width="250" class="text-center " style=" background-color: indigo"><img src="{{ profile.image.url }}"></td></tr>
-        <tr><th class="text-left" style="border: 1px solid black">İsim Soyisim</th><td style="border: 1px solid black">{{ profile.user_name }}</td></tr>
-        <tr><th class="text-left" style="border: 1px solid black">Email</th><td style="border: 1px solid black">{{ profile.user.email }}</td></tr>
-        <tr><th class="text-left" style="border: 1px solid black">Telefon</th><td style="border: 1px solid black">{{ profile.phone }}</td></tr>
-        <tr><th class="text-left" style="border: 1px solid black">Adres</th><td style="border: 1px solid black">{{ profile.address }}</td></tr>
-        <tr><th class="text-left" style="border: 1px solid black">Şehir</th><td style="border: 1px solid black">{{ profile.city }}</td></tr>
-        <tr><th class="text-left" style="border: 1px solid black">Ülke</th><td style="border: 1px solid black">{{ profile.country }}</td></tr>
-
-    </thead>
-
-</table>
+                    <table>
+                        <style>
+                            table {
+                                border-collapse: collapse;
+                            }
+                            th, td {
+                                color: darkblue;
+                                padding: 8px;
+                                text-align: left;
+                                border-bottom: 1px solid #ddd;
+                            }
+                            tr:hover {background-color:grey;}
+                        </style>
+                        <thead>
+                        <tr style=" background-color: transparent"><th width="100" ></th><td width="250" class="text-center " style=" background-color: indigo"><img src="{{ profile.image.url }}"></td></tr>
+                        <tr><th class="text-left" style="border: 1px solid black">İsim Soyisim</th><td style="border: 1px solid black">{{ profile.user_name }}</td></tr>
+                        <tr><th class="text-left" style="border: 1px solid black">Email</th><td style="border: 1px solid black">{{ profile.user.email }}</td></tr>
+                        <tr><th class="text-left" style="border: 1px solid black">Telefon</th><td style="border: 1px solid black">{{ profile.phone }}</td></tr>
+                        <tr><th class="text-left" style="border: 1px solid black">Adres</th><td style="border: 1px solid black">{{ profile.address }}</td></tr>
+                        <tr><th class="text-left" style="border: 1px solid black">Şehir</th><td style="border: 1px solid black">{{ profile.city }}</td></tr>
+                        <tr><th class="text-left" style="border: 1px solid black">Ülke</th><td style="border: 1px solid black">{{ profile.country }}</td></tr>
+                        </thead>
+                    </table>
                 </div>
             </div>
-    <div class="span3">
-        <h3>Hesabını Güncelle</h3>
-        <a href="/user/update" class="button" style="color: red">Profil Güncelleme</a><br>
-        <a href="/user/password" class="button" style="color: red">Şifre Değiştirme</a>
-    </div>
-
-
-
+            <div class="span3">
+                <h3>Hesabını Güncelle</h3>
+                <a href="/user/update" class="button" style="color: red">Profil Güncelleme</a><br>
+                <a href="/user/password" class="button" style="color: red">Şifre Değiştirme</a>
+                <br><br><br>
+                <table >
+                    <style>
+                        tr:hover.a {background-color:#f5f5f5;}
+                    </style>
+                    <h3>Turistik mekan rehberlerim</h3>
+                    <tr class="a">
+                        <th>Resim</th>
+                        <th>Başlık</th>
+                        <th>Tarih</th>
+                    </tr>
+                    {% for rs in userproducts %}
+                        <tr class="a">
+                            <td>
+                                <a href="/product/{{ rs.id }}/{{ rs.slug }}">
+                                    <img src="{{ rs.image.url }}" style="height: 30px"></a>
+                            </td>
+                            <td><a href="/product/{{ rs.id }}/{{ rs.slug }}">{{ rs.title }}</a></td>
+                            <td>{{ rs.create_at }}</td>
+                        </tr>
+                    {% endfor %}
+                </table>
+            </div>
         </div>
-
     </div>
 </div>
-
-
-
 {% endblock %}
-
-
-
-

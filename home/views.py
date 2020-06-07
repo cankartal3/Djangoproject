@@ -103,7 +103,7 @@ def product_detail(request ,id,slug):
 
     try:
         product = Product.objects.get(pk=id)
-        images = Images.objects.filter(product_id=id)
+        images = Images.objects.filter(product_id=id,status='True')
         comments = Comment.objects.filter(product_id=id,status='True').order_by('-id') #en son yorumdan itibaren
         avg = Comment.objects.filter(product_id=id, status='True').aggregate(Avg('rate'))
         context = {'product':product,
@@ -256,7 +256,7 @@ def visitetouser(request,id):
     category = Category.objects.all()
     profile = User.objects.get(id=id)
     userprofile = UserProfile.objects.get(user_id=id)
-    userproducts = Product.objects.filter(user_id=id)
+    userproducts = Product.objects.filter(user_id=id,status='True')
     context = {'category': category,
                'profile': profile,
                'userprofile':userprofile,

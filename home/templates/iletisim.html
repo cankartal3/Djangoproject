@@ -1,5 +1,4 @@
 {% extends "homebase.html" %}
-
 {% block title %}İletişim {{ settings.title }} {% endblock %}
 {% block keywords %}{{ settings.keywords}}{% endblock %}
 {% block description %}{{settings.description}}{% endblock %}
@@ -7,18 +6,13 @@
     <link rel="shortcut icon" href='{{settings.icon.url}}'>
 {% endblock %}
 
-
-
-
 {% block body %} <div id="breadcrumb">
     <div class="container">
         <ul class="breadcrumb">
             <li><a href="/">Anasayfa</a></li>
             <li class="active">İletişim</li>
         </ul>
-
         <div class="well well-small">
-
             <div class="span4">
                 <h4>İletişim formu</h4>
                 {% if messages %}
@@ -26,35 +20,22 @@
                         <div class="alert alert-{{ message.tags }}" role="alert">
                             {{ message }}
                         </div>
-
                     {% endfor %}
                 {% endif %}
-
                 <form action="" method="post">
                     {% csrf_token %}
                     {{ form.as_p }}
                     <input type="submit" value="SEND FORM">
                 </form>
             </div>
-
-
-
             <div class="container">
                 <div class="row">
                     {{ settings.contact|safe}}
                 </div>
             </div>
-
-
-
-
         </div>
-
     </div>
 </div>
-
-
-
 {% endblock %}
 
 

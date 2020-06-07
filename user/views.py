@@ -15,10 +15,11 @@ from user.forms import UserUpdateForm, ProfileUpdateForm
 def index(request):
     category = Category.objects.all()
     current_user = request.user
-
+    userproducts = Product.objects.filter(user_id=current_user.id, status='True')
     profile = UserProfile.objects.get(user_id=current_user.id)
     context = {'category':category,
-               'profile':profile,}
+               'profile':profile,
+               'userproducts':userproducts}
     return render(request, 'user_profile.html', context)
 
 def user_update(request):

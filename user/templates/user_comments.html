@@ -6,49 +6,31 @@
 {% block head %}
     <link rel="shortcut icon" href='{{settings.icon.url}}'>
 {% endblock %}
-
-
-
-
-
 {% block body %} <div id="breadcrumb">
     <div class="container">
         <ul class="breadcrumb">
             <li><a href="/">Anasayfa</a></li>
             <li class="active">Yorumlarım</li>
         </ul>
-
         <div class="well well-small">
-
             <div class="span3">
-
                 {% include "user_panel.html" %}
             </div>
-
-
-
-
             <div class="span3">
                 <h2>Yorumlarım</h2> <br>
-
                 <style>
                     table {
                         border-collapse: collapse;
                         width: 900px;
                     }
-
                     th, td {
                         padding: 8px;
                         text-align: left;
                         border-bottom: 1px solid #ddd;
                         height: 100px;
-
                     }
-
                     tr:hover {background-color:#f5f5f5;}
                 </style>
-
-
                 <table >
                     <tr>
                         <th>Turistik Mekan</th>
@@ -61,7 +43,6 @@
                     </tr>
                     {% for rs in comments %}
                         <tr>
-
                             <td><a href="/product/{{ rs.product_id }}/{{ rs.product.slug }}" style="color: indigo;">
                                 <strong>{{ rs.product.title }}</strong>
                                 </a>
@@ -75,20 +56,8 @@
                         </tr>
                     {% endfor %}
                 </table>
-
             </div>
-
-
-
         </div>
-
     </div>
 </div>
-
-
-
 {% endblock %}
-
-
-
-

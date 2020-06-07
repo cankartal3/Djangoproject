@@ -6,24 +6,15 @@
 {% block head %}
     <link rel="shortcut icon" href='{{settings.icon.url}}'>
 {% endblock %}
-
-
-
-
 {% block body %} <div id="breadcrumb">
     <div class="container">
         <ul class="breadcrumb">
             <li><a href="/">Anasayfa</a></li>
             <li class="active">{{ categorydata.title }}</li>
         </ul>
-
         <div class="well well-small">
-
-
             <div class="container">
                 <div class="row">
-
-
                     <table cellpadding="3" width="800" style="border: 1px solid black">
                         <tr>
                             <th style="border: 1px solid black">Resim</th>
@@ -40,8 +31,6 @@
                             </tr>
                         {% endfor %}
                     </table>
-
-
                 </div>
             </div>
         </div>
@@ -49,4 +38,3 @@
 
 </div>
 {% endblock %}
-

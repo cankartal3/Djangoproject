@@ -6,27 +6,19 @@
 {% block head %}
     <link rel="shortcut icon" href='{{settings.icon.url}}'>
 {% endblock %}
-
-
-
-
 {% block body %} <div id="breadcrumb">
     <div class="container">
         <ul class="breadcrumb">
             <li><a href="/">Anasayfa</a></li>
             <li class="active">Kullanıcı Profil</li>
         </ul>
-
         <div class="well well-small">
-
             <div class="span3">
-
                 {% include "user_panel.html" %}
             </div>
             <div class="cm-sectionTitle">
                 <h4 class="popover-title">Kullanıcı Bilgileri</h4>
             </div>
-
             <div class="content">
                 <div class="media">
                     <img src="{{ user.userprofile.image.url }}" style="height: 300px">
@@ -41,21 +33,7 @@
                      </div>
                 </form>
             </div>
-
-
-
-
-
-
         </div>
-
     </div>
 </div>
-
-
-
 {% endblock %}
-
-
-
-

@@ -6,39 +6,26 @@
 {% block head %}
     <link rel="shortcut icon" href='{{settings.icon.url}}'>
 {% endblock %}
-
-
-
-
 {% block body %} <div id="breadcrumb">
     <div class="container">
         <ul class="breadcrumb">
             <li><a href="/">Anasayfa</a></li>
             <li class="active">Login</li>
         </ul>
-
         <div class="well well-small" >
-
-
                 <form action="" method="post">
                     {% csrf_token %}
                     <div class="control-group">
                         <input type="text" class="span2" style="width: 20%;height: 40px" name="username" placeholder="Kullanıcı adı">
                     </div>
-
                     <div class="control-group">
                         <input type="password" class="span2" style="width: 20%;height: 40px" name="password" placeholder="Password">
                     </div>
                     <input type="submit" value="Login">
                 </form>
-
         </div>
-
     </div>
 </div>
-
-
-
 {% endblock %}
 
 

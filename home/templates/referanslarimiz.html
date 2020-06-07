@@ -6,24 +6,16 @@
 {% block head %}
     <link rel="shortcut icon" href='{{settings.icon.url}}'>
 {% endblock %}
-
-
-
-
 {% block body %} <div id="breadcrumb">
         <div class="container">
             <ul class="breadcrumb">
                 <li><a href="/">Anasayfa</a></li>
                 <li class="active">Referanslarımız</li>
             </ul>
-
-
 <div class="well well-small">
     <div class="cm-sectionTitle">
         <div class="container">
-            <div class="row">
                 {{ settings.references|safe}}
-            </div>
         </div>
     </div>
  </div>

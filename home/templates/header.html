@@ -15,30 +15,25 @@
                 {% if user.id is not None %}
                     <a href="/user"><img src="{{ user.userprofile.image.url }}" style="height: 30px; width: 30px"> {{ user.first_name }}</a>
                 {% endif %}
-
                 <a href="/hakkimizda"><span class="icon-envelope"></span> Hakkımızda</a>
                 <a href="/iletisim"><span class="icon-phone"></span> İletişim</a>
                 <a href="/referanslarimiz"><span class="icon-refresh"></span> Referanslar</a>
-
                 <!--	<a href="cart.html"><span class="icon-shopping-cart"></span> 2 Item(s) - <span class="badge badge-warning"> $448.42</span></a>
                 -->
                 <ul class="nav pull-right">
                     {% if user.id is not None %}
                         <a href="/logout" style="color: red">Logout</a>
                     {% else %}
-
                         <li> <div class="control-group">
                             <a href="/login" style="font-size: 15px">Login</a>
                             <a href="/signup/" style="font-size: 15px">Üye Ol</a>
                         </div></li>
-
                         </ul>
                     {% endif %}
             </div>
         </div>
     </div>
 </div>
-
 <!--
 Lower Header Section
 -->
@@ -82,10 +77,6 @@ Navigation Bar Section
                         <li class=""><a href="three-col.html">Three Column</a></li>
                         <li class=""><a href="/sss">SSS</a></li>
                     </ul>
-
-
-
-
                     <script>
                         $(function () {
                             $("#query").autocomplete({
@@ -102,11 +93,9 @@ Navigation Bar Section
                         }
 
                     </script>
-
                     <form action="/search/" method="post" class="navbar-search pull-left" >
                         {% csrf_token %}
                         <input id="query" name="query" type="text" placeholder="Anahtar kelimeyi gir" class="">
-
                         {% load mptt_tags %}
                         <select name="catid" class="input search-categories">
                             <option value="0">Bütün Kategoriler</option>
@@ -119,22 +108,16 @@ Navigation Bar Section
                                 {% endif %}
                             {% endrecursetree %}
                         </select>
-
                         <button class="" ><i class="fa fa-search">Ara</i></button>
                     </form>
-
-
-
                 </div>
             </div>
             <div style="position:relative; z-index:2">
                 <nav role="navigation" class="nmee">
-
                     <ul class="dsaf">
                         {% load mptt_tags %}
                         {% if menu  %}
                             {% recursetree menu %}
-
                                 <li class="herw qwert wrdw"><a href="/menu/{{ node.id }}" class="nme asdf" {% if not node.is_leaf_node %} data-toggle="dropdown" aria-expanded="true" {% endif %}>{{ node.title }} {% if not node.is_leaf_node %}<i class="fa fa-angle-right"></i>{% endif %}</a>
                                     {% if not node.is_leaf_node %}
                                         <ul class="dropdown adsafsa acılırkutu dsaf">
@@ -142,11 +125,9 @@ Navigation Bar Section
                                         </ul>
                                     {% endif %}
                                 </li>
-
                             {% endrecursetree %}
                         {% endif %}
                     </ul>
-
                 </nav>
             </div>
         </div>

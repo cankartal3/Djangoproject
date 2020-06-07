@@ -1,15 +1,11 @@
 {% extends "homebase2.html" %}
-
 {% block title %} {{ settings.title }} {% endblock %}
 {% block keywords %}{{ settings.keywords}}{% endblock %}
 {% block description %}{{settings.description}}{% endblock %}
 {% block head %}
     <link rel="shortcut icon" href='{{settings.icon.url}}'>
 {% endblock %}
-
 {% block sidebar %} {% include "sidebar.html" %} {% endblock %}
-
 {% block slider %} {% include "slider.html" %} {% endblock %}
-
 {% block body %} {% include "content.html" %} {% endblock %}
 

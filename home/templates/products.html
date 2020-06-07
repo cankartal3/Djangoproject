@@ -6,17 +6,12 @@
 {% block head %}
     <link rel="shortcut icon" href='{{settings.icon.url}}'>
 {% endblock %}
-
-
-
-
 {% block body %} <div id="breadcrumb">
         <div class="container">
             <ul class="breadcrumb">
                 <li><a href="/">Anasayfa</a></li>
                 <li class="active">{{categorydata.title}} Gezi yerleri</li>
             </ul>
-
 <div class="well well-small">
 <!--
 New Products
@@ -28,7 +23,6 @@ New Products
             {% for rs in products %}
 			<li class="span4">
 			  <div class="thumbnail">
-
 				<a href="/product/{{ rs.id }}/{{ rs.slug }}"><img src="{{ rs.image.url }}" alt=""></a>
 				<div class="caption cntr">
 					<p>{{ rs.title }}</p>
@@ -36,24 +30,14 @@ New Products
 				</div>
 			  </div>
 			</li>
-
              {% endfor %}
-
-
-
 		  </ul>
-
-
-
-
-
 	</div>
 	</div>
 	</div>
 <!--
 Clients
 -->
-
         <div class="container">
             <div class="row">
 
@@ -61,7 +45,6 @@ Clients
         </div>
     </div>
  </div>
-
 </div>
 {% endblock %}
 

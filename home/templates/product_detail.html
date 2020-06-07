@@ -6,10 +6,6 @@
 {% block head %}
     <link rel="shortcut icon" href='{{settings.icon.url}}'>
 {% endblock %}
-
-
-
-
 {% block body %} <div id="breadcrumb">
     <div class="container">
         <ul class="breadcrumb">
@@ -17,7 +13,6 @@
             <li><h5><a href="/category/{{ product.category_id }}/{{ product.category.slug }}" style="color: #0e0e0e" >{{ product.category }}-> </a></h5></li>
             <li class="active"><h5>{{product.title}}</h5></li>
         </ul>
-
         <div class="container">
             <div class="row">
             <div class="well well-small">
@@ -31,11 +26,9 @@
                         <div class="span12">
                             <div id="myCarousel" class="carousel slide cntr">
                                 <div class="carousel-inner">
-
                                     <div class="item active">
                                          <img src="{{ product.image.url }}" alt="" style="width: 1000px; height: 550px" >
                                     </div>
-
                                     {% for img in images %}
                                         <div class="item">
                                              <img src="{{img.image.url}}" alt="" style="width: 1000px; height: 550px" >
@@ -50,23 +43,16 @@
                             <h3>{{product.title}}</h3>
                             <hr class="soft"/>
                         </div>
-
-
                     </div>
                     <hr class="softn clr"/>
-
-
                     <ul id="productDetail" class="nav nav-tabs">
                         <li class="active"><a href="#home" data-toggle="tab">Bu Turistik Mekan Hakkında Detay</a></li>
                         <li class=""><a href="#profile" data-toggle="tab">Yorumlar</a></li>
-
                     </ul>
                     <div id="myTabContent" class="tab-content tabWrapper">
                         <div class="tab-pane fade active in" id="home">
                             <h4>Product Information</h4>
-
                             {{ product.detail|safe }}
-
                         </div>
                         <div class="tab-pane fade" id="profile">
                              <div class="row-fluid">
@@ -112,13 +98,9 @@
                                         {% endif %}
                                     </form>
                                 </div>
-
                                 <div class="span4 alignR">
-
                                 </div>
                             </div>
-
-
                             {% for com in comments %}
                                 <div class="row-fluid">
                                     <div class="span6">
@@ -126,9 +108,7 @@
                                             <div><a href="/visitetouser/{{ com.user_id }}"><i class="fa fa-user-o"></i> <b>{{ com.user.first_name }} {{ com.user.last_name }}</b></a></div>
                                             <div><a href="#" style="color: #0e0e0e"><i class="fa fa-user-o"></i>{{ com.create_at }}</a></div>
                                             <hr style="width: 50%;border-top: 2px solid red;">
-
                                             <div>
-
                                                 {% if com.rate == 1 %}<h4>Puan: 1</h4> {% endif %}
                                                 {% if com.rate == 2 %}<h4>Puan: 2</h4> {% endif %}
                                                 {% if com.rate == 3 %}<h4>Puan: 3</h4> {% endif %}
@@ -140,22 +120,17 @@
                                             <p>{{ com.comment }}</p>
                                         </div>
                                     </div>
-
                                 </div>
                                 <hr class="soft">
-
                             {% endfor %}
-
                         </div>
                             <hr class="soften"/>
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>
     </div>
 </div>
-
 {% endblock %}
 

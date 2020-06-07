@@ -79,8 +79,14 @@ class Product(models.Model):
         return reverse('product_detail', kwargs={'slug':self.slug})
 
 class Images(models.Model):
+    STATUS = (
+        ('True', 'Evet'),
+        ('False', 'Hayır'),
+    )
+
     product = models.ForeignKey(Product,on_delete=models.CASCADE)
     title = models.CharField(max_length=50,blank=True)
+    status = models.CharField(max_length=10, blank=True, choices=STATUS)
     image = models.ImageField(blank=True,upload_to='images/')
     def __str__(self):
         return self.title

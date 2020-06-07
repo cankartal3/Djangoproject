@@ -15,18 +15,15 @@
                 {% if user.id is not None %}
                     <a href="/user"> <img src="{{ user.userprofile.image.url }}" style="height: 30px; width: 30px"> {{ user.first_name }}</a>
                 {% endif %}
-
                 <a href="/hakkimizda"><span class="icon-envelope"></span> Hakkımızda</a>
                 <a href="/iletisim"><span class="icon-phone"></span> İletişim</a>
                 <a href="/referanslarimiz"><span class="icon-refresh"></span> Referanslar</a>
-
                 <!--	<a href="cart.html"><span class="icon-shopping-cart"></span> 2 Item(s) - <span class="badge badge-warning"> $448.42</span></a>
                 -->
                 <ul class="nav pull-right">
                     {% if user.id is not None %}
                         <a href="/logout" style="color: red">Logout</a>
                     {% else %}
-
                         <li class="dropdown">
                             <a data-toggle="dropdown" class="dropdown-toggle" href="#" style="color: black"><span class="icon-lock"></span> Login <b class="caret"></b></a>
                             <div class="dropdown-menu">
@@ -35,37 +32,29 @@
                                     <div class="control-group">
                                         <input type="text" class="span2" name="username" placeholder="Kullanıcı adı">
                                     </div>
-
                                     <div class="control-group">
                                         <input type="password" class="span2" name="password" placeholder="Password">
                                     </div>
-
-
-
                                     <div class="control-group">
                                         <button type="submit" value="Login" class="shopBtn btn-block">Login</button>
                                     </div>
-
                                 </form>
                             </div>
                         </li>
                         <li> <div class="control-group">
                             <a href="/signup" style="font-size: 15px">Üye Ol</a>
                         </div></li>
-
                         </ul>
                     {% endif %}
             </div>
         </div>
     </div>
 </div>
-
 <!--
 Lower Header Section
 -->
 <div class="container">
     <div id="gototop"> </div>
-
     <header id="header">
         <div class="row">
             <div class="span4">
@@ -102,11 +91,7 @@ Navigation Bar Section
                         <li class=""><a href="grid-view.html">Grid View</a></li>
                         <li class=""><a href="general.html">General Content</a></li>
                         <li class=""><a href="/sss">SSS</a></li>
-
-
                     </ul>
-
-
                     <script>
                         $(function () {
                             $("#query").autocomplete({
@@ -121,13 +106,10 @@ Navigation Bar Section
                         {
                             var selectedObj = ui.item;
                         }
-
                     </script>
-
                     <form action="/search/" method="post" class="navbar-search pull-left" >
                         {% csrf_token %}
                         <input id="query" name="query" type="text" placeholder="Anahtar kelimeyi gir" class="">
-
                         {% load mptt_tags %}
                         <select name="catid" class="input search-categories">
                             <option value="0">Bütün Kategoriler</option>
@@ -140,16 +122,12 @@ Navigation Bar Section
                                 {% endif %}
                             {% endrecursetree %}
                         </select>
-
                         <button class="" ><i class="fa fa-search">Ara</i></button>
                     </form>
-
-
                 </div>
             </div>
             <div style="position:relative; z-index:2">
                 <nav role="navigation" class="nmee">
-
                     <ul class="dsaf">
                         {% load mptt_tags %}
                         {% if menu  %}
@@ -162,13 +140,10 @@ Navigation Bar Section
                                         </ul>
                                     {% endif %}
                                 </li>
-
                             {% endrecursetree %}
                         {% endif %}
                     </ul>
-
                 </nav>
             </div>
-
         </div>
     </div>
