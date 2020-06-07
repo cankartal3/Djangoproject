@@ -31,7 +31,6 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'content.apps.ContentConfig',
     'user.apps.UserConfig',
     'turistikmekan.apps.TuristikmekanConfig',
     'home.apps.HomeConfig',

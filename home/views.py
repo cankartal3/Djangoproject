@@ -9,7 +9,6 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
 
 # Create your views here.
-from content.models import Menu, Content, CImage, Commentcontent
 from home.forms import SearchForm, SignUpForm
 from home.models import Settings, ContactFormuu, ContactFormMessage, UserProfile, FAQ
 from turistikmekan.models import Product, Category, Images, Comment
@@ -19,12 +18,10 @@ def index(request):
     settings = Settings.objects.get(pk=1)
     sliderdata = Product.objects.filter(status='True').order_by('-id')[:5]
     category = Category.objects.all()
-    menu = Menu.objects.all()
+
     dayproducts = Product.objects.filter(status='True')[:4]
-    lastproducts = Product.objects.filter(status='True').order_by('-id')[:12]
+    lastproducts = Product.objects.filter(status='True').order_by('-id')
     randomproducts = Product.objects.filter(status='True').order_by('?')[:5]
-    duyuru = Content.objects.filter(status='True', type='duyuru').order_by('-id')[:3]
-    etkinlik = Content.objects.filter(status='True', type='etkinlik').order_by('-id')[:3]
     if request.method == 'POST':
         username = request.POST['username']
         password = request.POST['password']
@@ -44,25 +41,20 @@ def index(request):
                'dayproducts':dayproducts,
                'lastproducts':lastproducts,
                'randomproducts':randomproducts,
-               'menu':menu,
-               'duyuru':duyuru,
-               'etkinlik':etkinlik
                }
 
     return render(request, 'index.html', context)
 
 def hakkimizda(request):
-    menu = Menu.objects.all()
     category = Category.objects.all()
     settings = Settings.objects.get(pk=1)
-    context = {'settings': settings,'menu':menu, 'category':category,'page':'hakkimizda'}
+    context = {'settings': settings, 'category':category,'page':'hakkimizda'}
     return render(request, 'hakkimizda.html', context)
 
 def referanslarimiz(request):
-    menu = Menu.objects.all()
     category = Category.objects.all()
     settings = Settings.objects.get(pk=1)
-    context = {'settings': settings,'menu':menu, 'page':'referanslarimiz','category':category}
+    context = {'settings': settings, 'page':'referanslarimiz','category':category}
     return render(request, 'referanslarimiz.html', context)
 
 def iletisim(request):
@@ -79,28 +71,28 @@ def iletisim(request):
             data.save()  # veri tabanına kaydet
             messages.success(request, "Mesajınız başarılı bir şekilde gönderilmiştir. Teşekkür ederiz.")
             return HttpResponseRedirect('/iletisim')
-    menu = Menu.objects.all()
+
     category = Category.objects.all()
     settings = Settings.objects.get(pk=1)
     form = ContactFormuu()
-    context = {'settings': settings,'menu':menu, 'form':form,'category':category}
+    context = {'settings': settings, 'form':form,'category':category}
     return render(request, 'iletisim.html', context)
 
 def category_products(request ,id,slug):
+    settings = Settings.objects.get(pk=1)
     category = Category.objects.all()
     categorydata = Category.objects.get(pk=id)
-    menu = Menu.objects.all()
     products = Product.objects.filter(category_id=id, status='True')
     context = {'products':products,
                'category':category,
                'categorydata':categorydata,
-               'menu':menu}
+               'settings':settings,
+               }
     return render(request,'products.html',context)
 
 def product_detail(request ,id,slug):
-    menu = Menu.objects.all()
     category = Category.objects.all()
-
+    settings = Settings.objects.get(pk=1)
     try:
         product = Product.objects.get(pk=id)
         images = Images.objects.filter(product_id=id,status='True')
@@ -110,8 +102,8 @@ def product_detail(request ,id,slug):
                    'images':images,
                    'comments':comments,
                    'category':category,
-                   'menu':menu,
                    'avg':avg,
+                   'settings': settings,
                    }
         return render(request,'product_detail.html',context)
     except:
@@ -179,45 +171,14 @@ def signup_view(request):
             return HttpResponseRedirect("/")
 
     form = SignUpForm()
+    settings = Settings.objects.get(pk=1)
     category = Category.objects.all()
     context = {'category': category,
                'form':form,
+               'settings':settings,
                }
     return render(request, 'signup.html', context)
 
-
-def menu(request, id):
-    try:
-        content= Content.objects.get(menu_id=id)
-        link ='/content/'+str(content.id)+'/menu'
-        return HttpResponseRedirect(link)
-    except:
-        messages.warning(request, "Hata! İlgili içerik bulunamadı")
-        link='/error'
-        return HttpResponseRedirect(link)
-
-def contentdetail(requset, id, slug):
-    commentscontent = Commentcontent.objects.filter(content_id=id, status='True').order_by('-id')  # en son yorumdan itibaren
-    category = Category.objects.all()
-    menu = Menu.objects.all()
-
-    try:
-        content = Content.objects.get(pk=id)
-        image = CImage.objects.filter(content_id=id)
-        comment = Comment.objects.filter(product_id=id, status='True')
-        context = {
-            'content':content,
-            'category':category,
-            'menu':menu,
-            'image':image,
-            'comment':comment,
-            'commentscontent':commentscontent
-        }
-        return render(requset, 'content_detail.html', context)
-    except:
-        messages.warning(requset, "Hata! İlgili içerik bulunamadı")
-        link='/error'
-        return HttpResponseRedirect(link)
 
 #def bossayfa(request, id):        #project ->urls.py
 #    return HttpResponse('Sayfa' + ' ' + str(id))
@@ -230,23 +191,22 @@ def contentdetail(requset, id, slug):
 
 def error(request):
     category = Category.objects.all()
-    menu = Menu.objects.all()
-
+    settings = Settings.objects.get(pk=1)
     context = {
         'category': category,
-        'menu': menu,
+        'settings':settings,
     }
     return render(request, 'error_page.html', context)
 
 
 def faq(request):
     category = Category.objects.all()
-    menu = Menu.objects.all()
     faq = FAQ.objects.all().order_by('ordernumber')
+    settings = Settings.objects.get(pk=1)
     context = {
         'category': category,
-        'menu': menu,
         'faq':faq,
+        'settings':settings,
     }
     return render(request, 'faq.html', context)
 
@@ -257,17 +217,19 @@ def visitetouser(request,id):
     profile = User.objects.get(id=id)
     userprofile = UserProfile.objects.get(user_id=id)
     userproducts = Product.objects.filter(user_id=id,status='True')
+    settings = Settings.objects.get(pk=1)
     context = {'category': category,
                'profile': profile,
                'userprofile':userprofile,
                'userproducts':userproducts,
+               'settings':settings,
                }
     return render(request, 'visit_to_user.html', context)
 
 
 def login_view(request):
     category = Category.objects.all()
-    menu = Menu.objects.all()
+    settings = Settings.objects.get(pk=1)
     if request.method == 'POST':
         username = request.POST['username']
         password = request.POST['password']
@@ -280,7 +242,31 @@ def login_view(request):
             messages.error(request, "Login Hatası! Kullanıcı adı ya da şifre yanlış. ")
             return HttpResponseRedirect('/login')
     context = {
+        'settings':settings,
         'category': category,
-        'menu': menu,
     }
     return render(request, 'login.html', context)
+
+
+def yurticituristikmekanlar(request):
+    settings = Settings.objects.get(pk=1)
+    category = Category.objects.all()
+    yurticitm = Product.objects.filter(status='True', where='Yurtici').order_by('-id')
+    context = {
+        'category':category,
+        'yurticitm':yurticitm,
+        'settings':settings,
+    }
+    return render(request, 'yurtici.html', context)
+
+
+def yurtdisituristikmekanlar(request):
+    settings = Settings.objects.get(pk=1)
+    category = Category.objects.all()
+    yurtdisitm = Product.objects.filter(status='True', where='Yurtdisi').order_by('-id')
+    context = {
+        'category': category,
+        'yurtdisitm': yurtdisitm,
+        'settings':settings,
+    }
+    return render(request, 'yurtdisi.html', context)

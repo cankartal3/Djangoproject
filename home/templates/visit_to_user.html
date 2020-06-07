@@ -59,10 +59,10 @@
                     {% for rs in userproducts %}
                         <tr class="a">
                             <td>
-                                <a href="/product/{{ rs.id }}/{{ rs.slug }}">
+                                <a href="/turistikmekan/{{ rs.id }}/{{ rs.slug }}">
                                 <img src="{{ rs.image.url }}" style="height: 30px"></a>
                             </td>
-                            <td><a href="/product/{{ rs.id }}/{{ rs.slug }}">{{ rs.title }}</a></td>
+                            <td><a href="/turistikmekan/{{ rs.id }}/{{ rs.slug }}">{{ rs.title }}</a></td>
                             <td>{{ rs.create_at }}</td>
                         </tr>
                     {% endfor %}

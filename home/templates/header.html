@@ -112,23 +112,5 @@ Navigation Bar Section
                     </form>
                 </div>
             </div>
-            <div style="position:relative; z-index:2">
-                <nav role="navigation" class="nmee">
-                    <ul class="dsaf">
-                        {% load mptt_tags %}
-                        {% if menu  %}
-                            {% recursetree menu %}
-                                <li class="herw qwert wrdw"><a href="/menu/{{ node.id }}" class="nme asdf" {% if not node.is_leaf_node %} data-toggle="dropdown" aria-expanded="true" {% endif %}>{{ node.title }} {% if not node.is_leaf_node %}<i class="fa fa-angle-right"></i>{% endif %}</a>
-                                    {% if not node.is_leaf_node %}
-                                        <ul class="dropdown adsafsa acılırkutu dsaf">
-                                            <li class="herw qwert wrdw faqfafs"><a href="#" class="nme asdf">{{ children }}</a></li>
-                                        </ul>
-                                    {% endif %}
-                                </li>
-                            {% endrecursetree %}
-                        {% endif %}
-                    </ul>
-                </nav>
-            </div>
         </div>
     </div>

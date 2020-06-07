@@ -35,7 +35,7 @@ class Category(MPTTModel):
         while k is not None:
             full_path.append(k.title)
             k = k.parent
-        return '/'.join(full_path[::-1])
+        return '->'.join(full_path[::-1])
 
 
     def image_tag(self):
@@ -50,15 +50,19 @@ class Product(models.Model):
         ('True', 'Evet'),
         ('False', 'Hayır'),
     )
+
+    WHERE = (
+        ('Yurtici', 'Yurtiçi'),
+        ('Yurtdisi', 'Yurdışı'),
+    )
+
     user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
     category = models.ForeignKey(Category,on_delete=models.CASCADE) # relation with Category table
     title = models.CharField(max_length=150)
     keywords = models.CharField(blank=True, max_length=255)
     description = models.CharField(blank=True, max_length=255)
+    where = models.CharField(blank=True, max_length=15, choices=WHERE)
     image = models.ImageField(blank=True,upload_to='images/')
-    #price = models.FloatField()
-    #amount = models.IntegerField()
-    #detail = RichTextUploadingField()
     detail = RichTextUploadingField()
     status = models.CharField(max_length=10, choices=STATUS)
     slug = models.SlugField(null=False, unique=True)

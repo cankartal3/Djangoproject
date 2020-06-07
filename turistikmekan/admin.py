@@ -25,7 +25,7 @@ class ProductAdmin(admin.ModelAdmin):
     prepopulated_fields = {'slug': ('title',)}
 
 class ImagesAdmin(admin.ModelAdmin):
-    list_display = ['image_tag','title', 'product']
+    list_display = ['image_tag','title', 'product', 'status']
     readonly_fields = ('image_tag',)
 
 class CategoryAdmin2(DraggableMPTTAdmin):

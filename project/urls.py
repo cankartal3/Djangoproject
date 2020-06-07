@@ -27,24 +27,23 @@ urlpatterns = [
     path('ckeditor/', include('ckeditor_uploader.urls')),
     path('', include('home.urls')),
     path('user/', include('user.url')),
-    path('content/', include('content.urls')),
 
     path('hakkimizda/', views.hakkimizda, name='hakkimizda'),
     path('referanslarimiz/', views.referanslarimiz, name='referanslarimiz'),
     path('iletisim/', views.iletisim, name='iletisim'),
     path('category/<int:id>/<slug:slug>/', views.category_products, name='category_products'),
-    path('product/<int:id>/<slug:slug>/',views.product_detail, name='product_detail'),
+    path('turistikmekan/<int:id>/<slug:slug>/',views.product_detail, name='product_detail'),
     path('search/', views.product_search, name='product_search'),
     path('search_auto/', views.get_places, name='get_places'),
     path('logout/', views.logout_view, name='logout_view'),
     path('login/', views.login_view, name='login_view'),
     path('signup/', views.signup_view, name='signup_view'),
     #path('bossayfa/<int:id>/', views.bossayfa , name='bossayfa'),
-    path('content/<int:id>/<slug:slug>/', views.contentdetail, name='contentdetail'),
-    path('menu/<int:id>', views.menu, name='menu'),
     path('error/', views.error, name='error'),
     path('sss/', views.faq, name='faq'),
     path('visitetouser/<int:id>', views.visitetouser, name='visitetouser'),
+    path('yurtici-turistik-mekanlar/',views.yurticituristikmekanlar, name='yurticituristikmekanlar' ),
+    path('yurtdisi-turistik-mekanlar/', views.yurtdisituristikmekanlar, name='yurtdisituristikmekanlar'),
 
 ]
 if settings.DEBUG: # new

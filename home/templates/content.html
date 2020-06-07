@@ -1,120 +1,34 @@
 <!--
 Keşfedilecek yeni yerler
 -->{% load static %}
-<div>
-    {% if duyuru %}
-        <div class="well well-small" style="width: 335px;height: 137px;float:left;margin-right: 10px;margin-left: 4px;">
-            <h3>Duyurular</h3>
-            <ul style="list-style-type: none">
-
-                {%for rs in duyuru %}
-                    <li>  <a href="content/{{ rs.id }}/{{ rs.slug }}" style=" text-decoration: none;color: #0000cc;font-size: 15px">{{ rs.title }}</a></li>
-
-                {% endfor %}
-            </ul>
-        </div>
-    {% endif %}
-
-    {% if etkinlik %}
-        <div class="well well-small" style="width: 335px;height: 137px;float:left;margin-right: 10px;margin-left: 4px;">
-            <h3>Etkinlik</h3>
-            <ul style="list-style-type: none">
-                {% for rs in etkinlik %}
-                    <li>   <a href="content/{{ rs.id }}/{{ rs.slug }}" style=" text-decoration: none;color: #df8505;font-size: 15px">{{ rs.title }}</a></li>
-                {% endfor %}
-            </ul>
-
-        </div>
-    {% endif %}
-
-</div>
-<br><br><br><br><br><br><br><br>
-<div class="well well-small">
+<div style="background-color: #f5f5f5">
     <h3>KEŞFEDİLECEK YENİ YERLER </h3>
     <hr class="soften"/>
-
-
-
-    <div class="row-fluid">
-
-        <ul class="thumbnails">
-            {% for yeni in lastproducts %}
-                {% if forloop.counter < 4 %}
-                    <li class="span4">
-                        <div class="thumbnail">
-
-                            <a class="zoomTool" href="/product/{{ yeni.id }}/{{ yeni.slug }}" title="add to cart"><span class="icon-search"></span> ZİYARET ET</a>
-                            <a href="/product/{{ yeni.id }}/{{ yeni.slug }}"><img src="{{ yeni.image.url }} " style="height: 200px" alt=""></a>
-                            <div class="caption cntr">
-                                <p>{{ yeni.title}}</p>
-                                <br class="clr">
-                            </div>
-                        </div>
-                    </li>
-                {% endif %}
-            {% endfor %}
-        </ul>
-
-        <ul class="thumbnails">
-            {% for yeni in lastproducts %}
-                {% if forloop.counter >= 4 and forloop.counter < 7%}
-                    <li class="span4">
-                        <div class="thumbnail">
-
-                            <a class="zoomTool" href="/product/{{ yeni.id }}/{{ yeni.slug }}" title="add to cart"><span class="icon-search"></span> ZİYARET ET</a>
-                            <a href="/product/{{ yeni.id }}/{{ yeni.slug }}"><img src="{{ yeni.image.url }} " style="height: 200px" alt=""></a>
-                            <div class="caption cntr">
-                                <p>{{ yeni.title}}</p>
-                                <br class="clr">
-                            </div>
-                        </div>
-                    </li>
-                {% endif %}
-            {% endfor %}
-        </ul>
-
-        <ul class="thumbnails">
-            {% for yeni in lastproducts %}
-                {% if forloop.counter >= 7 and forloop.counter < 10%}
-                    <li class="span4">
-                        <div class="thumbnail">
-
-                            <a class="zoomTool" href="/product/{{ yeni.id }}/{{ yeni.slug }}" title="add to cart"><span class="icon-search"></span> ZİYARET ET</a>
-                            <a href="/product/{{ yeni.id }}/{{ yeni.slug }}"><img src="{{ yeni.image.url }} " style="height: 200px" alt=""></a>
-                            <div class="caption cntr">
-                                <p>{{ yeni.title}}</p>
-                                <br class="clr">
-                            </div>
-                        </div>
-                    </li>
-                {% endif %}
-            {% endfor %}
-        </ul>
-
-
-        <ul class="thumbnails">
-            {% for yeni in lastproducts %}
-                {% if forloop.counter >= 10 and forloop.counter < 13%}
-                    <li class="span4">
-                        <div class="thumbnail">
-
-                            <a class="zoomTool" href="/product/{{ yeni.id }}/{{ yeni.slug }}" title="add to cart"><span class="icon-search"></span> ZİYARET ET</a>
-                            <a href="/product/{{ yeni.id }}/{{ yeni.slug }}"><img src="{{ yeni.image.url }} " style="height: 200px" alt=""></a>
-                            <div class="caption cntr">
-                                <p>{{ yeni.title}}</p>
-                                <br class="clr">
-                            </div>
-                        </div>
-                    </li>
-                {% endif %}
-            {% endfor %}
-        </ul>
-
-
-    </div>
+    <ul class="thumbnails">
+        {% for yeni in lastproducts %}
+            {% if forloop.counter == 7 %}
+                <div style="width: 335px;height: 200px;float:left;margin-right: 10px;margin-left: 26px; background-color: white">
+                    <div align="center"><a href="yurtici-turistik-mekanlar/" style="font-size: 20px; font-weight: bold;text-decoration: none; color: red"> Yurtiçi Turistik Mekanlar</a></div>
+                    <div align="center"><a href="yurtici-turistik-mekanlar/"><img src="{% static  'assets/img/saatkulesi.jpg'%}" alt="bootstrap shop" style="height: 170px; width: 300px"></a></div>
+                </div>
+                <div style="width: 335px;height: 200px;float:left;margin-right: 10px;margin-left: 4px; margin-bottom: 10px; background-color: white">
+                    <div align="center"><a href="yurtdisi-turistik-mekanlar/" style="font-size: 20px; font-weight: bold;text-decoration: none; color: red"> Yurtdışı Turistik Mekanlar</a></div>
+                    <div align="center"><a href="yurtdisi-turistik-mekanlar/"><img src="{% static  'assets/img/kolezyum.jpg'%}" alt="bootstrap shop" style="height: 170px; width: 300px"></a></div>
+                </div>
+            {% endif %}
+            <li class="span3">
+                <div class="thumbnail">
+                    <a class="zoomTool" href="/turistikmekan/{{ yeni.id }}/{{ yeni.slug }}" title="add to cart"><span class="icon-search"></span> ZİYARET ET</a>
+                    <a href="/turistikmekan/{{ yeni.id }}/{{ yeni.slug }}"><img src="{{ yeni.image.url }} " style="height: 200px" alt=""></a>
+                    <div class="caption cntr">
+                        <p>{{ yeni.title}}</p>
+                        <br class="clr">
+                    </div>
+                </div>
+            </li>
+        {% endfor %}
+    </ul>
 </div>
-
-
 </div>
 </div>
 <!--
@@ -122,6 +36,4 @@ Clients
 -->
 <section class="our_client">
     <hr class="soften"/>
-
-
 </section>

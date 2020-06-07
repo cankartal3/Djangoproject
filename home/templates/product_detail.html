@@ -16,9 +16,14 @@
         <div class="container">
             <div class="row">
             <div class="well well-small">
-                <h2>REHBER</h2>
-                 <a href="/visitetouser/{{ product.user.id }}"><img src="{{ product.user.userprofile.image.url }}" style="height: 80px"></a><br>
+                 <a href="/visitetouser/{{ product.user.id }}"><img src="{{ product.user.userprofile.image.url }}" style="height: 100px; width: 100px"></a><br>
                 <a href="/visitetouser/{{ product.user.id }}" style="font-size: 20px; text-decoration: none; color: orange;">{{ product.user.first_name }} {{ product.user.last_name }}</a>
+                <div>
+                    <p>
+                        <strong>Yükleme Tarihi:</strong> {{ product.create_at }}<br>
+                        <strong>Güncelleme tarihi:</strong> {{ product.update_at }}
+                    </p>
+                </div>
             </div>
                 <div class="well well-small">
                 <h2 align="center" style="color: #cd0a0a;">İlgili resimler</h2>
@@ -51,7 +56,6 @@
                     </ul>
                     <div id="myTabContent" class="tab-content tabWrapper">
                         <div class="tab-pane fade active in" id="home">
-                            <h4>Product Information</h4>
                             {{ product.detail|safe }}
                         </div>
                         <div class="tab-pane fade" id="profile">
@@ -131,6 +135,5 @@
             </div>
         </div>
     </div>
-</div>
 {% endblock %}
 

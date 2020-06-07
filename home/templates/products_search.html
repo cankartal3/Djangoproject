@@ -24,8 +24,8 @@
                         </tr>
                         {% for rs in products %}
                             <tr>
-                                <td style="border: 1px solid black"><div class="span4"> <a href="/product/{{rs.id}}/{{ rs.slug }}"><img src="{{ rs.image.url }}" style="height: 100px; width: 200px"></a> </div></td>
-                                <td style="border: 1px solid black"><h4 class="fa-product-hunt"><a href="/product/{{ rs.id }}/{{ rs.slug }}">{{ rs.title }}</a></h4></td>
+                                <td style="border: 1px solid black"><div class="span4"> <a href="/turistikmekan/{{rs.id}}/{{ rs.slug }}"><img src="{{ rs.image.url }}" style="height: 100px; width: 200px"></a> </div></td>
+                                <td style="border: 1px solid black"><h4 class="fa-product-hunt"><a href="/turistikmekan/{{ rs.id }}/{{ rs.slug }}">{{ rs.title }}</a></h4></td>
                                 <td style="border: 1px solid black"><a href="/category/{{ rs.category.id }}/{{ rs.category.slug }}">{{ rs.category }}</a></td>
                                 <!--<td></td>-->
                             </tr>

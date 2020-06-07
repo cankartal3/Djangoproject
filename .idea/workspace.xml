@@ -2,50 +2,62 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="02bb089f-e80a-4433-8741-c3b51d268ae8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/home/static/gotop1.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/home/static/gotop2.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/turistikmekan/migrations/0020_images_status.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/turistikmekan/migrations/0021_auto_20200607_1809.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/turistikmekan/migrations/0022_auto_20200607_1809.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/turistikmekan/migrations/0023_auto_20200607_1812.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/uploads/images/pamukkale-travertenleri-3-1280x720_i1RbjzO.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/uploads/images/users/2.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/home/static/assets/img/kolezyum.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/home/static/assets/img/saatkulesi.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/home/templates/yurtdisi.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/home/templates/yurtici.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/turistikmekan/migrations/0024_product_where.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/turistikmekan/migrations/0025_auto_20200607_2149.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/turistikmekan/migrations/0026_auto_20200607_2150.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/images/1.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/images/1_5KvO3aH.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/images/Video_Adapter_and_PC_Display_Diagnostic_Flowchart_D6QPgQ0.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/images/hata111.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/images/yol_9sg3OPD.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/admin.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/apps.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/migrations/0002_auto_20200520_1731.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/migrations/0003_auto_20200520_1733.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/migrations/0004_commentcontent.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/migrations/0005_delete_commentcontent.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/migrations/0006_commentcontent.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/migrations/0007_content_user.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/migrations/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/models.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/tests.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/urls.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/views.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/static/gotop1.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/static/gotop2.css" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/home/templates/content.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/content.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/templates/content_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/content_detail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/templates/error_page.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/error_page.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/templates/faq.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/faq.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/templates/footer.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/footer.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/templates/hakkimizda.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/hakkimizda.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/templates/content_detail.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/home/templates/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/header.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/home/templates/header2.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/header2.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/templates/homebase.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/homebase.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/templates/homebase2.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/homebase2.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/templates/iletisim.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/iletisim.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/login.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/home/templates/product_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/product_detail.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/home/templates/products.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/products.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/home/templates/products_search.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/products_search.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/templates/referanslarimiz.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/referanslarimiz.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/home/templates/sidebar.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/sidebar.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/templates/signup.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/signup.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/home/templates/slider.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/slider.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/home/templates/visit_to_user.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/visit_to_user.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/home/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/home/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/project/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/project/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/turistikmekan/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/turistikmekan/admin.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/turistikmekan/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/turistikmekan/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/user/templates/change_password.html" beforeDir="false" afterPath="$PROJECT_DIR$/user/templates/change_password.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/templates/content_gallery.html" beforeDir="false" afterPath="$PROJECT_DIR$/user/templates/content_gallery.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/templates/product_gallery.html" beforeDir="false" afterPath="$PROJECT_DIR$/user/templates/product_gallery.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/templates/content_gallery.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/user/templates/rehberler.html" beforeDir="false" afterPath="$PROJECT_DIR$/user/templates/rehberler.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/templates/user_addcontent.html" beforeDir="false" afterPath="$PROJECT_DIR$/user/templates/user_addcontent.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/templates/user_addcontent.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/user/templates/user_comments.html" beforeDir="false" afterPath="$PROJECT_DIR$/user/templates/user_comments.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/templates/user_contents.html" beforeDir="false" afterPath="$PROJECT_DIR$/user/templates/user_contents.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/templates/user_contents.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/templates/user_panel.html" beforeDir="false" afterPath="$PROJECT_DIR$/user/templates/user_panel.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/user/templates/user_profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/user/templates/user_profile.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/user/templates/user_rehber_ekle.html" beforeDir="false" afterPath="$PROJECT_DIR$/user/templates/user_rehber_ekle.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/templates/user_update.html" beforeDir="false" afterPath="$PROJECT_DIR$/user/templates/user_update.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/url.py" beforeDir="false" afterPath="$PROJECT_DIR$/user/url.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/user/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/user/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -111,7 +123,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/user/templates" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/home/templates" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.jscs" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
@@ -139,17 +151,17 @@
     </option>
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Django\project\home\templates" />
+      <recent name="C:\Django\project\user\templates" />
+      <recent name="C:\Django\project\turistikmekan" />
+      <recent name="C:\Django\project\project" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Django\project\user\templates" />
       <recent name="C:\Django\project\user" />
       <recent name="C:\Django\project\user\migrations" />
       <recent name="C:\Django\project\home" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Django\project\user\templates" />
-      <recent name="C:\Django\project\home\templates" />
-      <recent name="C:\Django\project\turistikmekan" />
-      <recent name="C:\Django\project\project" />
     </key>
   </component>
   <component name="RunManager">
@@ -221,7 +233,7 @@
       <workItem from="1590491674641" duration="22498000" />
       <workItem from="1590523114601" duration="2663000" />
       <workItem from="1591352312890" duration="17264000" />
-      <workItem from="1591529975655" duration="7065000" />
+      <workItem from="1591529975655" duration="23427000" />
     </task>
     <task id="LOCAL-00001" summary="Homebase değişti">
       <created>1585339704994</created>
@@ -412,7 +424,14 @@
       <option name="project" value="LOCAL" />
       <updated>1591369138861</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="Template kodlarının aralarındaki gereksiz boşluklar silindi. Üyenin kendi profilinde paylaştığı mekanları listeleme eklendi.">
+      <created>1591549225420</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1591549225420</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -444,7 +463,8 @@
     <MESSAGE value="İçeriklere yorum yapan kişinin isimi ve profil bilgilerinine erişim sağlayan link eklendi." />
     <MESSAGE value="Uye, rehber(Turistik mekan) ekleme, düzenleme, silme eklendi. Uye icerikleri ve rehberleri resim galerisi eklendi." />
     <MESSAGE value="Paylaşılan rehberlerin oylama ortalaması, ziyaret edilen üyenin paylaştığı rehberleri görüntüleme,&#10;rehber detay kısmında rehber paylaşan üyenin profil resmini gösterme, ana sayfa haricinde diğer sayfalarda da&#10;login yapılma eklendi." />
-    <option name="LAST_COMMIT_MESSAGE" value="Paylaşılan rehberlerin oylama ortalaması, ziyaret edilen üyenin paylaştığı rehberleri görüntüleme,&#10;rehber detay kısmında rehber paylaşan üyenin profil resmini gösterme, ana sayfa haricinde diğer sayfalarda da&#10;login yapılma eklendi." />
+    <MESSAGE value="Template kodlarının aralarındaki gereksiz boşluklar silindi. Üyenin kendi profilinde paylaştığı mekanları listeleme eklendi." />
+    <option name="LAST_COMMIT_MESSAGE" value="Template kodlarının aralarındaki gereksiz boşluklar silindi. Üyenin kendi profilinde paylaştığı mekanları listeleme eklendi." />
   </component>
   <component name="WindowStateProjectService">
     <state x="275" y="24" key="#Inspections" timestamp="1588695118068">
@@ -459,10 +479,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="413" y="113" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.728@0.0.1366.728" timestamp="1587492871954" />
-    <state x="0" y="0" key="CommitChangelistDialog2" timestamp="1591369136732">
+    <state x="0" y="0" key="CommitChangelistDialog2" timestamp="1591549222706">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="0" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1591369136732" />
+    <state x="0" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1591549222706" />
     <state x="463" y="121" key="FileChooserDialogImpl" timestamp="1585342094466">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -507,18 +527,18 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="177" y="0" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1587482913948" />
-    <state x="275" y="99" key="Vcs.Push.Dialog.v2" timestamp="1591369145962">
+    <state x="275" y="99" key="Vcs.Push.Dialog.v2" timestamp="1591549235419">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="275" y="99" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1591369145962" />
+    <state x="275" y="99" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1591549235419" />
     <state x="404" y="188" key="com.intellij.ide.util.TipDialog" timestamp="1591529999985">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="404" y="188" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1591529999985" />
-    <state x="494" y="282" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1591549125383">
+    <state x="494" y="282" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1591566322773">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="494" y="282" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.728@0.0.1366.728" timestamp="1591549125383" />
+    <state x="494" y="282" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.728@0.0.1366.728" timestamp="1591566322773" />
     <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1589989599252">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

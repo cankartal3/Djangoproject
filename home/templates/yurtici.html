@@ -1,6 +1,6 @@
 {% extends "homebase.html" %}
 
-{% block title %}{{categorydata.title}} Gezi Yerleri {{ settings.title }} {% endblock %}
+{% block title %}Yurt İçi {{ settings.title }} {% endblock %}
 {% block keywords %}{{ settings.keywords}}{% endblock %}
 {% block description %}{{settings.description}}{% endblock %}
 {% block head %}
@@ -10,29 +10,28 @@
         <div class="container">
             <ul class="breadcrumb">
                 <li><a href="/">Anasayfa</a></li>
-                <li class="active">{{categorydata.title}} Gezi yerleri</li>
+                <li class="active">Yurt İçi Turistik Yerler</li>
             </ul>
-<div class="well well-small">
+<div>
 <!--
 New Products
 -->
-	<div class="well well-small">
-	<h3>{{categorydata.title}} </h3>
-		<div class="row-fluid">
+	<div>
+
 		  <ul class="thumbnails">
-            {% for rs in products %}
+            {% for rs in yurticitm %}
 			<li class="span4">
 			  <div class="thumbnail">
-				<a href="/turistikmekan/{{ rs.id }}/{{ rs.slug }}"><img src="{{ rs.image.url }}" alt=""></a>
-				<div class="caption cntr">
-					<p>{{ rs.title }}</p>
+				<a href="/turistikmekan/{{ rs.id }}/{{ rs.slug }}"><img src="{{ rs.image.url }}" style="height: 150px" alt=""></a>
+				<a href="/turistikmekan/{{ rs.id }}/{{ rs.slug }}" style="text-decoration: none; color: black;" ><div class="caption cntr">
+                    {{ rs.title }}
 					<br class="clr">
-				</div>
+                </div></a>
 			  </div>
 			</li>
              {% endfor %}
 		  </ul>
-	</div>
+
 	</div>
 	</div>
 <!--
@@ -45,5 +44,6 @@ Clients
         </div>
     </div>
  </div>
+
 {% endblock %}
 

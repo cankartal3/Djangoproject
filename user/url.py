@@ -9,21 +9,9 @@ urlpatterns = [
     path('password/', views.change_password, name='change_password'),
     path('comments/', views.comments, name='comments'),
     path('deletecomment/<int:id>', views.deletecomment, name='deletecomment'),
-    path('addcontent/', views.addcontent, name='addcontent'),
-    path('contents/', views.contents, name='contents'),
-    path('contentedit/<int:id>', views.contentedit, name='contentedit'),
-    path('contentdelete/<int:id>', views.contentdelete, name='contentdelete'),
     path('rehberler/', views.rehberler, name='rehberler'),
     path('rehberekle/', views.rehberekle, name='rehberekle'),
     path('editrehber/<int:id>/', views.editrehber, name='editrehber'),
     path('deleterehber/<int:id>/', views.deleterehber, name='deleterehber'),
-    path('contentaddimage/<int:id>', views.contentaddimage, name='contentaddimage'),
-    path('productaddimage/<int:id>', views.productaddimage, name='productaddimage'),
-    #path('addcomment/<int:id>',views.addcomment, name='addcomment'),
-    # ex: /polls/5/
-    #  path('<int:question_id>/', views.detail, name='detail'),
-    # ex: /polls/5/results/
-    #  path('<int:question_id>/results/', views.results, name='results'),
-    # ex: /polls/5/vote/
-    #  path('<int:question_id>/vote/', views.vote, name='vote'),
+    path('rehberaddimage/<int:id>', views.productaddimage, name='productaddimage'),
 ]
