@@ -112,9 +112,12 @@ def rehberekle(request):
             data.user_id = current_user.id
             data.title = form.cleaned_data['title']
             data.category = form.cleaned_data['category']
+            data.where = form.cleaned_data['where']
             data.keywords = form.cleaned_data['keywords']
             data.description = form.cleaned_data['description']
             data.image = form.cleaned_data['image']
+            if data.image == None:
+                data.image = "images/product/product.png"
             data.detail = form.cleaned_data['detail']
             data.status = 'False'
             data.save()  # veritabanına kaydet

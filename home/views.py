@@ -17,8 +17,7 @@ from turistikmekan.models import Product, Category, Images, Comment
 def index(request):
     settings = Settings.objects.get(pk=1)
     sliderdata = Product.objects.filter(status='True').order_by('-id')[:5]
-    category = Category.objects.all()
-
+    category = Category.objects.filter(status='True')
     dayproducts = Product.objects.filter(status='True')[:4]
     lastproducts = Product.objects.filter(status='True').order_by('-id')
     randomproducts = Product.objects.filter(status='True').order_by('?')[:5]

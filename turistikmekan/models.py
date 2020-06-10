@@ -65,7 +65,9 @@ class Product(models.Model):
     image = models.ImageField(blank=True,upload_to='images/')
     detail = RichTextUploadingField()
     status = models.CharField(max_length=10, choices=STATUS)
-    slug = models.SlugField(null=False, unique=True)
+    slug = models.SlugField(null=False, unique=False) # unique=True olduğu zaman kullanıcılar product (turistik mekan)
+                                                      # eklediklerinde önceki productın slugı aynı olduğu için productı ekleme hatası verir.
+                                                      # Bütünlük hatası verir.
     parent = models.ForeignKey('self', blank=True, null=True, related_name='children', on_delete=models.CASCADE)
     create_at = models.DateTimeField(auto_now_add=True)
     update_at = models.DateTimeField(auto_now=True)
@@ -132,10 +134,11 @@ class CommentForm(ModelForm):
 class ProductForm(ModelForm):
     class Meta:
         model = Product
-        fields = ['title', 'category' ,'keywords' ,'description', 'image', 'detail']
+        fields = ['title', 'category' ,'where','keywords' ,'description', 'image', 'detail']
         widgets = {
             'title' : TextInput(attrs={'class': 'input', 'placeholder': 'title'}),
             'category': Select(attrs={'class': 'input', 'placeholder': 'category'}),
+            'where': Select(attrs={'class': 'input', 'placeholder': 'where'}),
             'keywords': TextInput(attrs={'class': 'input', 'placeholder': 'keywords'}),
             'description': TextInput(attrs={'class': 'input', 'placeholder': 'description'}),
             'image': FileInput(attrs={'class': 'input', 'placeholder': 'image'}),

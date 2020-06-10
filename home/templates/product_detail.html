@@ -20,7 +20,6 @@
                 <a href="/visitetouser/{{ product.user.id }}" style="font-size: 20px; text-decoration: none; color: orange;">{{ product.user.first_name }} {{ product.user.last_name }}</a>
                 <div>
                     <p>
-                        <strong>Yükleme Tarihi:</strong> {{ product.create_at }}<br>
                         <strong>Güncelleme tarihi:</strong> {{ product.update_at }}
                     </p>
                 </div>
@@ -44,10 +43,7 @@
                                 <a class="right carousel-control" href="#myCarousel" data-slide="next">›</a>
                             </div>
                         </div>
-                        <div class="span7">
-                            <h3>{{product.title}}</h3>
-                            <hr class="soft"/>
-                        </div>
+
                     </div>
                     <hr class="softn clr"/>
                     <ul id="productDetail" class="nav nav-tabs">
@@ -56,6 +52,7 @@
                     </ul>
                     <div id="myTabContent" class="tab-content tabWrapper">
                         <div class="tab-pane fade active in" id="home">
+                            <h3>{{product.title}}</h3>
                             {{ product.detail|safe }}
                         </div>
                         <div class="tab-pane fade" id="profile">
