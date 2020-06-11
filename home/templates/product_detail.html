@@ -106,8 +106,11 @@
                                 <div class="row-fluid">
                                     <div class="span6">
                                         <div class="">
-                                            <div><a href="/visitetouser/{{ com.user_id }}"><i class="fa fa-user-o"></i> <b>{{ com.user.first_name }} {{ com.user.last_name }}</b></a></div>
-                                            <div><a href="#" style="color: #0e0e0e"><i class="fa fa-user-o"></i>{{ com.create_at }}</a></div>
+                                            <div>
+                                                <a href="/visitetouser/{{ com.user_id }}"><img src="{{ com.user.userprofile.image.url }}" style="height: 75px"></a>
+                                                <a href="/visitetouser/{{ com.user_id }}"><i class="fa fa-user-o"></i> <b>{{ com.user.first_name }} {{ com.user.last_name }}</b></a>
+                                            </div>
+                                            <div>{{ com.create_at }}</div>
                                             <hr style="width: 50%;border-top: 2px solid red;">
                                             <div>
                                                 {% if com.rate == 1 %}<h4>Puan: 1</h4> {% endif %}

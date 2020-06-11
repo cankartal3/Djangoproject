@@ -6,7 +6,7 @@ from django.shortcuts import render, redirect
 from django.contrib import messages
 
 # Create your views here.
-from home.models import UserProfile, Settings
+from home.models import UserProfile, Settings, AdminMessage
 from turistikmekan.models import Category, Comment, Product, ProductForm, ProductImageForm, Images
 from user.forms import UserUpdateForm, ProfileUpdateForm
 
@@ -90,12 +90,15 @@ def deletecomment(request,id):
 
 @login_required(login_url='/login') #Check login
 def rehberler(request):
+    current_userr = request.user
+    profile = UserProfile.objects.get(user_id=current_userr.id)
     settings = Settings.objects.get(pk=1)
     category = Category.objects.all()
     current_user = request.user
     products = Product.objects.filter(user_id=current_user.id).order_by('-id')
 
     context = {
+        'profile':profile,
         'settings':settings,
         'category': category,
         'products': products,
@@ -127,10 +130,13 @@ def rehberekle(request):
             messages.success(request, 'Content Form Error:' + str(form.errors))
             return HttpResponseRedirect('/user/rehberekle')
     else:
+        current_userr = request.user
+        profile = UserProfile.objects.get(user_id=current_userr.id)
         settings = Settings.objects.get(pk=1)
         category = Category.objects.all()
         form = ProductForm()
         context = {
+            'profile':profile,
             'category': category,
             'form': form,
             'settings':settings,
@@ -148,12 +154,15 @@ def editrehber(request, id):
             return HttpResponseRedirect('/user/rehberler')
         else:
             messages.success(request, 'Content Form Error' + str(form.errors))
-            return HttpResponseRedirect('/user/editrehberler/' + str(id))
+            return HttpResponseRedirect('/user/editrehber/' + str(id))
     else:
+        current_userr = request.user
+        profile = UserProfile.objects.get(user_id=current_userr.id)
         settings = Settings.objects.get(pk=1)
         category = Category.objects.all()
         form = ProductForm(instance=product)
         context = {
+            'profile':profile,
             'category': category,
             'form': form,
             'settings':settings,
@@ -193,3 +202,21 @@ def productaddimage(request, id):
             'form':form,
         }
         return render(request, 'product_gallery.html', context)
+
+
+@login_required(login_url='/login') #Check login
+def mesajlar(request):
+    current_userr = request.user
+    profile = UserProfile.objects.get(user_id=current_userr.id)
+    settings = Settings.objects.get(pk=1)
+    category = Category.objects.all()
+    current_user = request.user
+    mesajlarim = AdminMessage.objects.filter(user_id=current_user.id).order_by('-id')
+    context = {
+        'profile':profile,
+        'settings':settings,
+        'category':category,
+        'mesajlarim':mesajlarim,
+    }
+
+    return render(request, 'mesajlar.html', context)

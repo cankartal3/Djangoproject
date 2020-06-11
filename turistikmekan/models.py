@@ -144,3 +144,4 @@ class ProductForm(ModelForm):
             'image': FileInput(attrs={'class': 'input', 'placeholder': 'image'}),
             'detail': CKEditorWidget(), #CKeditor input
         }
+

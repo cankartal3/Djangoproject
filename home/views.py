@@ -10,7 +10,7 @@ from django.shortcuts import render
 
 # Create your views here.
 from home.forms import SearchForm, SignUpForm
-from home.models import Settings, ContactFormuu, ContactFormMessage, UserProfile, FAQ
+from home.models import Settings, ContactFormuu, ContactFormMessage, UserProfile, FAQ, SifreunuttumForm, Sifreunuttum
 from turistikmekan.models import Product, Category, Images, Comment
 
 
@@ -104,7 +104,7 @@ def product_detail(request ,id,slug):
                    'avg':avg,
                    'settings': settings,
                    }
-        return render(request,'product_detail.html',context)
+        return render(request,'product_detail.html',context )
     except:
         messages.warning(request, "Hata! İlgili içerik bulunamadı")
         link='/error'
@@ -188,28 +188,6 @@ def signup_view(request):
 #    return HttpResponse("Boş Sayfa")
 
 
-def error(request):
-    category = Category.objects.all()
-    settings = Settings.objects.get(pk=1)
-    context = {
-        'category': category,
-        'settings':settings,
-    }
-    return render(request, 'error_page.html', context)
-
-
-def faq(request):
-    category = Category.objects.all()
-    faq = FAQ.objects.all().order_by('ordernumber')
-    settings = Settings.objects.get(pk=1)
-    context = {
-        'category': category,
-        'faq':faq,
-        'settings':settings,
-    }
-    return render(request, 'faq.html', context)
-
-
 
 def visitetouser(request,id):
     category = Category.objects.all()
@@ -269,3 +247,64 @@ def yurtdisituristikmekanlar(request):
         'settings':settings,
     }
     return render(request, 'yurtdisi.html', context)
+
+
+def sifreunuttum(request):
+
+    if request.method == 'POST': #form post edildiyse
+        form = SifreunuttumForm(request.POST)
+        if form.is_valid():
+
+            data = Sifreunuttum() #model ile bağlantı kur
+            data.email=form.cleaned_data['email']
+            data.ip=request.META.get('REMOTE_ADDR') #Client computer ip address
+            data.save() #veritabanına kaydet
+
+            messages.success(request,"Şifreniz mail adresinize en kısa sürede gönderilecektir.!")
+
+            return HttpResponseRedirect('/sifremi-unuttum')
+            #return HttpResponse("Kaydedildi")
+
+    category = Category.objects.all()
+    settings = Settings.objects.get(pk=1)
+    form = SifreunuttumForm()
+    context = {'settings': settings, 'form': form, 'category': category}
+    return render(request, 'sifremiUnuttum.html', context)
+
+
+def product_detail_noslug(request,id):
+    messages.warning(request, "Hata! İlgili içerik bulunamadı")
+    link = '/onay-bekleyen-icerik'
+    return HttpResponseRedirect(link)
+
+
+def onaybekleyenicerik(request):
+    category = Category.objects.all()
+    settings = Settings.objects.get(pk=1)
+    context = {
+        'category': category,
+        'settings': settings,
+    }
+    return render(request, 'onayBekleyenIcerik.html', context)
+
+
+def error(request):
+    category = Category.objects.all()
+    settings = Settings.objects.get(pk=1)
+    context = {
+        'category': category,
+        'settings':settings,
+    }
+    return render(request, 'error_page.html', context)
+
+
+def faq(request):
+    category = Category.objects.all()
+    faq = FAQ.objects.filter(status='True').order_by('ordernumber')
+    settings = Settings.objects.get(pk=1)
+    context = {
+        'category': category,
+        'faq':faq,
+        'settings':settings,
+    }
+    return render(request, 'faq.html', context)

@@ -33,6 +33,8 @@ urlpatterns = [
     path('iletisim/', views.iletisim, name='iletisim'),
     path('category/<int:id>/<slug:slug>/', views.category_products, name='category_products'),
     path('turistikmekan/<int:id>/<slug:slug>/',views.product_detail, name='product_detail'),
+    path('turistikmekan/<int:id>/',views.product_detail_noslug, name='product_detail_noslug'),
+
     path('search/', views.product_search, name='product_search'),
     path('search_auto/', views.get_places, name='get_places'),
     path('logout/', views.logout_view, name='logout_view'),
@@ -40,10 +42,12 @@ urlpatterns = [
     path('signup/', views.signup_view, name='signup_view'),
     #path('bossayfa/<int:id>/', views.bossayfa , name='bossayfa'),
     path('error/', views.error, name='error'),
+    path('onay-bekleyen-icerik/', views.onaybekleyenicerik, name='onaybekleyenicerik'),
     path('sss/', views.faq, name='faq'),
     path('visitetouser/<int:id>', views.visitetouser, name='visitetouser'),
     path('yurtici-turistik-mekanlar/',views.yurticituristikmekanlar, name='yurticituristikmekanlar' ),
     path('yurtdisi-turistik-mekanlar/', views.yurtdisituristikmekanlar, name='yurtdisituristikmekanlar'),
+    path('sifremi-unuttum/', views.sifreunuttum, name='sifreunuttum'),
 
 ]
 if settings.DEBUG: # new

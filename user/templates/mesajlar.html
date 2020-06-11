@@ -1,0 +1,47 @@
+{% extends "homebase.html" %}
+
+{% block title %} {{ profile.user_name }} Profili{% endblock %}
+{% block keywords %}{{ settings.keywords}}{% endblock %}
+{% block description %}{{settings.description}}{% endblock %}
+{% block head %}
+    <link rel="shortcut icon" href='{{settings.icon.url}}'>
+{% endblock %}
+{% block body %} <div id="breadcrumb">
+    <div class="container">
+        <ul class="breadcrumb">
+            <li><a href="/">Anasayfa</a></li>
+            <li class="active">Mesajlar</li>
+        </ul>
+
+        <div class="span3">
+            {% include "user_panel.html" %}
+        </div>
+        <div class="span3">
+            <h2>Mesajlar</h2> <br>
+            <style>
+                table {
+                    border-collapse: collapse;
+                    width: 670px;
+                }
+                th, td {
+                    padding: 8px;
+                    text-align: left;
+                    border-bottom: 1px solid #ddd;
+                    height: 100px;
+                }
+                tr:hover {background-color:#f5f5f5;}
+            </style>
+            <table >
+                {% for mes in mesajlarim %}
+                    <tr>
+                        <td>
+                            <h3>{{ mes.kimden }}</h3>
+                                {{ mes.messagess|safe }}
+                        </td>
+                    </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -109,3 +109,36 @@ class FAQ(models.Model):
 
     def __str__(self):
         return self.question
+
+
+class Sifreunuttum(models.Model):
+    STATUS = (
+        ('Yeni', 'Yeni'),
+        ('Gonderildi', 'Gonderildi'),
+        ('Gonderilmedi', 'Gonderilmedi'),
+    )
+
+    email = models.EmailField(max_length=200)
+    ip = models.CharField(blank=True,max_length=20)
+    status = models.CharField(blank=True, max_length=20,default='Yeni', choices=STATUS)
+    create_at = models.DateTimeField(auto_now_add=True)
+    update_at = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return self.email
+
+class SifreunuttumForm(ModelForm):
+    class Meta:
+        model = Sifreunuttum
+        fields = ['email']
+
+
+class AdminMessage(models.Model):
+        user = models.ForeignKey(User,on_delete=models.CASCADE)
+        messagess = RichTextUploadingField()
+        kimden = models.CharField(max_length=30, default='Admin')
+        create_at = models.DateTimeField(auto_now_add=True)
+        update_at = models.DateTimeField(auto_now=True)
+
+        def __str__(self):
+            return self.messagess

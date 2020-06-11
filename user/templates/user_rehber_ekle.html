@@ -1,6 +1,6 @@
 {% extends "homebase.html" %}
 
-{% block title %} İçerik Ekle{% endblock %}
+{% block title %} İçerik Ekle {{ profile.user_name }}{% endblock %}
 {% block keywords %}{{ settings.keywords}}{% endblock %}
 {% block description %}{{settings.description}}{% endblock %}
 {% block head %}

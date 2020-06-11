@@ -1,0 +1,29 @@
+{% extends "homebase.html" %}
+{% block title %}Şifremi Unuttum {{ settings.title }} {% endblock %}
+{% block keywords %}{{ settings.keywords}}{% endblock %}
+{% block description %}{{settings.description}}{% endblock %}
+{% block head %}
+    <link rel="shortcut icon" href='{{settings.icon.url}}'>
+{% endblock %}
+
+{% block body %} <div id="breadcrumb">
+    <div class="container">
+        <ul class="breadcrumb">
+            <li><a href="/">Anasayfa</a></li>
+            <li class="active">Sifremi Unuttum</li>
+        </ul>
+        <div class="well well-small">
+            <div class="span4">
+                <br>
+                <form class="" action="/sifremi-unuttum/" method="post">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <input class="" type="email" name="email" id="id_email" placeholder="Email"/>
+                    </div>
+                    <button class="primary-btn">Gönder</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

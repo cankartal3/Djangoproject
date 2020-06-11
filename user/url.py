@@ -14,4 +14,5 @@ urlpatterns = [
     path('editrehber/<int:id>/', views.editrehber, name='editrehber'),
     path('deleterehber/<int:id>/', views.deleterehber, name='deleterehber'),
     path('rehberaddimage/<int:id>', views.productaddimage, name='productaddimage'),
+    path('mesajlar/', views.mesajlar ,name='mesajlar'),
 ]
