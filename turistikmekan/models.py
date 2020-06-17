@@ -63,6 +63,8 @@ class Product(models.Model):
     description = models.CharField(blank=True, max_length=255)
     where = models.CharField(blank=True, max_length=15, choices=WHERE)
     image = models.ImageField(blank=True,upload_to='images/')
+    howtogo = models.CharField(blank=True,max_length=200)
+    address = models.CharField(blank=True,max_length=255)
     detail = RichTextUploadingField()
     status = models.CharField(max_length=10, choices=STATUS)
     slug = models.SlugField(null=False, unique=False) # unique=True olduğu zaman kullanıcılar product (turistik mekan)
@@ -115,7 +117,6 @@ class Comment(models.Model):
     )
     product = models.ForeignKey(Product,on_delete=models.CASCADE)
     user = models.ForeignKey(User,on_delete=models.CASCADE)
-    subject = models.CharField(max_length=500,blank=True)
     comment = models.CharField(max_length=200)
     rate = models.IntegerField()
     status = models.CharField(max_length=10,choices=STATUS,default='New')
@@ -124,23 +125,25 @@ class Comment(models.Model):
     update_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):
-        return self.subject
+        return self.comment
 
 class CommentForm(ModelForm):
     class Meta:
         model = Comment
-        fields = ['subject','comment','rate']
+        fields = ['comment','rate']
 
 class ProductForm(ModelForm):
     class Meta:
         model = Product
-        fields = ['title', 'category' ,'where','keywords' ,'description', 'image', 'detail']
+        fields = ['title', 'category' ,'where','address','howtogo','keywords' ,'description', 'image', 'detail']
         widgets = {
-            'title' : TextInput(attrs={'class': 'input', 'placeholder': 'title'}),
-            'category': Select(attrs={'class': 'input', 'placeholder': 'category'}),
-            'where': Select(attrs={'class': 'input', 'placeholder': 'where'}),
-            'keywords': TextInput(attrs={'class': 'input', 'placeholder': 'keywords'}),
-            'description': TextInput(attrs={'class': 'input', 'placeholder': 'description'}),
+            'title' : TextInput(attrs={'class': 'vof', 'placeholder': 'title'}),
+            'category': Select(attrs={'class': 'select-css', 'placeholder': 'category'}),
+            'where': Select(attrs={'class': 'select-css', 'placeholder': 'where'}),
+            'address': TextInput(attrs={'class': 'vof', 'placeholder': 'Adres'}),
+            'howtogo': TextInput(attrs={'class': 'vof', 'placeholder': 'Nasıl Gidilir'}),
+            'keywords': TextInput(attrs={'class': 'vof', 'placeholder': 'Anahtar Kelime'}),
+            'description': TextInput(attrs={'class': 'vof', 'placeholder': 'Açıklama'}),
             'image': FileInput(attrs={'class': 'input', 'placeholder': 'image'}),
             'detail': CKEditorWidget(), #CKeditor input
         }

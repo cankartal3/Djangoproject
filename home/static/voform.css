@@ -1,0 +1,13 @@
+
+input[type=text].vof {
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: none;
+  background-color: #33FFDA;
+  color: white;
+  height: 40px;
+  width: 300px;
+  font-size: 20px;
+  color: black;
+}

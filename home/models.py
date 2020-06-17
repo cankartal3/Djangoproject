@@ -64,10 +64,10 @@ class ContactFormuu(ModelForm):
         model = ContactFormMessage
         fields = ['name','email','subject','message']
         widgets = {
-            'name': TextInput(attrs={'class': 'input','placeholder':'Name & Surname'}),
-            'subject': TextInput(attrs={'class': 'input', 'placeholder': 'Subject'}),
-            'email': TextInput(attrs={'class': 'input', 'placeholder': 'Email Address'}),
-            'message': Textarea(attrs={'class': 'input', 'placeholder': 'Your message','rows':'5'}),
+            'name': TextInput(attrs={'class': 'vof','placeholder':'Name & Surname'}),
+            'subject': TextInput(attrs={'class': 'vof', 'placeholder': 'Subject'}),
+            'email': TextInput(attrs={'class': 'vof', 'placeholder': 'Email Address'}),
+            'message': Textarea(attrs={'class': 'voftextarea', 'placeholder': 'Your message','rows':'5'}),
         }
 
 
@@ -117,7 +117,7 @@ class Sifreunuttum(models.Model):
         ('Gonderildi', 'Gonderildi'),
         ('Gonderilmedi', 'Gonderilmedi'),
     )
-
+    username = models.CharField(max_length=255)
     email = models.EmailField(max_length=200)
     ip = models.CharField(blank=True,max_length=20)
     status = models.CharField(blank=True, max_length=20,default='Yeni', choices=STATUS)
@@ -125,12 +125,12 @@ class Sifreunuttum(models.Model):
     update_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):
-        return self.email
+        return self.username
 
 class SifreunuttumForm(ModelForm):
     class Meta:
         model = Sifreunuttum
-        fields = ['email']
+        fields = ['email','username']
 
 
 class AdminMessage(models.Model):

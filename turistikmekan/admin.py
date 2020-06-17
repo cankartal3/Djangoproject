@@ -4,7 +4,6 @@ from django.contrib import admin
 from django.utils.html import format_html
 from mptt.admin import MPTTModelAdmin, DraggableMPTTAdmin
 
-from home.models import Sifreunuttum
 from turistikmekan.models import Category, Product, Images, Comment
 
 
@@ -64,15 +63,11 @@ class CategoryAdmin2(DraggableMPTTAdmin):
     related_products_cumulative_count.short_description = 'Related products (in tree)'
 
 class CommentAdmin(admin.ModelAdmin):
-    list_display = ['id','subject','comment','product','user','status']
+    list_display = ['id','comment','product','user','status']
     list_filter = ['status']
 
-class SifreunuttumAdmin(admin.ModelAdmin):
-    list_display = ['email','status','ip','create_at','update_at']
-    list_filter = ['status']
 
 admin.site.register(Category,CategoryAdmin2)
 admin.site.register(Product,ProductAdmin)
 admin.site.register(Images,ImagesAdmin)
 admin.site.register(Comment,CommentAdmin)
-admin.site.register(Sifreunuttum,SifreunuttumAdmin)

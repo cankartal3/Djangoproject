@@ -1,33 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="02bb089f-e80a-4433-8741-c3b51d268ae8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/home/migrations/0013_sifreunuttum.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/home/migrations/0014_auto_20200611_1754.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/home/migrations/0015_sifreunuttum_status.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/home/migrations/0016_auto_20200611_1850.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/home/migrations/0017_auto_20200611_1905.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/home/migrations/0018_adminmessage_kimden.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/home/migrations/0019_auto_20200611_1948.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/home/templates/onayBekleyenIcerik.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/home/templates/sifremiUnuttum.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user/templates/mesajlar.html" afterDir="false" />
+    <list default="true" id="02bb089f-e80a-4433-8741-c3b51d268ae8" name="Default Changelist" comment="Yeni eklenen turistik mekanın detay linki onay bekleme sayfasına yönlendirildi. Kullanıcıya admin tarafından mesaj gönderme eklendi. Şifre unuttum sayfası eklendi.">
+      <change afterPath="$PROJECT_DIR$/home/migrations/0020_sifreunuttum_username.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/home/migrations/0021_auto_20200613_0057.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/home/static/assets/img/logo1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/home/static/assets/img/yenilogo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/home/static/select-css.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/home/static/voform.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/home/static/voformemail.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/home/static/voformpassword.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/home/static/voformtextarea.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/turistikmekan/migrations/0028_remove_comment_subject.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/turistikmekan/migrations/0029_auto_20200612_2221.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/images/pamukkale-travertenleri-3-1280x720_WoIPJxq.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/images/unnamed_nPaQFA4.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/home/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/home/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/home/forms.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/home/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/home/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/static/assets/img/logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/templates/content.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/content.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/home/templates/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/header.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/home/templates/header2.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/header2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/templates/homebase.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/homebase.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/templates/iletisim.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/iletisim.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/login.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/home/templates/product_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/product_detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/templates/products.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/products.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/templates/sidebar.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/sidebar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/templates/sifremiUnuttum.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/sifremiUnuttum.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/home/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/home/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/project/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/turistikmekan/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/turistikmekan/admin.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/turistikmekan/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/turistikmekan/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/images/product/product.png" beforeDir="false" afterPath="$PROJECT_DIR$/uploads/images/product/product.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/templates/user_comments.html" beforeDir="false" afterPath="$PROJECT_DIR$/user/templates/user_comments.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/templates/user_panel.html" beforeDir="false" afterPath="$PROJECT_DIR$/user/templates/user_panel.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/turistikmekan/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/turistikmekan/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/user/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/templates/change_password.html" beforeDir="false" afterPath="$PROJECT_DIR$/user/templates/change_password.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/templates/product_gallery.html" beforeDir="false" afterPath="$PROJECT_DIR$/user/templates/product_gallery.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/user/templates/user_rehber_ekle.html" beforeDir="false" afterPath="$PROJECT_DIR$/user/templates/user_rehber_ekle.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/url.py" beforeDir="false" afterPath="$PROJECT_DIR$/user/url.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/templates/user_update.html" beforeDir="false" afterPath="$PROJECT_DIR$/user/templates/user_update.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/user/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/user/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -205,7 +217,10 @@
       <workItem from="1591352312890" duration="17264000" />
       <workItem from="1591529975655" duration="24215000" />
       <workItem from="1591781566809" duration="14516000" />
-      <workItem from="1591881952844" duration="16128000" />
+      <workItem from="1591881952844" duration="16310000" />
+      <workItem from="1591912392066" duration="94000" />
+      <workItem from="1591976652834" duration="17161000" />
+      <workItem from="1592423861183" duration="3905000" />
     </task>
     <task id="LOCAL-00001" summary="Homebase değişti">
       <created>1585339704994</created>
@@ -417,7 +432,14 @@
       <option name="project" value="LOCAL" />
       <updated>1591813201716</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="Yeni eklenen turistik mekanın detay linki onay bekleme sayfasına yönlendirildi. Kullanıcıya admin tarafından mesaj gönderme eklendi. Şifre unuttum sayfası eklendi.">
+      <created>1591912080518</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1591912080518</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -425,7 +447,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Hakkimizda, refereanslar ve iletisim sayfalari eklendi." />
     <MESSAGE value="Contact form bize ulaşın formu eklendi." />
     <MESSAGE value="Slider kullanımı eklendi." />
     <MESSAGE value="Kategory alt kategori menü eklendi (Csste biraz kusur var). Kategori ürünlerini gösterme eklendi." />
@@ -450,7 +471,8 @@
     <MESSAGE value="Template kodlarının aralarındaki gereksiz boşluklar silindi. Üyenin kendi profilinde paylaştığı mekanları listeleme eklendi." />
     <MESSAGE value="Ana sayfada yurtiçi ve yurtdışı turistik mekanlar linkleri ve onları listeleyen sayfa eklendi. Gereksiz bir uygulama kaldırıldı." />
     <MESSAGE value="İçerikle düzenlendi. Turistikmekan &gt; models.py slugın unique=True olduğu zaman kullanıcılar product (turistik mekan) eklediklerinde önceki productın slugı aynı olduğu için productı ekleme hatası verir. Yani bütünlük hatası veriyor.&#10;Bu yüzden slugın uniquesi False yaptım. Productın detayına girdiğimizde bir çakışma ihtimali yok çünkü slug ve id ile sayfaya getiriyoruz product detayı." />
-    <option name="LAST_COMMIT_MESSAGE" value="İçerikle düzenlendi. Turistikmekan &gt; models.py slugın unique=True olduğu zaman kullanıcılar product (turistik mekan) eklediklerinde önceki productın slugı aynı olduğu için productı ekleme hatası verir. Yani bütünlük hatası veriyor.&#10;Bu yüzden slugın uniquesi False yaptım. Productın detayına girdiğimizde bir çakışma ihtimali yok çünkü slug ve id ile sayfaya getiriyoruz product detayı." />
+    <MESSAGE value="Yeni eklenen turistik mekanın detay linki onay bekleme sayfasına yönlendirildi. Kullanıcıya admin tarafından mesaj gönderme eklendi. Şifre unuttum sayfası eklendi." />
+    <option name="LAST_COMMIT_MESSAGE" value="Yeni eklenen turistik mekanın detay linki onay bekleme sayfasına yönlendirildi. Kullanıcıya admin tarafından mesaj gönderme eklendi. Şifre unuttum sayfası eklendi." />
   </component>
   <component name="WindowStateProjectService">
     <state x="275" y="24" key="#Inspections" timestamp="1588695118068">
@@ -461,14 +483,18 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="137" y="21" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1585342239582" />
+    <state x="404" y="173" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1591997881232">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="404" y="173" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.728@0.0.1366.728" timestamp="1591997881232" />
     <state x="413" y="113" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1587492871954">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="413" y="113" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.728@0.0.1366.728" timestamp="1587492871954" />
-    <state x="53" y="0" key="CommitChangelistDialog2" timestamp="1591813199071">
+    <state x="0" y="0" key="CommitChangelistDialog2" timestamp="1591912455552">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="53" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1591813199071" />
+    <state x="0" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1591912455552" />
     <state x="463" y="121" key="FileChooserDialogImpl" timestamp="1585342094466">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -513,21 +539,21 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="177" y="0" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1587482913948" />
-    <state x="275" y="99" key="Vcs.Push.Dialog.v2" timestamp="1591813209283">
+    <state x="275" y="99" key="Vcs.Push.Dialog.v2" timestamp="1591912463258">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="275" y="99" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1591813209283" />
-    <state x="404" y="188" key="com.intellij.ide.util.TipDialog" timestamp="1591881952903">
+    <state x="275" y="99" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1591912463258" />
+    <state x="404" y="188" key="com.intellij.ide.util.TipDialog" timestamp="1592423886594">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="404" y="188" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1591881952903" />
-    <state x="494" y="282" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1591911904809">
+    <state x="404" y="188" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1592423886594" />
+    <state x="494" y="282" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1592427816160">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="494" y="282" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.728@0.0.1366.728" timestamp="1591911904809" />
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1589989599252">
+    <state x="494" y="282" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.728@0.0.1366.728" timestamp="1592427816160" />
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1591997884923">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1589989599252" />
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1591997884923" />
   </component>
 </project>

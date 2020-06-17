@@ -18,7 +18,10 @@
                 <form class="" action="/sifremi-unuttum/" method="post">
                     {% csrf_token %}
                     <div class="form-group">
-                        <input class="" type="email" name="email" id="id_email" placeholder="Email"/>
+                        <input class="vof" type="text" name="username" id="id_username" placeholder="Kullanıcı Adı"/>
+                    </div>
+                    <div class="form-group">
+                        <input class="vofemail" type="email" name="email" id="id_email" placeholder="Email"/>
                     </div>
                     <button class="primary-btn">Gönder</button>
                 </form>

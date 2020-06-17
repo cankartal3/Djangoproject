@@ -21,6 +21,7 @@ def index(request):
                'settings':settings,}
     return render(request, 'user_profile.html', context)
 
+@login_required(login_url='/login') #Check login
 def user_update(request):
     if request.method == 'POST':
         user_form = UserUpdateForm(request.POST, instance=request.user) #request.user is user session data
@@ -45,6 +46,7 @@ def user_update(request):
         }
         return render(request, 'user_update.html', context)
 
+@login_required(login_url='/login') #Check login
 def change_password(request):
     if request.method == 'POST':
         form = PasswordChangeForm(request.user, request.POST)
@@ -116,6 +118,8 @@ def rehberekle(request):
             data.title = form.cleaned_data['title']
             data.category = form.cleaned_data['category']
             data.where = form.cleaned_data['where']
+            data.address = form.cleaned_data['address']
+            data.howtogo = form.cleaned_data['howtogo']
             data.keywords = form.cleaned_data['keywords']
             data.description = form.cleaned_data['description']
             data.image = form.cleaned_data['image']

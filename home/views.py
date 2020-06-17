@@ -82,6 +82,12 @@ def category_products(request ,id,slug):
     category = Category.objects.all()
     categorydata = Category.objects.get(pk=id)
     products = Product.objects.filter(category_id=id, status='True')
+    request.session['product_sayi']=Product.objects.filter(category_id=id, status='True').count()
+
+    if request.session['product_sayi'] == 0:
+        messages.success(request,"Henüz bu kategoride içerik eklenmedi.")
+        return HttpResponseRedirect('/')
+
     context = {'products':products,
                'category':category,
                'categorydata':categorydata,
@@ -166,7 +172,7 @@ def signup_view(request):
             data.user_id = current_user.id
             data.image="images/users/user.png"
             data.save()
-            messages.success(request,"Hoş geldiniz. Sitemize başarılı bilr şekilde üye oldunuz. İyi gezmeler.")
+            messages.success(request,"Hoş geldiniz. Sitemize başarılı bir şekilde üye oldunuz.")
             return HttpResponseRedirect("/")
 
     form = SignUpForm()
@@ -256,6 +262,7 @@ def sifreunuttum(request):
         if form.is_valid():
 
             data = Sifreunuttum() #model ile bağlantı kur
+            data.username = form.cleaned_data['username']
             data.email=form.cleaned_data['email']
             data.ip=request.META.get('REMOTE_ADDR') #Client computer ip address
             data.save() #veritabanına kaydet
@@ -264,7 +271,10 @@ def sifreunuttum(request):
 
             return HttpResponseRedirect('/sifremi-unuttum')
             #return HttpResponse("Kaydedildi")
+        else :
+            messages.success(request, "Kullanıcı adınızı ya da email adresinizi girmeyi unuttunuz! " +str(form.errors))
 
+            return HttpResponseRedirect('/sifremi-unuttum')
     category = Category.objects.all()
     settings = Settings.objects.get(pk=1)
     form = SifreunuttumForm()

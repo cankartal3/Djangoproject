@@ -11,24 +11,20 @@ class UserUpdateForm(UserChangeForm):
         model = User
         fields = ('username','email','first_name','last_name')
         widgets = {
-            'username'  :TextInput(attrs={'class': 'input', 'placeholder':'Kullanıcı adı'}),
-            'email'     : EmailInput(attrs={'class': 'input', 'placeholder': 'Email'}),
-            'first_name': TextInput(attrs={'class': 'input', 'placeholder': 'İsim'}),
-            'last_name' : TextInput(attrs={'class': 'input', 'placeholder': 'Soyisim'}),
+            'username'  :TextInput(attrs={'class': 'vof', 'placeholder':'Kullanıcı adı'}),
+            'email'     : EmailInput(attrs={'class': 'vofemail', 'placeholder': 'Email'}),
+            'first_name': TextInput(attrs={'class': 'vof', 'placeholder': 'İsim'}),
+            'last_name' : TextInput(attrs={'class': 'vof', 'placeholder': 'Soyisim'}),
         }
-CITY = [
-    ('Istanbul','Istanbul'),
-    ('Ankara', 'Ankara'),
-    ('Izmir','Izmir'),
-]
+
 class ProfileUpdateForm(forms.ModelForm):
     class Meta:
         model = UserProfile
         fields = ('phone', 'address', 'city', 'country', 'image')
         widgets = {
-            'phone' : TextInput(attrs={'class': 'input', 'placeholder':'phone'}),
-            'address': TextInput(attrs={'class': 'input', 'placeholder': 'address'}),
-            'city': Select(attrs={'class': 'input', 'placeholder': 'phone'},choices=CITY),
-            'country': TextInput(attrs={'class': 'input', 'placeholder': 'country'}),
+            'phone' : TextInput(attrs={'class': 'vof', 'placeholder':'phone'}),
+            'address': TextInput(attrs={'class': 'vof', 'placeholder': 'address'}),
+            'city': TextInput(attrs={'class': 'vof', 'placeholder': 'phone'}),
+            'country': TextInput(attrs={'class': 'vof', 'placeholder': 'country'}),
             'image': FileInput(attrs={'class': 'input', 'placeholder': 'image'}),
         }

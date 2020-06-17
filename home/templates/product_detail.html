@@ -15,55 +15,41 @@
         </ul>
         <div class="container">
             <div class="row">
-            <div class="well well-small">
-                 <a href="/visitetouser/{{ product.user.id }}"><img src="{{ product.user.userprofile.image.url }}" style="height: 100px; width: 100px"></a><br>
-                <a href="/visitetouser/{{ product.user.id }}" style="font-size: 20px; text-decoration: none; color: orange;">{{ product.user.first_name }} {{ product.user.last_name }}</a>
-                <div>
-                    <p>
-                        <strong>Güncelleme tarihi:</strong> {{ product.update_at }}
-                    </p>
-                </div>
-            </div>
                 <div class="well well-small">
-                <h2 align="center" style="color: #cd0a0a;">İlgili resimler</h2>
-                    <div class="row-fluid">
-                        <div class="span12">
-                            <div id="myCarousel" class="carousel slide cntr">
-                                <div class="carousel-inner">
-                                    <div class="item active">
-                                         <img src="{{ product.image.url }}" alt="" style="width: 1000px; height: 550px" >
-                                    </div>
-                                    {% for img in images %}
-                                        <div class="item">
-                                             <img src="{{img.image.url}}" alt="" style="width: 1000px; height: 550px" >
-                                        </div>
-                                    {% endfor %}
-                                </div>
-                                <a class="left carousel-control" href="#myCarousel" data-slide="prev">‹</a>
-                                <a class="right carousel-control" href="#myCarousel" data-slide="next">›</a>
-                            </div>
+                    <a href="/visitetouser/{{ product.user.id }}"><img src="{{ product.user.userprofile.image.url }}" style="height: 100px; width: 100px"></a><br>
+                    <a href="/visitetouser/{{ product.user.id }}" style="font-size: 20px; text-decoration: none; color: orange;">{{ product.user.first_name }} {{ product.user.last_name }}</a>
+                    <div>
+                        <p>
+                            <strong>Güncelleme tarihi:</strong> {{ product.update_at }}
+                        </p>
+                    </div>
+                </div>
+                <div class="well well-small">
+                    <h2 align="center" style="color: #cd0a0a;">{{product.title}}</h2>
+                    <div>
+                        <img src="{{ product.image.url }}" align="left" style="height: 300px;padding: 20px; border-radius:25px" >
+                        {{ product.detail|safe }}
+                        <div align="">
+                            {% for img in images %}
+                                <h3 style="left: 100px">{{ img.title }}</h3>
+                                <img src="{{img.image.url}}" alt="" style="height: 451px; width: 800px" > <br> <br> <br>
+                            {% endfor %}
                         </div>
-
                     </div>
                     <hr class="softn clr"/>
-                    <ul id="productDetail" class="nav nav-tabs">
-                        <li class="active"><a href="#home" data-toggle="tab">Bu Turistik Mekan Hakkında Detay</a></li>
-                        <li class=""><a href="#profile" data-toggle="tab">Yorumlar</a></li>
-                    </ul>
-                    <div id="myTabContent" class="tab-content tabWrapper">
-                        <div class="tab-pane fade active in" id="home">
-                            <h3>{{product.title}}</h3>
-                            {{ product.detail|safe }}
-                        </div>
-                        <div class="tab-pane fade" id="profile">
-                             <div class="row-fluid">
+                    <div class="tab-content tabWrapper">
+                        <div>
+                            <div class="row-fluid">
                                 <div class="span6">
-                                <h2>
-                                {% if avg.rate__avg >= 3 %}<strong style="color: green">
-                                {% elif avg.rate__avg < 3 or avg.rate__avg > 2.5 %} <strong style="color: orange">
-                                {% else %} <strong style="color: red"> {% endif %}
-                                    {{ avg.rate__avg|floatformat:"2"}} </strong>{% if avg.rate__avg == NULL %}<strong style="color: red">Henüz kimse bu içeriği oylamadı.</strong> {% else %} / <strong style="color: green">5</strong>{% endif %}
-                                </h2>
+                                    <h2>
+                                        {% if avg.rate__avg >= 3 %}<strong style="color: green">
+                                        {% elif avg.rate__avg < 3 or avg.rate__avg > 2.5 %} <strong style="color: orange">
+                                        {% else %} <strong style="color: red"> {% endif %}
+                                        {{ avg.rate__avg|floatformat:"2"}} </strong>{% if avg.rate__avg == NULL %}<strong style="color: red">Henüz kimse bu içeriği oylamadı.</strong> {% else %} / <strong style="color: green">5</strong>{% endif %}
+                                    </h2>
+
+                                    <!-- Yorum yap ve puan ver. -->
+
                                     <h4>Görüşünüz yaz</h4>
                                     {% if messages%}
                                         {% for message in messages %}
@@ -74,9 +60,7 @@
                                     {% endif %}
                                     <form class="" action="/turistikmekan/addcomment/{{ product.id }}" method="post">
                                         {% csrf_token %}
-                                        <div class="form-group">
-                                            <input class="" type="text" name="subject" id="id_subject" placeholder="Subject"/>
-                                        </div>
+
                                         <div class="form-group">
                                             <textarea class="" name="comment" id="id_comment" placeholder="Your review"></textarea>
                                         </div>
@@ -93,7 +77,7 @@
                                             </div>
                                         </div>
                                         {% if user.id is not None %}
-                                            <button class="primary-btn">Send Comment</button>
+                                            <button class="primary-btn">Yorumunu Gönder</button>
                                         {% else %}
                                             Yorum eklemek için <a href="/login" style="color: red">giriş</a> yapınız.
                                         {% endif %}
@@ -102,6 +86,9 @@
                                 <div class="span4 alignR">
                                 </div>
                             </div>
+
+                            <!-- Yapılan yorumları ve verilen puanları görüntüle. -->
+
                             {% for com in comments %}
                                 <div class="row-fluid">
                                     <div class="span6">
@@ -120,7 +107,7 @@
                                                 {% if com.rate == 5 %}<h4>Puan: 5</h4> {% endif %}
                                             </div>
                                         </div>
-                                        <div><h4>{{ com.subject }}</h4>
+                                        <div>
                                             <p>{{ com.comment }}</p>
                                         </div>
                                     </div>
@@ -128,12 +115,11 @@
                                 <hr class="soft">
                             {% endfor %}
                         </div>
-                            <hr class="soften"/>
-                        </div>
+                        <hr class="soften"/>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+</div>
 {% endblock %}
-
