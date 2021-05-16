@@ -1,1 +1,1 @@
-"# Django Gezi Turizm Regber projesi" 
+"# Django Gezi Turizm Rehber projesi" 
